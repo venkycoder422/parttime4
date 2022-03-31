@@ -11,9 +11,10 @@
     display: grid;
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(2,200px);
-    gap:10px 50px;
+    grid-gap:10px;
     margin:auto;
     width: 80%;
+
     
 }
 #partner-section>div>img{
@@ -45,13 +46,26 @@ body{
         font-size: 25px;
         color: rgb(136, 131, 131);
     }
-
-@media screen and (min-width:451px)and(max-width:850px) {
+@media all and (min-width:85px) and (max-width:450px) {
     #partner-section{
-        width: 100%;
+        display: grid;
+        width:auto;
+        grid-template-columns:repeat(2 ,1fr);
+        grid-template-rows: repeat(8,200px);
+        grid-gap:10px;
+        
+    }
+
+
+}
+
+@media all and (min-width:451px)  and (max-width:850px) {
+    #partner-section{
+        display: grid;
+        width: auto;
         grid-template-columns:repeat(5 ,1fr);
         grid-template-rows: repeat(3,200px);
-        border: 1px solid black;
+        grid-gap:10px;
         
     }
 
