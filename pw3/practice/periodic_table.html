@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+</head>
+<style >
+    main{
+        margin:20px;
+        display: grid;
+        background-color: blanchedalmond;
+        width:auto;
+        height:auto;
+        
+    }
+    .table{
+        display: grid;
+        margin-left: 150px;
+        margin-bottom :40px;
+        text-align: center;
+        grid-gap:20px;
+        grid-template-columns: repeat(18,90px);
+        grid-template-rows: repeat(10,100px);
+    }
+    .element{
+        background-color: aquamarine;
+        
+
+    }
+    #help{grid-area: 1/ 7 / 3/ 10;}
+    #h {grid-area: 1 / 1 / 1 / 1;}
+    #he {grid-area: 1 / 18 / 1 / 18;}
+    #li{grid-area:2 /1 /3/1;}
+    #BE{grid-area:2 / 2 / 3 / 3;}
+    #B{grid-area: 2/ 13/ 3 / 14;}
+    #C{grid-area:2 / 14 / 3 / 15;}
+    #N{grid-area:2 / 15 / 3 / 16;}
+    #O{grid-area:2 / 16/ 3 / 17;}
+    #F{grid-area:2 / 17 / 3 / 18;}
+    #Ne{grid-area:2 / 18 / 3 / 18;}
+    #Na{grid-area:3 / 1 / 4 / 2;}
+    #Mg{grid-area:3 / 2 / 4 / 3;}
+    #Al{grid-area:3 / 13 / 4 / 14;}
+    #Si{grid-area:3 / 14 / 4 / 15;}
+    #P{grid-area:3 / 15 / 4 / 16;}
+    #S{grid-area:3 / 16 / 4 / 17;}
+    #Cl{grid-area:3 / 17/ 4/ 18;}
+    #Ar{grid-area:3/ 18 / 4 / 18;}
+    #K{grid-area:4 / 1 / 5 / 2;}
+    #Ca{grid-area:4 / 2 / 5 / 3;}
+    #Sc{grid-area:4 / 3 / 5/ 4;}
+    #Ti{grid-area:4 / 4 / 5 / 5;}
+    #V{grid-area:4 / 5 / 5 / 6;}
+    #Cr{grid-area:4 / 6 / 5 / 7;}
+    #Mn{grid-area:4 / 7 / 5 / 8;}
+    #Fe{grid-area:4 / 8 / 5 / 9;}
+    #Co{grid-area:4 / 9 / 5 / 10;}
+    #Ni{grid-area:4 / 10 / 5 / 11;}
+    #Cu{grid-area:4 / 11 / 5 / 12;}
+    #Zn{grid-area:4 / 12 / 5 / 13;}
+    #Ga{grid-area:4 / 13 / 5 / 14;}
+    #Ge{grid-area:4 / 14 / 5 / 15;}
+    #As{grid-area:4 / 15 / 5 / 16;}
+    #Se{grid-area:4 / 16 / 5 / 17;}
+    #Br{grid-area:4 / 17 / 5 / 18;}
+    #Kr{grid-area:4 / 18 / 5 / 18;}
+    #Rb{grid-area:5/1/6/ 2;}
+    #Sr{grid-area: 5/ 2 / 6 / 3 ;}
+    #Y{grid-area: 5/  3/ 6 / 4 ;}
+    #Zr{grid-area: 5/  4/ 6 / 5 ;}
+    #Nb{grid-area: 5/ 5 / 6 / 6 ;}
+    #Mo{grid-area: 5/ 6 / 6 / 7 ;}
+    #Tc{grid-area: 5/ 7 / 6 / 8 ;}
+    #Ru{grid-area: 5/ 8 / 6 / 9 ;}
+    #Rh{grid-area: 5/ 9 / 6 / 10 ;}
+    #Pd{grid-area: 5/ 10 / 6 / 11 ;}
+    #Ag{grid-area: 5/ 11 / 6 / 12 ;}
+    #Cd{grid-area: 5/ 12 / 6 / 13 ;}
+    #In{grid-area: 5/ 13/ 5 / 14 ;}
+    #Sn{grid-area: 5/ 14 / 6 / 15 ;}
+    #Sb{grid-area: 5/ 15 / 6 / 16 ;}
+    #Te{grid-area: 5/ 16 / 6 /  17;}
+    #I{grid-area: 5/ 17 / 6 / 18 ;}
+    #Xe{grid-area: 5/ 18 / 6 / 18 ;}
+    #Cs{grid-area: 6 / 1 / 7 / 2 ;}
+    #Ba{grid-area: 6/ 2 / 7 / 3 ;}
+    
+    
+    #Hf{grid-area: 6/ 4 / 7 / 5 ;}
+    #Ta{grid-area: 6/ 5 / 7 / 6 ;}
+    #W{grid-area: 6/ 6/ 7 / 7 ;}
+    #Re{grid-area:6 / 7 / 7 /8;}
+    #Os{grid-area:6 / 8 / 7 / 9 ;}
+    #Ir{grid-area:6 / 9 / 7 / 10 ;}
+    #Pt{grid-area:6 / 10 / 7 / 11 ;}
+    #Au{grid-area:6 /  11/ 7/ 12 ;}
+    #Hg{grid-area: 6/ 12/ 7 / 13 ;}
+    #Tl{grid-area: 6/ 13 / 7 / 14 ;}
+    #Pb{grid-area: 6/ 14 / 7 / 15 ;}
+    #Bi{grid-area: 6/ 15 / 7 / 16 ;}
+    #Po{grid-area: 6/ 16 / 7 / 17 ;}
+    #At{grid-area: 6/ 17 / 7 / 18 ;}
+    #Rn{grid-area: 6/ 18 / 7 / 18 ;}
+
+    
+    #Fr{grid-area:7 / 1 / 8 / 2 ;}
+    #Ra{grid-area: 7/ 2 /  8/ 3 ;}
+    #Rf{grid-area: 7/ 4 /  8/ 5 ;}
+    #Db{grid-area: 7/ 5 / 8 / 6 ;}
+    #Sg{grid-area:7 / 6 / 8 / 7 ;}
+    #Bh{grid-area: 7/ 7 / 8 / 8 ;}
+    #Hs{grid-area: 7/ 8 / 8 / 9 ;}
+    #Mt{grid-area: 7/ 9 / 8 / 10 ;}
+    #Ds{grid-area: 7/ 10 / 8 / 11 ;}
+    #Rg{grid-area: 7/ 11 / 8 / 12 ;}
+    #Cn{grid-area: 7/ 12 / 8 / 13 ;}
+    #Uut{grid-area:7 / 13 / 8 / 14 ;}
+    #Fl{grid-area: 7/ 14 / 8 / 15 ;}
+    #Uup{grid-area: 7/ 15 / 8 / 16;}
+    
+    #Lv{grid-area: 7/ 16 / 8 / 17 ;}
+    #Uus{grid-area: 7/ 17 / 8 / 18 ;}
+    #Uuo{grid-area: 7/ 18 / 8 / 18 ;}
+
+   #La{grid-area: 8/ 3 / 9 / 4 ;}
+    #Ce{grid-area:8/ 4/ 9 / 5 ;}
+    #Pr{grid-area: 8/ 5 / 9 / 6 ;}
+    #Nd{grid-area: 8/ 6/ 9/7;}
+    #Pm{grid-area: 8/ 7/ 9 / 8;}
+    #Sm{grid-area: 8/ 8/ 9/ 9;}
+    #Eu{grid-area: 8/  9/ 9/ 10;}
+    #Gd{grid-area: 8/ 10 / 9 /11;}
+    #Tb{grid-area: 8/11 /9 / 12 ;}
+    #Dy{grid-area: 8/  12/  9/ 13;}
+    #Ho{grid-area: 8/ 13/ 9 / 14;}
+    #Er{grid-area: 8/  14/  9/ 15;}
+    #Tm{grid-area: 8/ 15 / 9 / 16;}
+    #Yb{grid-area: 8/  16/  9/ 17;}
+    #Lu{grid-area: 8/ 17 / 9 / 18;}
+    #Ac{grid-area: 9/  3/ 10 / 4;}
+    #Th{grid-area: 9/ 4/ 10/ 5 ;}
+    #Pa{grid-area: 9/ 5 /  10/ 6;}
+    #U{grid-area: 9/  6/  10/ 7;}
+    #Np{grid-area: 9/ 7 / 10 /8 ;}
+    #Pu{grid-area: 9/  8/ 10/  9;}
+    #Am{grid-area: 9/ 9/ 10 / 10;}
+    #Cm{grid-area: 9/  10/ 10/ 11;}
+    #Bk{grid-area: 9/ 11 / 10 / 12;}
+    #Cf{grid-area: 9/ 12/ 10/ 13;}
+    #Es{grid-area: 9/ 13 /10 / 14;}
+    #Fm{grid-area: 9/  14/ 10/ 15;}
+    #Md{grid-area: 9/  15/ 10/ 16;}
+    #No{grid-area: 9/  16/ 10/ 17;}
+    #Lr{grid-area: 9/  17/  10/ 18;}
+
+*/
+
+
+/* different types of elements*/
+
+    section:nth-child(2){
+        background-color: rgb(177, 219, 238);
+        
+    }
+
+    section:nth-child(2),
+    section:nth-child(3){
+        background-color:#07e5f5 ;
+    }
+    /*Alkali elements*/
+    section:nth-child(4),
+    section:nth-child(12),
+    section:nth-child(20),
+    section:nth-child(38),
+    section:nth-child(56),
+    section:nth-child(73){
+        background-color: hsl(281, 94%, 50%);
+    }
+
+    section:nth-child(5),
+    section:nth-child(13),
+    section:nth-child(21),
+    section:nth-child(39),
+    section:nth-child(57),
+    section:nth-child(74){
+        background-color: #0ec5f3ef;
+    }
+
+    section:nth-child(14),
+    section:nth-child(22),
+    section:nth-child(23),
+    section:nth-child(24),
+    section:nth-child(25),
+    section:nth-child(26),
+    section:nth-child(27),
+    section:nth-child(28),
+    section:nth-child(29),
+    section:nth-child(30),
+    section:nth-child(31),
+    section:nth-child(32),
+    section:nth-child(40),
+    section:nth-child(41),
+    section:nth-child(42),
+    section:nth-child(43),
+    section:nth-child(44),
+    section:nth-child(45),
+    section:nth-child(46),
+    section:nth-child(47),
+    section:nth-child(48),
+    section:nth-child(49),
+    section:nth-child(50),
+    section:nth-child(51)
+
+    section:nth-child(57),
+    section:nth-child(58),
+    section:nth-child(59),
+    section:nth-child(60),
+    section:nth-child(61),
+    section:nth-child(62),
+    section:nth-child(63),
+    section:nth-child(64),
+    section:nth-child(65),
+    section:nth-child(66),
+    section:nth-child(67),
+    section:nth-child(68),
+    section:nth-child(69),
+
+   section:nth-child(75),
+   section:nth-child(76),
+    section:nth-child(77),
+    section:nth-child(78),
+
+    section:nth-child(79),
+    section:nth-child(80),
+    section:nth-child(81),
+    section:nth-child(82),
+    section:nth-child(83),
+    section:nth-child(84),
+    section:nth-child(85),
+    section:nth-child(86),
+    section:nth-child(87)
+    {
+        background-color: #16e60fef;
+    }
+
+
+    
+    section:nth-child(90),
+    section:nth-child(91),
+    section:nth-child(92),
+    section:nth-child(93),
+    section:nth-child(94),
+    section:nth-child(95),
+    section:nth-child(96),
+    section:nth-child(97),
+    section:nth-child(98),
+    section:nth-child(99),
+    section:nth-child(100),
+    section:nth-child(101),
+    section:nth-child(102),
+
+   section:nth-child(103),
+   section:nth-child(104),
+    section:nth-child(105),
+    section:nth-child(106),
+
+    section:nth-child(107),
+    section:nth-child(108),
+    section:nth-child(109),
+    section:nth-child(110),
+    section:nth-child(111),
+    section:nth-child(112),
+    section:nth-child(113),
+    section:nth-child(114),
+    section:nth-child(115),
+    section:nth-child(116),
+    section:nth-child(117),
+    section:nth-child(118),
+    section:nth-child(119)
+    {
+        background-color: rgb(211, 35, 187);
+    }
+
+    /* */
+
+
+</style>
+<body>
+<main>
+<h1 style="text-align:center;font-size:40px;" > The Periodic Table of Elements</h1>
+<div  class="table">
+    <section class="element" id="help">
+        <h1>NUMBER</h1>
+        <h4>Symbol</h4>
+        <p>Name</p>
+        <h3>Weight</h3>
+
+    </section>
+    <section class="element" id="h">
+        <h2>1</h2>
+        <h1>H</h1>
+        
+    </section>
+
+    <section class="element" id="he">
+        <h2>2</h2>
+        <h1>He</h1>
+
+    </section>
+
+    <section class="element" id="li">
+        <h2>3</h2>
+        <h2>LI</h2>
+    </section>
+
+    <section class="element" id="BE">
+        <h2>4</h2>
+        <h1>Be</h1>
+    </section>
+
+    <section class="element" id="B">
+        <h1>5</h1>
+        <h1>B</h1>
+    </section>
+
+    <section class="element" id="C">
+        <h2>6</h2>
+        <h1>C</h1>
+    </section>
+
+    <section class="element" id="N">
+        <h2>7</h2>
+        <h1>N</h1>
+    </section>
+
+    <section class="element" id="O">
+        <h2>8</h2>
+        <h1>O</h1>
+    </section>
+
+    <section class="element" id="F">
+        <h2>9</h2>
+        <h1>F</h1>
+    </section>
+
+    <section class="element" id="Ne">
+        <h2>10</h2>
+        <h1>Ne</h1>
+    </section>
+
+    <section class="element" id="Na">
+        <h2>11</h2>
+        <h1>Na</h1>
+    </section>
+
+    <section class="element" id="Mg">
+        <h2>12</h2>
+        <h1>Mg</h1>
+    </section>
+
+    <section class="element" id="Al">
+        <h2>13</h2>
+        <h1>Al</h1>
+    </section>
+
+    <section class="element" id="Si">
+        <h2>14</h2>
+        <h1>Si</h1>
+    </section>
+
+    <section class="element" id="P">
+        <h2>15</h2>
+        <h1> P</h1>
+    </section>
+
+    <section class="element" id="S">
+        <h2>16</h2>
+        <h1>S</h1>
+    </section>
+
+    <section class="element" id="Cl">
+        <h2>17</h2>
+        <h1>Cl</h1>
+    </section>
+
+    <section class="element" id="Ar">
+        <h2>18</h2>
+        <h1>Ar</h1>
+    </section>
+
+    <section class="element" id="K">
+        <h2>19</h2>
+        <h1>K</h1>
+    </section>
+
+    <section class="element" id="Ca">
+        <h2>20</h2>
+        <h1>Ca</h1>
+    </section>
+
+    <section class="element" id="Sc">
+        <h2>21</h2>
+        <h1>Sc</h1>
+    </section>
+
+    <section class="element" id="Ti">
+        <h2>22</h2>
+        <h1>Ti</h1>
+    </section>
+
+    <section class="element" id="V">
+        <h2>23</h2>
+        <h1>V</h1>
+    </section>
+
+    <section class="element" id="Cr">
+
+        <h2>24</h2>
+        <h1>Cr</h1>
+    </section>
+
+    <section class="element" id="Mn">
+        <h2>25</h2>
+        <h1>Mn</h1>
+    </section>
+
+    <section class="element" id="Fe">
+        <h2>26</h2>
+        <h1>Fe</h1>
+    </section>
+
+    <section class="element" id="Co">
+        <h2>27</h2>
+        <h1>Co</h1>
+    </section>
+
+    <section class="element" id="Ni">
+        <h2>28</h2>
+        <h1>Ni</h1>
+    </section>
+
+    <section class="element" id="Cu">
+        <h2>29</h2>
+        <h1>Cu</h1>
+    </section>
+
+    <section class="element" id="Zn">
+        <h2>30</h2>
+        <h1>Zn</h1>
+    </section>
+
+    <section class="element" id="Ga">
+        <h2>31</h2>
+        <h1>Ga</h1>
+    </section>
+
+    <section class="element" id="Ge">
+        <h2>32</h2>
+        <h1>Ge</h1>
+    </section>
+
+    <section class="element" id="As">
+        <h2>33</h2>
+        <h1>As</h1>
+    </section>
+
+    <section class="element" id="Se">
+        <h2>34</h2>
+        <h1>Se</h1>
+    </section>
+
+    <section class="element" id="Br">
+        <h2>35</h2>
+        <h1>br</h1>
+    </section>
+
+    <section class="element" id="Kr">
+        <h2>36</h2>
+        <h1>Kr</h1>
+    </section>
+
+    <section class="element" id="Rb">
+        <h2>37</h2>
+        <h1>Rb</h1>
+    </section>
+
+    <section class="element" id="Sr">
+        <h2>38</h2>
+        <h1>Sr</h1>
+    </section>
+
+    <section class="element" id="Y">
+        <h2>39</h2>
+        <h1>Y</h1>
+    </section>
+    
+    <section class="element" id="Zr">
+        <h2>40</h2>
+        <h1>Zr</h1>
+    </section>
+
+    <section class="element" id="Nb">
+        <h2>41</h2>
+        <h1>Nb</h1>
+    </section>
+
+    <section class="element" id="Mo">
+        <h2>42</h2>
+        <h1>Mo</h1>
+    </section>
+
+    <section class="element" id="Tc">
+        <h2>43</h2>
+        <h1>Tc</h1>
+    </section>
+
+    <section class="element" id="Ru">
+        <h2>44</h2>
+        <h1>Rh</h1>
+    </section>
+
+    <section class="element" id="Rh">
+        <h2>45</h2>
+        <h1>Rh</h1>
+    </section>
+
+    <section class="element" id="Pd">
+        <h2>46</h2>
+        <h1>Pd</h1>
+    </section>
+
+    <section class="element" id="Ag">
+        <h2>47</h2>
+        <h1>Ag</h1>
+    </section>
+
+    <section class="element" id="Cd">
+        <h2>48</h2>
+        <h1>Cd</h1>
+    </section>
+
+    <section class="element" id="In">
+        <h2>49</h2>
+        <h1>In</h1>
+    </section>
+
+    <section class="element" id="Sn">
+        <h2>50</h2>
+        <h1>In</h1>
+    </section>
+
+    <section class="element" id="Sb">
+        <h2>51</h2>
+        <h1>Sb</h1>
+    </section>
+
+
+    <section class="element" id="Te">
+        <h2>52</h2>
+        <h1>Te</h1>
+    </section>
+
+    <section class="element" id="I">
+        <h2>53</h2>
+        <h1>I</h1>
+    </section>
+
+    <section class="element" id="Xe">
+        <h2>54</h2>
+        <h1>Xe</h1>
+    </section>
+
+    <section class="element" id="Cs">
+        <h2>55</h2>
+        <h1>Cs</h1>
+    </section>
+
+    <section class="element" id="Ba">
+        <h2>56</h2>
+        <h1>Ba</h1>
+    </section>
+
+    <section class="element" id="Hf">
+        <h2>72</h2>
+        <h1>Hf</h1>
+    </section>
+
+    <section class="element" id="Ta">
+        <h2>73</h2>
+        <h1>Ta</h1>
+    </section>
+
+    <section class="element" id="W">
+        <h2>74</h2>
+        <h1>W</h1>
+    </section>
+
+    <section class="element" id="Re">
+        <h2>75</h2>
+        <h1>Re</h1>
+    </section>
+
+    <section class="element" id="Os">
+        <h2>76</h2>
+        <h1>Os</h1>
+    </section>
+    <section class="element" id="Ir">
+        <h2>77</h2>
+        <h1>Ir</h1>
+    </section>
+    <section class="element" id="Pt">
+        <h2>78</h2>
+        <h1>Pt</h1>
+    </section>
+    <section class="element" id="Au">
+        <h2>79</h2>
+        <h1>Au</h1>
+    </section>
+    <section class="element" id="Hg">
+        <h2>80</h2>
+        <h1>Hg</h1>
+    </section>
+    <section class="element" id="Tl">
+        <h2>81</h2>
+        <h1>Tl</h1>
+    </section>
+    <section class="element" id="Pb">
+        <h2>82</h2>
+        <h1>Pb</h1>
+    </section>
+    <section class="element" id="Bi">
+        <h2>83</h2>
+        <h1>Bi</h1>
+    </section>
+    <section class="element" id="Po">
+        <h2>84</h2>
+        <h1>Po</h1>
+    </section>
+    <section class="element" id="At">
+        <h2>85</h2>
+        <h1>At</h1>
+    </section>
+    <section class="element" id="Rn">
+        <h2>86</h2>
+        <h1>Rn</h1>
+    </section>
+
+
+
+
+
+
+    <section class="element" id="Fr">
+        <h2>87</h2>
+        <h1>Fr</h1>
+    </section>
+    <section class="element" id="Ra">
+        <h2>88</h2>
+        <h1>Ra</h1>
+    </section>
+    <section class="element" id="Rf">
+        <h2>104</h2>
+        <h1>Rf</h1>
+    </section>
+    <section class="element" id="Db">
+        <h2>105</h2>
+        <h1>Db</h1>
+    </section>
+    <section class="element" id="Sg">
+        <h2>106</h2>
+        <h1>Sg</h1>
+    </section>
+    <section class="element" id="Bh">
+        <h2>107</h2>
+        <h1>Bh</h1>
+    </section>
+    <section class="element" id="Hs">
+        <h2>108</h2>
+        <h1>Hs</h1>
+    </section>
+    <section class="element" id="Mt">
+        <h2>109</h2>
+        <h1>Rn</h1>
+    </section>
+    <section class="element" id="Ds">
+        <h2>110</h2>
+        <h1>Ds</h1>
+    </section>
+    <section class="element" id="Rg">
+        <h2>111</h2>
+        <h1>Rg</h1>
+    </section>
+    <section class="element" id="Cn">
+        <h2>112</h2>
+        <h1>Cn</h1>
+    </section>
+    <section class="element" id="Uut">
+        <h2>113</h2>
+        <h1>Uut</h1>
+    </section>
+    <section class="element" id="Fl">
+        <h2>114</h2>
+        <h1>Fl</h1>
+    </section>
+    <section class="element" id="Uup">
+        <h2>115</h2>
+        <h1>Uup</h1>
+    </section>
+    <section class="element" id="Lv">
+        <h2>116</h2>
+        <h1>Lv</h1>
+    </section>
+    <section class="element" id="Uus">
+        <h2>117</h2>
+        <h1>Uus</h1>
+    </section>
+    <section class="element" id="Uuo">
+        <h2>118</h2>
+        <h1>Uuo</h1>
+    </section>
+
+
+    <section class="element" id="La">
+        <h2>57</h2>
+        <h1>La</h1>
+    </section>
+    <section class="element" id="Ce">
+        <h2>58</h2>
+        <h1>Ce</h1>
+    </section>
+    <section class="element" id="Pr">
+        <h2>59</h2>
+        <h1>Pr</h1>
+    </section>
+    <section class="element" id="Nd">
+        <h2>60</h2>
+        <h1>Nd</h1>
+    </section>
+    <section class="element" id="Pm">
+        <h2>61</h2>
+        <h1>Pm</h1>
+    </section>
+    <section class="element" id="Sm">
+        <h2>62</h2>
+        <h1>Sm</h1>
+    </section>
+    <section class="element" id="Eu">
+        <h2>63</h2>
+        <h1>Eu</h1>
+    </section>
+    
+    <section class="element" id="Gd">
+        <h2>64</h2>
+        <h1>Gd</h1>
+    </section>
+
+    <section class="element" id="Tb">
+        <h2>65</h2>
+        <h1>Tb</h1>
+    </section>
+    <section class="element" id="Dy">
+        <h2>66</h2>
+        <h1>Ho</h1>
+    </section>
+    <section class="element" id="Ho">
+        <h2>67</h2>
+        <h1>Ho</h1>
+    </section>
+    <section class="element" id="Er">
+        <h2>68</h2>
+        <h1>Er</h1>
+    </section>
+    <section class="element" id="Tm">
+        <h2>69</h2>
+        <h1>Tm</h1>
+    </section>
+    <section class="element" id="Yb">
+        <h2>70</h2>
+        <h1>Yb</h1>
+    </section>
+    <section class="element" id="Lu">
+        <h2>71</h2>
+        <h1>Lu</h1>
+    </section>
+    <section class="element" id="Ac">
+        <h2>89</h2>
+        <h1>Th</h1>
+    </section>
+    <section class="element" id="Th">
+        <h2>90</h2>
+        <h1>Th</h1>
+    </section>
+    <section class="element" id="Pa">
+        <h2>91</h2>
+        <h1>Pa</h1>
+    </section>
+    <section class="element" id="U">
+        <h2>92</h2>
+        <h1>U</h1>
+    </section>
+    <section class="element" id="Np">
+        <h2>93</h2>
+        <h1>Np</h1>
+    </section>
+    <section class="element" id="Pu">
+        <h2>94</h2>
+        <h1>Pu</h1>
+    </section>
+
+    <section class="element" id="Am">
+        <h2>95</h2>
+        <h1>Am</h1>
+    </section>
+
+    <section class="element" id="Cm">
+        <h2>96</h2>
+        <h1>Cm</h1>
+    </section>
+
+    <section class="element" id="Bk">
+        <h2>97</h2>
+        <h1>Bk</h1>
+    </section>
+    <section class="element" id="Cf">
+        <h2>98</h2>
+        <h1>Cf</h1>
+    </section>
+
+    <section class="element" id="Es">
+        <h2>99</h2>
+        <h1>Es</h1>
+    </section>
+
+    <section class="element" id="Fm">
+        <h2>100</h2>
+        <h1>Fm</h1>
+    </section>
+
+    <section class="element" id="Md">
+        <h2>101</h2>
+        <h1>Md</h1>
+    </section>
+
+    <section class="element" id="No">
+        <h2>102</h2>
+        <h1>No</h1>
+    </section>
+
+    <section class="element" id="Lr">
+        <h2>103</h2>
+        <h1>Lr</h1>
+    </section>
+
+
+
+</div>
+
+</div>    
+</main>
+
+   
+</body>
+</html>

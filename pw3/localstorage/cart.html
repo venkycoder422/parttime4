@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width:100px;
+        height:100px;
+    }
+    table,th,td{
+        border:1px solid black;
+    }
+</style>
+<title> Cart page</title>
+<body>
+    <h1> CART PAGE</h1>
+    <div id="container"> </div>
+</body>
+
+<script>
+    let container = document.getElementById("container");
+    var cart=localStorage.getItem('cart');
+    if(cart ===null){
+        localStorage.setItem('cart',JSON.stringify([]));
+    }
+
+    function getData(){
+        var data = JSON.parse(localStorage.getItem('cart'));
+        displayData(data);
+
+    }
+
+    var table=document.createElement("table");
+
+    var thead = document.createElement("thead");
+
+    var theadRow= document.createElement("tr");
+
+    var th1 = document.createElement("th");
+    th1.textContent="Product Image";
+
+    var th2 = document.createElement("th");
+    th2.textContent="productName";
+
+    var th3 = document.createElement("th");
+    th3.textContent="Product Price";
+
+    theadRow.append(th1, th2, th3);
+    thead.append(theadRow);
+
+    var tbody=document.createElement("tbody");
+
+    function displayData(data){
+        data.forEach(function (prod){
+            var tr=document.createElement("tr");
+
+            var td1=document.createElement("td1");
+        var prodImg=document.createElement("img");
+        prodImg.src=prod.image;
+        td1.append(prodImg);
+
+        var td2=document.createElement("td");
+        td2.textContent=prod.title;
+
+        var td3=document.createElement("td");
+        td3.textContent="INR :"+ prod.price;
+
+        tr.append(td1,td2,td3);
+
+        tbody.append(tr);
+
+        });
+
+        table.append(thead,tbody);
+        container.append(table);
+    }
+    
+getData();
+</script>
+</html>

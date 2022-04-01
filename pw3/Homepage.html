@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  grid-gap: 30px;
+}
+
+#container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #111010;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+
+}
+#tittle{
+text-align: center;
+font-size: 50px;
+}
+p{
+    font-size: 20px;
+}
+</style>
+<body>
+    <div id="tittle"><h2> NEWS APP<h2></div>
+    <div id="container"></div>
+    <script>
+        let container=document.getElementById("container");
+        let url="https://newsapi.org/v2/everything?q=apple&from=2022-02-13&to=2022-02-13&sortBy=popularity&apiKey=de637df5ec0e452896d5eca301a6fdbd";
+
+      /*  0:
+//author: "David Nield"
+content: "It may feel frustrating to have to enter your password every time you sit down at your laptop, or to have to scan your fingerprint every time you want to get into your phone, but these security measu… [+2549 chars]"
+description: "Your lock screen stands between your private data and unwelcome visitors—make sure you set it up correctly."
+publishedAt: "2022-02-13T14:00:00Z"
+source: {id: 'wired', name: 'Wired'}
+//title: "How to Set Up Lock Screens on All Your Devices"
+url: "https://www.wired.com/story/how-to-set-up-lock-screens-all-devices/"
+//rlToImage: "https://media.wired.com/photos/6206f1fbc14aa6d334a5d890/191:100/w_1280,c_limit/Gear-How-to-Set-Lock-Screens-1254978528.jpg"
+[[Prototype]]: Object
+*/
+  async function getData(data){
+            
+        try{
+
+            let out=await fetch(url);
+            let data=await out.json();
+            console.log(data);
+            displayData(data);
+        }catch(err){
+            console.log(err);
+        }
+        }
+        getData();
+
+        function displayData(data){
+            var arr=data.articles;
+            arr.forEach(function(article){
+
+                let newsitems=document.createElement("div");
+
+                let img=document.createElement("img");
+                img.src=article.urlToImage;
+                let title=document.createElement("h4");
+                title.textContent=article.title;
+                let author=document.createElement("p");
+                author.textContent=article.author;
+                
+                newsitems.append(img,author,title);
+                container.append(newsitems);
+            });
+        }
+    </script>
+</body>
+</html>

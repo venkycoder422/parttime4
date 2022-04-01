@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#container{
+    
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+
+}
+
+#container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border:1px solid black;
+}
+img{
+    width:400px;
+    height: 400px;
+    border: 1px solid black;
+   
+    margin:10px;
+
+}
+p{
+    font-size:30px;
+}
+button{
+    width:100px;
+    height:50px;
+    background-color: blueviolet;
+    color:white;
+}
+
+
+#deletebutton{
+    margin-top: 50px;
+    margin-left: 800px;
+    color:white;
+    border:10px;
+    font-size: 30px;
+    width:200px;
+    height: 100px;
+    border-radius: 10px;;
+
+
+}
+</style>
+<body>
+    <div id="container"></div>
+    <button onclick="Delete()" id="deletebutton">DeleteBTN</button>
+    <script>
+       // let cart =localStorage.gerItem("cart");
+        // Getting data from url by using fetch method.
+        // 
+let cart=localStorage.getItem("cart");
+if(cart===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+
+let container= document.getElementById("container");
+
+       let url="http://fakestoreapi.com/products";
+
+       async function getData(){
+            try{
+
+               let res= await fetch(url);
+               let data= await res.json();
+               console.log(data);
+               displayData(data);
+           }catch(err){
+               console.log(err);
+           }
+       }
+       getData();
+
+       // Displaying data from website.
+
+       function displayData(data){
+            data.forEach(function(product){
+                let productCard= document.createElement("div");
+
+                let pic=document.createElement("img");
+
+                pic.src = product.image;
+
+                let title = document.createElement("p");
+
+                title.textContent = product.title;
+
+                let price= document.createElement("p");
+
+                price.textContent = product.price;
+
+                let addToCartButton = document.createElement("button");
+                addToCartButton.textContent ="Add to cart";
+                 productCard.append(pic,title,price,addToCartButton);
+                container.append(productCard);
+                addToCartButton.onclick=function(){
+                    addToCart(product)
+                }
+
+
+            });
+            
+        }
+
+        function addToCart(product){
+
+            let cart= JSON.parse(localStorage.getItem("cart"));
+
+            cart.push(product);
+
+            localStorage.setItem("cart",JSON.stringify(cart)); //send data back to local storage
+        }
+
+        function Delete(){
+
+            
+
+          var deletebutton=document.getElementById("deletebuttun");
+          localStorage.clear();
+        }
+
+    </script>
+</body>
+</html>
