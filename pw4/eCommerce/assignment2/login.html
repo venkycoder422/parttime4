@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div id="login">
+        <input  id="email" type="email" placeholder="Enter email">
+        <input id="password"type="password" placeholder="Enter password">
+        <input id="login"type="submit" value="Login">
+    </div>
+</body>
+<script>
+    document.querySelector("login").addEventListener('submit',checkUserDetails);
+    var data=JSON.parse(localStorage.getItem('customerData'));
+    console.log(data);
+    function checkUserDetails(data){
+        event.preventDefault();
+        data.forEach(function(){
+
+            if(data.email===document.querySelector("#email").value && data.password===document.querySelector("#password").value){
+                alert("Login Successful")
+            }else{
+                alert("Please enter Core=")
+            }
+        });
+        
+
+        
+    }
+</script>
+</html>

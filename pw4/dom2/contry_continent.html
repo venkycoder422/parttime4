@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contry_continental</title>
+</head>
+<body>
+    <form>
+<select type="text" id="continent_select">
+        <option>--Choose option--</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Argentina">Argentina</option>
+        <option value="China">China</option>
+        <option value="Autralia">Autralia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="South africa">South africa</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapure">Singapure</option>
+        <option value="Sweden">Sweden</option>
+        
+
+    </select>
+
+    <button onclick="findContinent()">FIND CONTINENT</button>
+</form>
+</body>
+<script>
+
+
+function findContinent(){
+    var contry=document.getElementById("continent_select").value;
+    console.log(contry);
+    switch(contry){
+        case "India":
+        case "China":
+        case "Singapure":
+            alert("Asai");
+            break;
+
+        case "USA":
+        case "Mexico":
+            alert("North America");
+            break;
+
+        case "Argentina":
+        case "Brazil":
+            alert("South America");
+            break;
+
+        case "France":
+        case "Germany":
+        case "Sweden":
+            alert("Europe");
+            break;
+
+        case "South africa":
+        case "Nigeria":
+        case "Sweden":
+            alert("Africa");
+            break;
+            
+    }
+
+}
+
+</script>
+</html>

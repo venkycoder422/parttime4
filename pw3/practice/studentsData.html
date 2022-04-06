@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+</head>
+<body>
+    <form>
+    <input id="name" type="text" placeholder="Enter Name" >
+    <input id="roll" type="number" placeholder="Enter Roll No">
+    <input  id="images" type="image" placeholder="Select file">
+    <input type="submit" value="SAVE">
+    </form>
+
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    
+    var studentsData=[
+        {
+            name:"venky",
+            roll:123,
+            image:"data:image/jpeg;base64,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",
+        },
+        {
+            name:"anil",
+            roll:345,
+            image:"data:image/jpeg;base64,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",
+        }
+    ];
+    document.querySelector('form').addEventListener('submit',addStudent);
+
+    function addStudent(){
+        event.preventDefault();
+        var studentObj={
+            name:document.querySelector('#name').value,
+            
+            roll:document.querySelector('#roll').value,
+
+            image:document.querySelector('#images').src,
+        };
+        studentsData.push(studentObj);
+        localStorage.setItem('students',JSON.stringify(studentsData));
+        displayData();
+    }
+    
+
+    function displayData(){
+        
+        studentsData.forEach(function(student){
+
+            var box=document.createElement("div");
+            
+            var name=document.createElement('p');
+            name.textContent=student.name;
+            var roll=document.createElement('p');
+            roll.textContent=student.roll;
+            var img=document.createElement('img');
+            img.src=student.image;
+            box.append(name,roll,img);
+            document.querySelector("#container").append(box);
+        });
+        
+    }
+
+
+</script>
+</html>

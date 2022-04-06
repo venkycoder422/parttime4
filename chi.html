@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expense</title>
+</head>
+<style>
+    #main{
+        margin-left: 40%;
+        margin-top: 10%;
+        margin-right: 30%;
+        text-align: center;
+    }
+    #form{
+        height: 250px;
+        width: 400px;
+        border: 1px solid red;
+    }
+    #container
+    {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+    }
+</style>
+<body>
+   
+    <div id = "main">
+   
+    <form id = "form">
+        Select Month</br></br>
+        <select id = "select">
+        <option value="January">January</option>
+        <option value="Febraury">Febraury</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="Septermber">Septermber</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select></br></br>
+    Enter Salary</br></br>
+    <input type = "number" id = "salary" placeholder="enter your salary"/></br></br>
+    expense</br></br>
+    <input type  = "number"  id = "expense" placeholder="your expense"/>
+    </form>
+    <button onclick = "submitDetailes()" > submit</button>
+    </div>
+    <div id = "container"></div>
+   
+</body>
+</html>
+<script>
+    var arr = [];
+    var container = document.querySelector("#container");
+    if( localStorage.getItem('expense') === null) {
+        //expense = "";
+    } else {
+        expense = getItem('expense');
+    }
+
+
+    function submitDetailes(){
+        var expenseData={
+            month : document.querySelector("#select").value,
+            salary : document.querySelector("#salary").value,
+            expense : document.querySelector("#expense").value,
+        };
+        arr.push(expenseData);
+        
+        displayData();
+
+    
+    }
+
+    function displayData(){
+       document.querySelector("#container").innerText="";
+        arr.forEach(function(expense){
+            var box = document.createElement("div");
+            var month = document.createElement("h1");
+            month.innerText = expense.month;
+            var salary = document.createElement("p");
+            salary.innerText = expense.salary;
+            var exp = document.createElement("p");
+            exp.innerText = expense.expense;
+            var saving = document.createElement("p");
+            saving.innerText = expense.salary - expense.expense;
+            box.append(month,salary,exp,saving);
+            container.append(box);
+            localStorage.setItem('expense',JSON.stringify(container));
+        })
+       
+    }
+
+</script>
