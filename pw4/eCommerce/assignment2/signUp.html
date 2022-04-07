@@ -6,13 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
 </head>
-<body>
-    <div>
-    <form>
+<style>
+  #signUpCss{
         
-        <input id="email" type="email" placeholder="Enter email">
-        <input id="number"type="number" placeholder="Enter phone number">
-        <input id="password" autocomplete="off" type="password" placeholder="Enter Password">
+        width: 500px;
+        height: auto;
+        margin: auto;
+        border: rgb(77, 71, 71);
+        border-radius: 5px;
+        margin-top: 50px;
+        padding-top: 20px;
+        border: solid rgb(209, 200, 200);
+    }
+#signUpCss >form{
+    display: flex;
+    flex-direction: column;
+}
+
+#signUpCss > form> input{
+    width:400px;
+    height:40px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding: 0%;
+    background-color: rgb(246, 251, 248);
+}
+#signUpCss > form > input:hover{
+    border:solid orange;
+}
+p,h1{
+margin-left: 50px;
+margin-bottom: 0%;
+
+}
+#logo{
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+}
+#logo>img{
+    width:100px;
+    height:100px;
+    
+}
+</style>
+<body>
+    <div id="logo">
+        <img src="https://dcassetcdn.com/design_img/3696593/107245/22058508/j5rtqa041jvdmpysgnph4je7kd_image.jpg">
+    </div>
+    <div id="signUpCss">
+    <form>
+
+        <h1>Creat account</h1>
+        <p>* Email</p>
+        <input id="email" type="email" >
+        <p>* PhoneNumber</p>
+        <input id="number"type="number" >
+        <p>* Password</p>
+        <input id="password" autocomplete="off" type="password">
+        <p>Password again (Optional)</p>
+        <input id="password2" type="password">
         <input type="submit" value="SignUp">
         
     </form>
@@ -35,11 +89,11 @@
             email:document.querySelector("#email").value,
             phoneNumber:document.querySelector("#number").value,
             password:document.querySelector("#password").value,
-
+            passwordAgain:document.querySelector("#password2").value,
         }
         customerData.push(customerDataObj);
         localStorage.setItem('customerData',JSON.stringify(customerData));
-
+        
         window.location.href="./login.html";
 
     }
