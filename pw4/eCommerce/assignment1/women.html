@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens Data</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns:repeat(4,300px);
+        gap:20px;
+        justify-content: center;
+    }
+    
+</style>
+<body>
+    <h1>Womens</h1>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+var data=[];
+
+    var womensData=[
+    {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/OD_01_T42_3240K_KY_X_EC_0?$PDP_INT_IMAGE_MOBILE_DOUBLE$",
+            name : "Pure cotton lace mandarin collar",
+            price : "2900",
+
+        },
+        {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T49_4282_T0_X_EC_0?$PLP_PRODUCT_IMAGE$&fmt=&fmt=pjpeg",
+            name : "Denim jacket",
+            price : "1740",
+
+        },
+        {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T69_4160_F4_X_EC_0?$PLP_PRODUCT_IMAGE$&fmt=&fmt=pjpeg",
+            name : "Floral Belted Midi Shirt Dress",
+            price : "1490",
+
+        },
+        {
+            image : "https://cdn.shopify.com/s/files/1/0588/6528/7346/products/NewProject_3_22f1ea90-fc2b-4c85-847a-5e4ce068eb11.png?v=1634561953",
+            name : "Sky Floral printed a line dress",
+            price : "999",
+
+        },
+        {
+            image : "https://i.pinimg.com/originals/c0/37/12/c037121844264e7d40ffc2bb11335a21.jpg",
+            name : "Best women fashoin this time",
+            price : "3450",
+
+        },
+        {
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcybukOqhvipUvY38-LzKwGPZQmOSyyHe1hUg0hlrYqYxB8cB2Pn6HQ9e0JazAocIz92c&usqp=CAU",
+            name : "Normal dress",
+            price : "2340",
+
+        },
+        {
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNL-mrh7syHFaf9wOYLg4nf2zHq_CNZoBWBEZM7KwjSQOT0OlZ6gbx_m6gaM8MGvOTNlk&usqp=CAU",
+            name : "Causal dress",
+            price : "2345",
+
+        },
+        {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/OD_01_T42_3240K_KY_X_EC_0?$PDP_INT_IMAGE_MOBILE_DOUBLE$",
+            name : "Pure cotton lace mandarin collar",
+            price : "2900",
+
+        },
+        {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T49_4282_T0_X_EC_0?$PLP_PRODUCT_IMAGE$&fmt=&fmt=pjpeg",
+            name : "Denim jacket",
+            price : "1740",
+
+        },
+        {
+            image : "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_01_T69_4160_F4_X_EC_0?$PLP_PRODUCT_IMAGE$&fmt=&fmt=pjpeg",
+            name : "Floral Belted Midi Shirt Dress",
+            price : "1490",
+
+        },
+        {
+            image : "https://cdn.shopify.com/s/files/1/0588/6528/7346/products/NewProject_3_22f1ea90-fc2b-4c85-847a-5e4ce068eb11.png?v=1634561953",
+            name : "Sky Floral printed a line dress",
+            price : "999",
+
+        },
+        {
+            image : "https://i.pinimg.com/originals/c0/37/12/c037121844264e7d40ffc2bb11335a21.jpg",
+            name : "Best women fashoin this time",
+            price : "3450",
+
+        },
+        {
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcybukOqhvipUvY38-LzKwGPZQmOSyyHe1hUg0hlrYqYxB8cB2Pn6HQ9e0JazAocIz92c&usqp=CAU",
+            name : "Normal dress",
+            price : "2340",
+
+        },
+        {
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNL-mrh7syHFaf9wOYLg4nf2zHq_CNZoBWBEZM7KwjSQOT0OlZ6gbx_m6gaM8MGvOTNlk&usqp=CAU",
+            name : "Causal dress",
+            price : "2345",
+
+        },
+      
+    ]
+
+    document.querySelector("#container").innerText="";
+    womensData.map(function(data){
+
+        var box=document.createElement("div");
+        box.style.border="solid";
+        box.style.backgroundColor="whitesmoke";
+        box.style.padding="20px";
+        var img=document.createElement("img");
+        img.src=data.image;
+        img.style.width="100%";
+        var name=document.createElement("h4");
+        name.innerText="Name :"+data.name;
+        var price=document.createElement("h5");
+        price.innerText="Price: "+data.price;
+        var cartButton=document.createElement("button");
+        cartButton.innerText="ADD TO CART";
+        box.append(img,name,price,cartButton);
+
+        document.querySelector("#container").append(box);
+
+    });
+
+
+</script>
+</html>
