@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<link rel="stylesheet" href="./gatway.css"/>
+<!-- <link rel="script" href="./gatway.js"> -->
+
+<body>
+    <div id="logo">
+    <img src="https://thumbs.dreamstime.com/z/graphics-come-file-types-very-easy-to-apply-any-software-download-contains-jpg-eps-money-dollar-payment-logo-139731098.jpg">
+    </div>
+    <div id="box">
+        
+        <form>
+            <h3>Card holder</h3>
+            <input id="name" type="text">
+            <h3>Card Number</h3>
+            <input id="cardNum" type="number">
+
+            <div id="importantdates">
+                <div>
+                    <h3>Expirydate</h3>
+                    <input id="expirydate" type="date">
+                </div>
+                <div>
+                    <h3>CVV</h3>
+                    <input id="cvv" type="number">
+                </div>
+
+            </div>
+            <input type="submit" value="Pay">
+            
+        </form>
+    </div>
+    
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit',checkdata);
+    var userDetails=[];
+//     if(localStorage.getItem('cardDetails')===null){
+//         userDetails=[];
+//    }else{
+//         userDetails=JSON.parse(localStorage.getItem('cardDetails',userDetails));
+//     }
+function checkdata(){
+    var is=false;
+    event.preventDefault();
+    var cardDetails={
+        name:document.querySelector('#name').value,
+        cardNum:document.querySelector('#cardNum').value,
+        cardExpiry:document.querySelector('#expirydate').value,
+        cvv:document.querySelector('#cvv').value,
+    }
+    userDetails.push(cardDetails);
+    console.log(userDetails)
+    ///localStorage.setItem('cardDetails',JSON.stringify(userDetails));
+
+        userDetails.forEach(function(allData){
+            if((allData.cardNum.length!=16) && (allData.cvv.length!=3)){
+                is=true;
+            }
+        });
+        if(is){
+            alert("please check your card details")
+        }else{
+            window.location.href="./otp.html";
+        }
+    
+};
+</script>
+
+</html>
