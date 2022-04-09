@@ -148,7 +148,24 @@ if(localStorage.getItem('menCartData')===null){
 var totalPrice=cartData.reduce(function(sum,ele){
     return sum+Number(ele.price)
 },0);
-
+document.querySelector("form").addEventListener("submit",promocode);
+var is=true;
+function promocode(){
+    
+    event.preventDefault();
+    
+    var promotext=document.querySelector("#promocode").value;
+    //console.log(promotext);
+    if(promotext==="masai30" && is){
+    var discount=totalPrice*(30/100);
+    totalPrice-=discount;
+        console.log(totalPrice)
+        document.querySelector('h3').innerText="You are Total produts price is :"+totalPrice;
+        is=false;
+    }
+    
+    
+}
 
 
 function displayData(){
