@@ -12,19 +12,44 @@
         grid-template-columns:repeat(4,300px);
         gap:20px;
         justify-content: center;
+        
     }
-    
+    #cart{
+        font-size: 40px;
+        display:flex;
+        flex-direction: row;
+        
+
+    }
+    #cart>a{
+        text-decoration: none;
+    }
+    input{
+        margin-left: 30px;
+    }
+
 </style>
 <body>
     <h1>Womens</h1>
+    <div id="cart">
+        <a rel="womenscart" href="./womenCart.html">Cart</a>
+        <form >
+            <input type="text" id="promocode" placeholder="Enter promo code">
+            <input type="submit" value="Apply">
+        </form>
+
+        </div>
+    <p></p>
+    <h3></h3>
+    
     <div id="container">
 
     </div>
 </body>
 <script>
-var data=[];
 
-    var womensData=[
+
+var womensData=[
     {
             image : "https://asset1.cxnmarksandspencer.com/is/image/mands/OD_01_T42_3240K_KY_X_EC_0?$PDP_INT_IMAGE_MOBILE_DOUBLE$",
             name : "Pure cotton lace mandarin collar",
@@ -111,9 +136,40 @@ var data=[];
         },
       
     ]
+var cartData;
 
+if(localStorage.getItem('womenCartData')===null){
+    cartData=[];
+    
+}else{
+    cartData=JSON.parse(localStorage.getItem('womenCartData'));
+}
+var totalPrice=cartData.reduce(function(sum,ele){
+    return sum+Number(ele.price);
+},0);
+
+document.querySelector("form").addEventListener("submit",promocode);
+var is=true;
+function promocode(){
+    
+    event.preventDefault();
+    
+    var promotext=document.querySelector("#promocode").value;
+    //console.log(promotext);
+    if(promotext==="masai30" && is){
+    var discount=totalPrice*(30/100);
+    totalPrice-=discount;
+        console.log(totalPrice)
+        document.querySelector('h3').innerText="You are Total produts price is :"+totalPrice;
+        is=false;
+    }
+    
+    
+}
+
+    function displayData(){
     document.querySelector("#container").innerText="";
-    womensData.map(function(data){
+    womensData.forEach(function(data){
 
         var box=document.createElement("div");
         box.style.border="solid";
@@ -129,10 +185,23 @@ var data=[];
         var cartButton=document.createElement("button");
         cartButton.innerText="ADD TO CART";
         box.append(img,name,price,cartButton);
-
+        cartButton.addEventListener('click',function(){
+            event.preventDefault();
+            cartData.push(data);
+            console.log(cartData);
+            
+            localStorage.setItem('womenCartData',JSON.stringify(cartData));
+            window.location.reload();
+        });
+        document.querySelector('p').innerText="You are Total produts are :"+cartData.length;
+        document.querySelector('h3').innerText="You are Total produts price is :"+totalPrice;
         document.querySelector("#container").append(box);
-
+           
     });
+    }
+    
+    displayData();
+
 
 
 </script>

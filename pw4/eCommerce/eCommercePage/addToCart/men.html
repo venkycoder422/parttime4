@@ -12,18 +12,43 @@
         grid-template-columns:repeat(4,300px);
         gap:20px;
         justify-content: center;
+        
     }
+    #cart{
+        font-size: 40px;
+        display:flex;
+        flex-direction: row;
+        
+
+    }
+    #cart>a{
+        text-decoration: none;
+        
+
+    }
+    input{
+        margin-left: 30px;
+    }
+
     
 </style>
 <body>
     <h1>Mens</h1>
+    <div id="cart">
+    <a rel="menCart" href="./menCart.html">Cart</a>
+        <form>
+    <input type="text" id="promocode" placeholder="Ente promo code">
+    <input type="submit" value="Apply">
+</form>
+    </div>
+    <p></p>
+    <h3></h3>
     <div id="container">
-
     </div>
 </body>
 <script>
-var data=[];
 var mensData=[
+
     {
     
         image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a7c4f0518c5e4b8f6d/webp/2211-600x900.jpg",
@@ -111,9 +136,27 @@ var mensData=[
     },
 
 ]
-    document.querySelector("#container").innerText="";
-    mensData.map(function(data){
+var cartData;
 
+if(localStorage.getItem('menCartData')===null){
+    cartData=[];
+}else{
+    cartData=JSON.parse(localStorage.getItem('menCartData'));
+}
+
+
+var totalPrice=cartData.reduce(function(sum,ele){
+    return sum+Number(ele.price)
+},0);
+
+
+
+function displayData(){
+    
+    document.querySelector("#container").innerText="";
+    
+    mensData.forEach(function(data){
+        
         var box=document.createElement("div");
         box.style.border="solid";
         box.style.backgroundColor="whitesmoke";
@@ -125,14 +168,32 @@ var mensData=[
         name.innerText="Name :"+data.name;
         var price=document.createElement("h6");
         price.innerText="Price: "+data.price;
-        var cartButton=document.createElement("button");
+        var cartButton=document.createElement("button")
         cartButton.innerText="ADD TO CART";
-
         box.append(img,name,price,cartButton);
+        cartButton.addEventListener('click',function(){
+            event.preventDefault();
+            cartData.push(data);
+            //alert("items added to cart");
+            //console.log(cartData);
+            localStorage.setItem("menCartData",JSON.stringify(cartData));
+            window.location.reload();
+            
+        });
+        document.querySelector('p').innerText="You are Total produts are :"+cartData.length;
 
+        document.querySelector('h3').innerText="You are Total produts are :"+totalPrice;
         document.querySelector("#container").append(box);
 
     });
+    
+
+   
+}
+displayData();
+
+
+    //totalCost();
 
 
 </script>
