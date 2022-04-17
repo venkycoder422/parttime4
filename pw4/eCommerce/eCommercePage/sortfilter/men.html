@@ -29,13 +29,26 @@
         margin-left: 30px;
     }
     #functionality{
-        display: flex;
-        flex-direction: row-reverse
+        
+        position: relative;
+        display: inline-block;
 
     }
-    #functionality>div{
-        padding-left: 50px;
-        padding-right: 50px;
+    #sort,#filter{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+    
+    }
+    #functionality:hover #sort{
+        display: block;
+    }
+    #functionality:hover #filter{
+        display: block;
     }
 </style>
 <body>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping for Men, Women Clothing & Accessories at Bewakoof</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.bewakoof.com/web/favicon-1635856217.png"
+        hreflang="en-in">
+    <style>
+        body {
+            margin-left: 8%;
+        }
+
+        .leftPart {
+            margin-right: 2%;
+            display: grid;
+            height: auto;
+            width: 20%;
+            float: left;
+            padding: 10px;
+            border: 2px solid red;
+            cursor: pointer;
+        }
+
+        .rightPart {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: auto;
+            gap: 25px;
+            width: 65%;
+            border: 2px solid red;
+        }
+        .product {
+            width: 100%;
+            height: 330px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Men Clothing &nbsp;(2470)</h1>
+    <div class="fullPart">
+        <div class="leftPart">
+            <div id="filter">
+                <div>
+                    <h5>FILTERS</h5>
+                </div>
+                <div>
+                    <h5>Clear All</h5>
+                </div>
+            </div>
+            <details>
+                <summary>Category</summary>
+                <li>
+                    <p>T-Shirt</p>
+                </li>
+            </details>
+        </div>
+
+        <div class="rightPart">
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+
+
+    var mensData = [
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/super-bros-stark-half-sleeve-t-shirt-489649-1649433819-1.jpg",
+            name: "Men's Red Super Bros Cap Typography T-shirt",
+            price: "₹" +" "+ 299,
+            strikedoffprice: "₹279 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/super-bros-cap-half-sleeve-t-shirt-489648-1649433798-1.jpg",
+            name: "Men's Blue Super Bros Cap Typography T-shirt",
+            price: "₹" +" "+ 299,
+            strikedoffprice: "₹279 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-white-one-piece-oversized-t-shirt-468314-1649262632-1.jpg",
+            name: "Men's White Anime Back Printed Oversized T-shirt",
+            price: "₹" +" "+ 799,
+            strikedoffprice: "₹679 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-black-naruto-1-1-oversized-t-shirt-469020-1649262786-1.jpg",
+            name: "Men's Black Anime Flamed T-shirt",
+            price: "₹" +" "+ 799,
+            strikedoffprice: "₹679 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-black-one-piece-oversized-t-shirt-468376-1649262750-1.jpg",
+            name: "Men's Black Anime Oversized T-shirt",
+            price: "₹" +" "+ 749,
+            strikedoffprice: "₹679 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-black-one-piece-oversized-t-shirt-468376-1649262750-1.jpg",
+            name: "Men's Black NASA Astronaut T-shirt",
+            price: "₹" +" "+ 399,
+            strikedoffprice: "₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/nasa-astronaut-half-sleeve-t-shirt-481834-1648011573-1.jpg",
+            name: "Men's Black Anime Printed Oversized T-shirt",
+            price: "₹" +" "+ 749,
+            strikedoffprice: "₹679 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-black-attack-on-titan-oversized-t-shirt-468371-1649262570-1.jpg",
+            name: "Men's White Revolution Loading Oversized T-shirt",
+            price: "₹"+" " + 399,
+            strikedoffprice: "₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/revolution-loading-half-sleeve-t-shirt-481840-1648011616-1.jpg",
+            name: "Men's Grey Anime Tie & Die Oversized T-shirt",
+            price: "₹" +" "+ 899,
+            strikedoffprice: "₹819 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-black-attack-on-titan-oversized-t-shirt-468319-1649263001-1.jpg",
+            name: "Men's Black Eyes of Uchiha T-shirt",
+            price: "₹" +" "+ 399,
+            strikedoffprice: "₹₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/nasa-astronaut-half-sleeve-t-shirt-481838-1648011595-1.jpg",
+            name: "Men's Red NASA Astronaut T-shirt",
+            price: "₹" +" "+ 399,
+            strikedoffprice: "₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/doctor-strange-full-sleeve-t-shirt-475176-1645086527-1.jpg",
+            name: "Men's White Vengeance T-shirt",
+            price: "₹" +" "+ 399,
+            strikedoffprice: "₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/men-s-birthday-yellow-loose-fit-t-shirt-479971-1648642569-1.jpg",
+            name: "Men's White 4x4 Off Road T-shirt",
+            price: "₹" +" "+ 399,
+            strikedoffprice: "₹369 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/jet-black-half-sleeve-t-shirt-106-1637159826-5.jpg",
+            name: "Men's Black T-shirt",
+            price: "₹" +" "+ 349,
+            strikedoffprice: "₹309 For TriBe Member",
+        },
+        {
+            image_url:
+                "https://images.bewakoof.com/t320/white-long-sleeve-henley-t-shirt-405278-1646674135-1.jpg",
+            name: "Men's White Henley T-shirt",
+            price: "₹" +" "+ 449,
+            strikedoffprice: "₹409 For TriBe Member",
+        },
+    ];
+
+
+    mensData.forEach(function (menData) {
+
+        var box = document.createElement('div');
+        box.setAttribute('class', 'box');
+        box.style.cursor="pointer";
+
+        var img = document.createElement('img');
+        img.src = menData.image_url;
+        img.setAttribute("class", "product")
+
+
+        var name = document.createElement('p');
+        name.textContent = menData.name;
+        name.setAttribute("id", "center");
+
+        var price = document.createElement('p');
+        price.innerText = menData.price;
+
+        var strikedoffprice = document.createElement('p');
+        strikedoffprice.innerText = menData.strikedoffprice;
+        strikedoffprice.style.backgroundColor="#e9f0ea";
+        
+
+        box.append(img, name, price,strikedoffprice);
+        document.querySelector('.rightPart').append(box)
+    });
+
+</script>
+
+</html>
