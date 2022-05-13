@@ -1,0 +1,36 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 5px;
+   height:100px;
+    /* background-color: antiquewhite; */
+}
+#nav_left{
+    display: flex;
+    float: left;
+}
+#nav_left>div>img{
+    width:150px;
+}
+#nav_middle{
+    display: flex;
+    float: center;
+    margin-top:30px;
+}
+#nav_middle >div input{
+    width:500px;
+    height:40px;
+}
+#nav_middle img{
+    width:50px;
+}
+#nav_right{
+    display: flex;
+    float:right;
+    margin-top: 12px;
+   
+}
+#nav_right>div img{
+    width:80px;
+}

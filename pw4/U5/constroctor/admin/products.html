@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<style>
+    .products{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        
+        gap:10px;
+
+    }
+    .products img{
+        width:100%;
+        height:300px;
+    }
+
+    #left{
+        float: left;
+        width:auto;
+        height:20px;
+    }
+    #right{
+        float: right;
+        width:auto;
+        height:20px;
+    }
+    #heading{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1 id="heading">Clothings</h1>
+    <h4 id="lens"></h4>
+    <div class="products">
+
+    </div>
+</body>
+<script>
+    var data=JSON.parse(localStorage.getItem('Products'));
+    
+    function displayData(data){
+        console.log(data);
+        data.forEach(function(item,index){
+            
+            var box=document.createElement("div");
+
+            var img=document.createElement("img");
+            img.src=item.image;
+
+            var name=document.createElement("h3");
+            name.innerText=item.name;
+
+            var price=document.createElement("h4");
+            price.innerText="$"+item.price;
+
+            var soldbutton=document.createElement('button')
+            soldbutton.innerText="SOLD";
+            soldbutton.setAttribute("id","left");
+            if(item.sold==="true"){
+                soldbutton.style.backgroundColor="red";
+            }else if(item.sold==="false"){
+                soldbutton.style.backgroundColor="green";
+            }
+            soldbutton.addEventListener('click',function(){
+              // console.log(item.sold);
+                if(item.sold==="true"){
+                    console.log(item.sold);
+                    item.sold="false";
+                }else{
+                    item.sold="true";
+                }
+                  
+            localStorage.setItem("Products",JSON.stringify(data));
+            window.location.reload();
+                
+            });
+
+            var removebtn=document.createElement('button');
+            removebtn.setAttribute("id","right");
+            removebtn.innerText="REMOVE"; 
+            
+            removebtn.addEventListener('click',function(){
+                data.splice(index,1);
+
+            localStorage.setItem("Products",JSON.stringify(data));
+            window.location.reload();
+            });
+        
+        box.append(img,name,price,soldbutton,removebtn);
+        document.querySelector('#lens').innerText="Total Number of Items"+"("+data.length+")";
+        document.querySelector(".products").append(box);
+
+        });
+
+    }
+    displayData(data);
+
+</script>
+</html>

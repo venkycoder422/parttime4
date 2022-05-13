@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens Data</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns:repeat(4,300px);
+        gap:20px;
+        justify-content: center;
+        
+    }
+    #cart{
+        font-size: 40px;
+        display:flex;
+        flex-direction: row;
+        
+
+    }
+    #cart>a{
+        text-decoration: none;
+        
+
+    }
+    input{
+        margin-left: 30px;
+    }
+
+    
+</style>
+<body>
+    <h1>Mens</h1>
+    <div id="cart">
+    <a rel="menCart" href="./menCart.html">Cart</a>
+        <form>
+    <input type="text" id="promocode" placeholder="Ente promo code">
+    <input type="submit" value="Apply">
+</form>
+    </div>
+    <p></p>
+    <h3></h3>
+    <div id="container">
+    </div>
+</body>
+<script>
+var mensData=[
+
+    {
+    
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a7c4f0518c5e4b8f6d/webp/2211-600x900.jpg",
+        name : "flash look dotte shirt",
+        price : "513",
+
+    },
+    {
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a3f4e2ecb6a381d65e/webp/234-600x900.jpg",
+        name : "Flash Black Dotted shirt for men",
+        price : "613",
+
+    },
+    {
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a3f4e2ecb6a381d629/webp/345-600x900.jpg",
+        name : "Flash Blue dotted Shirt for men",
+        price : "586",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/FLOGBEIGE-0108.jpg?v=1648122118",
+        name : "Printed slim fir mens",
+        price : "1234",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/7_b98ce545-7295-4fd8-8dd7-0f6b3d65b2df.jpg?v=1647343369",
+        name : "Slim printed men shirt beige",
+        price : "1,779",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/1_b0505508-5e2f-418a-aecc-e432403b2458.jpg?v=1647343163",
+        name : "Florin printed men shirt",
+        price : "2340",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/FLOGBEIGE-0108.jpg?v=1648122118",
+        name : "Flog slim printed men shirt beige",
+        price : "1098",
+
+    },
+    {
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a7c4f0518c5e4b8f6d/webp/2211-600x900.jpg",
+        name : "flash look dotte shirt",
+        price : "513",
+
+    },
+    {
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a3f4e2ecb6a381d65e/webp/234-600x900.jpg",
+        name : "Flash Black Dotted shirt for men",
+        price : "613",
+
+    },
+    {
+        image :"https://d2pyicwmjx3wii.cloudfront.net/s/614b22fc216e9c12467b3738/623065a3f4e2ecb6a381d629/webp/345-600x900.jpg",
+        name : "Flash Blue dotted Shirt for men",
+        price : "586",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/FLOGBEIGE-0108.jpg?v=1648122118",
+        name : "Printed slim fir mens",
+        price : "1234",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/7_b98ce545-7295-4fd8-8dd7-0f6b3d65b2df.jpg?v=1647343369",
+        name : "Slim printed men shirt beige",
+        price : "1,779",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/1_b0505508-5e2f-418a-aecc-e432403b2458.jpg?v=1647343163",
+        name : "Florin printed men shirt",
+        price : "2340",
+
+    },
+    {
+        image :"https://cdn.shopify.com/s/files/1/0752/6435/products/FLOGBEIGE-0108.jpg?v=1648122118",
+        name : "Flog slim printed men shirt beige",
+        price : "1098",
+
+    },
+
+]
+var cartData;
+
+if(localStorage.getItem('menCartData')===null){
+    cartData=[];
+}else{
+    cartData=JSON.parse(localStorage.getItem('menCartData'));
+}
+
+
+var totalPrice=cartData.reduce(function(sum,ele){
+    return sum+Number(ele.price)
+},0);
+document.querySelector("form").addEventListener("submit",promocode);
+var is=true;
+function promocode(){
+    
+    event.preventDefault();
+    
+    var promotext=document.querySelector("#promocode").value;
+    //console.log(promotext);
+    if(promotext==="masai30" && is){
+    var discount=totalPrice*(30/100);
+    totalPrice-=discount;
+        console.log(totalPrice)
+        document.querySelector('h3').innerText="You are Total produts price is :"+totalPrice;
+        is=false;
+    }
+    
+    
+}
+
+
+function displayData(){
+    
+    document.querySelector("#container").innerText="";
+    
+    mensData.forEach(function(data){
+        
+        var box=document.createElement("div");
+        box.style.border="solid";
+        box.style.backgroundColor="whitesmoke";
+        box.style.padding="20px";
+        var img=document.createElement("img");
+        img.src=data.image;
+        img.style.width="100%";
+        var name=document.createElement("h5");
+        name.innerText="Name :"+data.name;
+        var price=document.createElement("h6");
+        price.innerText="Price: "+data.price;
+        var cartButton=document.createElement("button")
+        cartButton.innerText="ADD TO CART";
+        box.append(img,name,price,cartButton);
+        cartButton.addEventListener('click',function(){
+            event.preventDefault();
+            cartData.push(data);
+            //alert("items added to cart");
+            //console.log(cartData);
+            localStorage.setItem("menCartData",JSON.stringify(cartData));
+            window.location.reload();
+            
+        });
+        document.querySelector('p').innerText="You are Total produts are :"+cartData.length;
+
+        document.querySelector('h3').innerText="You are Total produts are :"+totalPrice;
+        document.querySelector("#container").append(box);
+
+    });
+    
+
+   
+}
+displayData();
+
+
+    //totalCost();
+
+
+</script>
+</html>

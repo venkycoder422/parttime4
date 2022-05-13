@@ -1,0 +1,21 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+
+#throwDice1,#throwDice2 ,#throwDice3{
+
+    display: inline-block;
+    justify-content: space-evenly;
+    margin-left: 150px;
+    
+}
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color: green;
+    border: 10px solid gray;
+}

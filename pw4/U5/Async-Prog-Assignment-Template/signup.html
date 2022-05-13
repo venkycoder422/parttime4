@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles/signup.css"></link>
+    <script type="text/javascript" src="./scripts/signup.js"></script>
+</head>
+<style>
+    
+</style>
+<body>
+    <div id="navbar">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="login.html">Login</a></div>
+        <div><a href="signup.html">SignUp</a></div>
+    </div>
+
+
+<div id="inputs">
+    <form>
+        <label>Name</label><input type="text" id="name" placeholder="Enter your name">
+        <label>Mobile Number</label><input type="number" id="phone" placeholder="Enter Number">
+        <label>Email</label><input type="email" id="email" placeholder="Enter email">
+        <label>Password</label><input type="password" id="password" placeholder="Password">
+        <input type="submit" id="button">
+    </form>
+</div>
+</body>
+<script>
+ 
+    
+ document.querySelector("form").addEventListener('submit',signUp);
+    var userData=[];
+    if(localStorage.getItem("userData")===null){
+            userData=[];
+        }else{
+            userData=JSON.parse(localStorage.getItem("userData"));
+        }
+    function signUp(){
+        event.preventDefault();
+        var userObj={
+    
+        name:document.getElementById("name").value,
+        number:document.getElementById("phone").value,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+    
+        }
+        userData.push(userObj);
+        checking(userData);
+        }
+        var isCorrectData=true;
+    function checking(userData){
+        
+            userData.forEach(function(data){
+                console.log(data.name,data.email,data.number);
+                if(data.name==="" || data.email==="" || data.number==="" || data.password===""){
+                     isCorrectData=false;
+                }
+            });
+        
+            if(isCorrectData){
+                localStorage.setItem('userData',JSON.stringify(userData));
+                alert("succesfully login");
+                window.location.href="login.html";
+        
+            }else{
+                alert("Check once your details");
+                
+               
+            }
+        }
+    //signuUp();
+</script>
+</html>

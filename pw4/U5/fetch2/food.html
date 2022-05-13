@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food app</title>
+</head>
+<style>
+    body{
+        margin:10px;
+    }
+    #alignment{
+        margin-left: 650px;
+        margin-right: 650px;
+        margin-bottom: 5%;
+       
+    }
+    #container select{
+        width:300px;
+        height: 30px;
+    }
+#results{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2%;
+    
+}
+#results img{
+    width:100%;
+}
+</style>
+<body>
+    <div id="alignment">
+    <h1>Select food Categary</h1>
+    <div id="container">
+        
+    </div>
+</div>
+    <div id="results">
+
+    </div>
+</body>
+<script>
+
+var foodCategory=JSON.parse(localStorage.getItem('foodItems'))||[]; //Getting catogory data from local storage.
+//console.log(foodCategory);
+    async function foodList(){
+        try{
+            var data=await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`);//list url
+
+            var res=await data.json();
+           // console.log(res);
+            localStorage.setItem('foodItems',JSON.stringify(res.meals));//setting to local storage;
+        }catch(err){
+            console.log(err);
+        }
+    }
+    foodList()
+//seeting the catogary data to select button from local storage;
+
+    function givingCategoryToSelect(){
+        //document.querySelector('#selecting').innerText="";
+        var select=document.createElement('select');
+        select.setAttribute('id','selecting')
+        foodCategory.forEach(function(items){
+                var option=document.createElement('option');
+                option.innerText=items.strCategory;
+                select.append(option);
+            
+            //console.log(select);
+            document.querySelector('#container').append(select);
+        });
+    }
+    givingCategoryToSelect();
+//Searching meals in API;
+document.querySelector('#selecting').addEventListener('change',function(){
+    event.preventDefault();
+    async function SearchItem(){
+        var searchValue=document.querySelector('#selecting').value;
+        console.log(searchValue);
+        try{
+            var data=await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchValue}`);
+
+            var res=await data.json();
+           var searchedData=res.meals;
+            console.log(searchedData);
+           //rendaring the data for displaying
+
+           function displayData(searchedData){
+            document.querySelector('#results').innerText="";
+            searchedData.forEach(function(data){
+                var box=document.createElement('div');
+                box.style.border='1px';
+                var name=document.createElement('h2');
+                name.innerText=data.strMeal;
+                name.style.textAlign='Center';
+                var img=document.createElement('img');
+                img.src=data.strMealThumb;
+                box.append(img,name);
+                document.querySelector('#results').append(box);
+            })
+            
+           }
+           displayData(searchedData);
+
+           
+        }catch(err){
+            //If serach item not found it will display sory image;
+            var box=document.createElement('div');
+                box.style.border='1px';
+            var img=document.createElement('img');
+            img.src='https://www.ubuy.co.in/skin/frontend/default/ubuycom/images/not-available/mobile_we_re-sorry.jpg?v=1.0';
+            img.style.marginLeft="550px";
+            box.append(img);
+            document.querySelector('#results').append(box);
+        }
+
+    }
+SearchItem();
+});
+
+
+    
+    //SearchItem();
+</script>
+</html>

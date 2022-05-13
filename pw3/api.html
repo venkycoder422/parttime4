@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  grid-gap: 20px;
+}
+
+#container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cecece;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+
+
+
+/*avatar: "https://reqres.in/img/faces/7-image.jpg"
+email: "michael.lawson@reqres.in"
+first_name: "Michael"
+id: 7
+last_name: "Lawson"
+
+*/
+let container = document.getElementById("container");
+let url="https://reqres.in/api/users?page=2";
+
+
+async function getData(){
+try{
+var res= await fetch(url);
+var data=await res.json();
+console.log(data);
+displayData(data);
+}
+catch(err){
+    console.log(err);
+
+}
+
+    
+}
+getData();
+
+function displayData(data){
+
+data.data.forEach(function(product){
+    
+var photoshoot=document.createElement("div");
+
+var profilepic = document.createElement("img");
+profilepic.src=product.avatar;
+var names = document.createElement("p");
+names.textContent = product.first_name+" "+ product.last_name;
+photoshoot.append(profilepic,names);
+
+container.append(photoshoot);
+
+});
+}
+
+</script>
+</body>
+
+</html>

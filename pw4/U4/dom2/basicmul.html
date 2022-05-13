@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basicmul</title>
+    
+    
+</head>
+<style>
+p{
+    color: blue;
+    font-size: 30px;
+    
+}
+
+</style>
+<body>
+    <form>
+    <input type="number"  id="a" placeholder="Enter A value"/>
+    <input type="number" id="b" placeholder="Enter B value"/>
+    </form>
+    <hr>
+    <button onclick="multiplication()">CLICK</button>
+    <p id="exponent"> </p>
+</body>
+<script>
+
+function multiplication(){
+var A=document.getElementById("a").value;
+var B=document.getElementById("b").value;
+var sum=1;
+for(var i=0; i<B; i++){
+    sum*=A;
+}
+document.getElementById("exponent").innerHTML=sum;
+
+alert(A*B);
+}
+
+</script>
+</html>

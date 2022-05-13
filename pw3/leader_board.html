@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <style>
+.main{
+    display: flex;
+    width: 500px;
+    height:auto;
+    margin-left:100px;
+    
+}
+
+
+
+#min{
+
+    width: 150px;
+    height:50px;
+       background-color:orange;
+       margin-left: 0%;
+       font-size: 30px;
+       text-align: center;
+       padding-top: 20px;
+       border: 2px solid black;
+}
+
+
+#max{
+    
+    width: 150px;
+       height: 50px;
+       background-color:green;
+       margin-left: 40%;
+       text-align: center;
+       padding-top: 20px;
+       font-size: 30px;
+       border: 2px solid black;
+    
+
+}
+
+#container{
+    width: 400px;
+         
+    margin-left: 500px;
+
+}
+#scorebox{
+            width: 250px;
+            height: 120px;
+            background-color: gray;
+            margin-left: 40%;
+            border: 1px solid black;
+        }
+        h3{
+            margin-left: 60%;
+        }
+        h2{
+            margin-left:60%;
+        }
+
+
+#keypad > div{
+       width: 300px;
+       font-size: 30px;
+       
+       margin-left: 140px;
+       margin-top: 50px;
+   }
+   #keypad > div >button{
+       width: 75px;
+       margin: 10px;
+       height: 75px;
+       font-size: 40px;
+      
+       
+   }
+  #keypad > div >:nth-child(2),#keypad > div >:nth-child(4),#keypad > div >:nth-child(5),#keypad > div >:nth-child(6),#keypad > div >:nth-child(8){
+      background-color: chocolate;
+  }
+  #keypad > div >:nth-child(1),#keypad > div >:nth-child(3),#keypad > div >:nth-child(7),#keypad > div >:nth-child(9){
+      background-color: green;
+  }
+  #keypad > div >:nth-child(10){
+      background-color: indigo;
+      margin-left: 110PX;
+  }
+
+  #enter >button{
+      width:300px ;
+      height: 70px;
+      text-align: center;
+      color: ivory;
+      background-color: black;
+      margin-left: 150px;
+      font-size: 30px
+  }
+
+
+
+</style>
+
+    </head>
+    <body>
+        <div id="container">
+        <div class="main">
+            <div>
+                <div id="min"></div>
+                <h3>MIN</h3>
+            </div>
+
+            <div>
+                <div id="max"></div>
+                <h3> MAX</h3>
+            </div>
+        </div>
+        <div> 
+            <h2> SCORE</h2>
+            <input type="number" id="scorebox">
+            
+        </div>
+        <div id="keypad">
+            <div>
+                <button onclick="btn(1)">1</button>
+                <button onclick="btn(2)">2</button>
+                <button onclick="btn(3)">3</button>
+                <button onclick="btn(4)">4</button>
+                <button onclick="btn(5)">5</button>
+                <button onclick="btn(6)">6</button>
+                <button onclick="btn(7)">7</button>
+                <button onclick="btn(8)">8</button>
+                <button onclick="btn(9)">9</button>
+                <button onclick="btn(0)">0</button>
+            </div>
+           </div>
+           <div id="enter">
+               <button onclick="enter()">ENTER</button>
+           </div>
+</div>
+</div>
+
+
+</body>
+<script>
+    var min=document.getElementById("min");
+    min.textContent=423;
+    var max=document.getElementById("max");
+    max.textContent=2019;
+    var scorebox=document.getElementById("scorebox");
+
+    function btn(key){
+        scorebox.value=scorebox.value+key;
+    }
+
+    function enter(){
+        
+
+        if(scorebox.value===""){
+            return ;
+        }else{
+            if(max.textContent==="" || +max.textContent<+scorebox.value){
+                max.textContent=scorebox.value;
+
+            }
+            if(min.textContent==="" || +min.textContent < +scorebox.value){
+                min.textContent=scorebox.value;
+
+            }
+           
+        }
+        scorebox.value="";
+    }
+
+</script>
+
+
+</html>

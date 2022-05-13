@@ -1,0 +1,260 @@
+body {
+    
+    margin: -0.25% 10% 0% 10%;
+}
+#topBar {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    left:0%;
+    border-bottom: 1px solid black;
+    z-index: 1;
+    
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 30px);
+    margin-bottom:auto;
+    padding: 0%;
+    overflow: hidden;
+    background-color:whitesmoke;
+    
+
+}
+
+.links {
+    display: flex;
+    gap: 2%;
+    flex-wrap: nowrap;
+    word-wrap: normal;
+    margin: 0% 10% 0% 10%;
+
+}
+
+
+.navigationbar {
+    display: flex;
+    gap: 2%;
+    flex-wrap: nowrap;
+    word-wrap: normal;
+    margin: -0.5% 10% 0% 10%;
+    /* background-color: rgb(214, 129, 18);  */
+}
+
+h3 {
+    margin: 0%;
+
+    font-size: 13px;
+}
+
+.links>a {
+    font-size: 12px;
+    margin: 0%;
+
+}
+
+.navigationbar img {
+    width: 200px;
+    height: 20px;
+    justify-content: baseline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#contactUs {
+    display: flex;
+    margin-left: auto;
+    justify-content: right;
+    gap: 10%;
+    word-wrap: normal;
+    width: 200px;
+    font-size: 12px;
+    flex-wrap: nowrap;
+}
+
+#loginSearch {
+    display: flex;
+    margin-left: auto;
+    justify-content: right;
+    gap: 10%;
+    flex-wrap: nowrap;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.subnavbtn {
+    font-size: 13px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-family: inherit;
+    margin: 0px;
+    
+}
+
+/**  Nav bar drop down content Css*/
+.subnavbtn:hover .subnav-content {
+    display: block;
+    color: black;
+    background-color: aliceblue;
+    
+    
+}
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 80%;
+    margin: 3px 0% auto 10%;
+    z-index: 1;
+    opacity: 10px;;
+
+}
+
+.subnavbtn:hover>h3 {
+
+    border-bottom: 5px solid rgb(245, 183, 67);
+    border-radius: 2px;
+
+}
+
+/* Mens and Womens content Block */
+#content-blockOfMenWomen {
+    display: flex;
+    border: 1px solid rgb(47, 44, 44);
+    padding: 30px;
+    overflow: scroll;
+    height: 650px;
+    flex-wrap: wrap;
+    
+    
+
+}
+
+#left-contentOfMenandWomen {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: auto;
+    flex-wrap: wrap;
+    opacity: 20;
+    background-color: aliceblue;
+}
+
+/* #topwear{grid-area:1/1/3/2;}
+#bottomwear{grid-area: 1/ 2/ 2/3;}
+#footwear{grid-area: 1/ 3/ 2/ 3;}
+#winterwear{grid-area: 3/ 2/3 /3;}
+#indianwear{grid-area:4/ 1/5/2;}
+#homefurnishing{grid-area:4/ 1/5/2;}
+#loungewear{grid-area: 4/ 2/5/3;}
+#homedecor{grid-area: 5/ 2/5/3;}
+#accessories{grid-area: 2/ 3/3/3;}
+#plussize{grid-area: 3/ 3/4/3;}
+#personalcare{grid-area: 4/ 3/ 5/3;}
+#stationary{grid-area: 5/ 3/5/3;} */
+
+.insidemensright-content:hover p {
+    text-decoration: underline;
+}
+
+#mensWomens-rightContent p {
+
+    margin-top: 10px;
+
+}
+
+#mensWomens-rightContent img {
+    margin-top: 10px;
+    width: 40%;
+    height: 40%;
+
+}
+
+.insidemensright-content {
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: auto;
+    margin-left: 30%;
+
+}
+
+
+/** Mobile cover content block */
+#content-blockOfMobileCover {
+    display: flex;
+    border: 1px solid rgb(37, 36, 35);
+    padding: 30px;
+    height: auto;
+
+}
+
+#left-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    margin-top: 20px;
+    
+}
+
+.menvl {
+    border-left: 2px solid rgb(71, 73, 71);
+    min-height: 1200px;
+
+}
+
+.mobilevl {
+    border-left: 2px solid rgb(71, 73, 71);
+    min-height: 400px;
+}
+
+.right-content {
+    display: flex;
+    column-gap: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+    gap: 50px;
+}
+
+/* Mpbile Nav bar CSS*/
+
+
+@media all and (min-width:85px) and (max-width:900px) {
+
+    
+    #navbar{
+        display: none;
+    }
+
+    .mediumbar{
+    
+        display: flex;
+        flex-flow: inherit;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        width:100%;
+        height:55px;
+        background-color: #fdd835;
+    }
+
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: auto;
+    margin-bottom: auto;
+    grid-gap: 10px;
+    margin-left:300px;
+    
+    }

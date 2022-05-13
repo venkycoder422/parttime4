@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Masai Calculator </title>
+</head>
+<style>
+    *body{
+        margin: 0%;
+    }
+    #box{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #keyboard{
+        display: grid;
+        grid-template-columns: repeat(4,50px);
+        grid-template-rows: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: center;
+        margin-top:50px;
+        gap:10px;
+
+        
+        
+    }
+    #keyboard>button{
+        width:50px;
+        height:50px;
+        background-color: rgb(194, 202, 209);
+        text-align: center;
+        color: rgb(15, 14, 14);
+        border-radius: 5px;
+    }
+    h1{
+        text-align: center;
+    }
+    #keyboard>button:nth-child(4n),
+    #keyboard>button:nth-child(15){
+        background-color: rgb(8, 8, 8);
+        color: white;
+    }
+    #keyboard>button:nth-child(13){
+        background-color: orangered;
+    }
+    input{
+        width:80%;
+        height:50px;
+        border: solid;
+        margin: auto;
+        margin-left: 15px;
+    }
+    #table{
+        
+        margin: auto;
+        padding-top: 30px;
+        box-sizing: border-box;
+        padding-bottom: 30px;
+        box-shadow: 100px;
+        box-shadow: 5px 10px 8px 10px #888888;
+    }
+    
+</style>
+<body>
+    <div id="box">
+
+        <h1> Masai Calculator</h1>
+        <div id="table">
+        <div >
+            <input type="text" id="scorebox">
+        </div>
+        <div id="keyboard">
+            
+            <button onclick="btn(1)">1</button>
+            <button onclick="btn(2)">2</button>
+            <button onclick="btn(3)">3</button>
+            <button onclick="plus()">+</button>
+            <button onclick="btn(4)">4</button>
+            <button onclick="btn(5)">5</button>
+            <button onclick="btn(6)">6</button>
+            <button onclick="sub()">-</button>
+            <button onclick="btn(7)">7</button>
+            <button onclick="btn(8)">8</button>
+            <button onclick="btn(9)">9</button>
+            <button onclick="mul()">X</button>
+            <button onclick="rem()">C</button>
+            <button onclick="btn(0)">0</button>
+            <button onclick="eql()">=</button>
+            <button onclick="div()">/</button>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+<script>
+   
+   
+   function btn(key){
+        scorebox.value=scorebox.value+key;
+    }
+    function plus(){
+        scorebox.value+=" +";
+    }
+    function eql(){
+       scorebox.value="";
+    }
+
+</script>
+</html>

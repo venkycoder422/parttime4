@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marriege_validator</title>
+</head>
+<body>
+<form>
+    <input  id="year" type="number" placeholder="Enter your birt year"/>
+    <select id="gender" type="text" placeholder="Enter Gender">
+    <option >Male</option>
+    <option>Female</option>
+
+    </select>
+    <button onclick="myFunction()">submit</button>
+</form>
+    <h1 id="demo"> </h1>
+</body>
+<script>
+    var year=0;
+    var gender="";
+    var curr_year=2021;
+    
+    function myFunction(){
+        year=document.getElementById("year").value;
+        gender=document.getElementById("gender").value;
+       
+        var diff_year=curr_year-year;
+        if(gender==="Male"){
+            if(diff_year>=21){
+                alert("He can Marry:"+diff_year)
+            }else{
+                alert("He can't Marry:"+diff_year)
+            }
+        }else if(gender==="Female"){
+            if(diff_year>=18){
+                alert("She can Marry:"+diff_year)
+            }else{ 
+                alert("She can't Marry:"+diff_year)
+            }
+        }
+    }
+    
+    
+</script>
+</html>

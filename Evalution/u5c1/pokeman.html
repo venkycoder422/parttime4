@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First pokeman</title>
+</head>
+<style>
+    #container{
+    
+        grid-template-columns: repeat(4,1fr);
+        justify-content: center;
+        display: grid;
+        gap:30px;
+
+    }
+    #table{
+        margin-left: 40%;
+    }
+    form{
+        margin-left: 35%;
+        margin-top: 10px;
+    }
+</style>
+<body>
+<table id="table" border="1px solid black">
+    <tr>
+        <th>Names</th>
+    </tr>
+<tbody id="tbody">
+</tbody>
+</table>
+
+<div>
+    <form>
+        <input type="text" id="poke">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div id="container">
+
+</div>
+</body>
+<script>
+
+    fetch("https://pokeapi.co/api/v2/pokemon").then((res)=>{
+        
+        res.json().then((res)=>{
+           console.log(res);
+            var pokeData=res.results;
+           // console.log(pokeData);
+            localStorage.setItem('pokeData',JSON.stringify(pokeData));
+            
+        });
+    });
+    var pokeData1;
+    if(localStorage.getItem('pokeData')===null){
+        pokeData1=[];
+    }else{
+        pokeData1=JSON.parse(localStorage.getItem('pokeData'));
+    }
+    console.log(pokeData1);
+function display(pokeData1){
+
+pokeData1.forEach(function(data){
+    var tr1=document.createElement("tr");
+
+    var td1=document.createElement('td');
+    td1.innerHTML=data.name;
+ 
+    tr1.append(td1);
+    var table=document.querySelector("#table");
+   
+
+var tbody=document.querySelector("#tbody");
+tbody.append(tr1);
+table.append(tbody);
+
+});
+
+}
+display(pokeData1);
+    
+
+document.querySelector('form').addEventListener('submit',function(){
+event.preventDefault();
+
+var names=document.getElementById('poke').value;
+fetch("https://pokeapi.co/api/v2/pokemon/ditto").then((res)=>{
+        
+        res.json().then((res)=>{
+           console.log(res);
+            
+        function displaySecond(res){
+            var box=document.createElement("div");
+            var id1=document.createElement('h3');
+            id1.innerText=res.id; 
+            var name=document.createElement('h3');
+            name.innerText=names; 
+
+            var weight=document.createElement('h3');
+            weight.innerText=res.weight; 
+
+            var height=document.createElement('h3');
+            height.innerText=res.height; 
+            box.append(name,id1,weight,height);
+
+            document.querySelector("#container").append(box);
+        }
+        displaySecond(res);
+
+var dummy=pokeData1;
+//console.log(pokeData1,"kk")
+        function searchMe(names){
+              //  console.log(names);
+                if(names==''){
+                   
+                }else{
+                    var searchData=dummy.filter(function(mv){
+                    if(mv.name.includes(names)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                });
+                return searchData;
+            }
+                
+        }
+        var searchedData=searchMe(names);
+        //displaySecond(searchedData)
+            
+    });
+   
+
+});
+
+
+});
+
+
+
+
+ 
+</script>
+</html>

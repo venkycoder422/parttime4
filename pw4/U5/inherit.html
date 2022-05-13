@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+var car = function(name,color,isNew,wheels){
+    this.name = name;
+    this.color = color;
+    this.isNew = isNew
+    this.wheels = wheels;
+
+}
+
+var newCar   = new car("BMW","white",true,4);
+// console.log(newCar)
+
+
+var newDetailsCar = function(name,color,isNew,wheels,price){
+
+    car.call(this,name,color,isNew,wheels)
+    
+    this.price = price
+}
+
+var addedDeatils = new  newDetailsCar("audi","red",false,2,120000);
+
+console.log(addedDeatils)
+
+
+
+//INHERITE USING THE CREATE.OBJECT();
+
+var car = {
+    name : "audi",
+    price : 12000,
+    innew :true,
+    wheels : 4,
+}
+
+var newCar = Object.create(car);
+newCar.name = "bmw"
+console.log(newCar);
+</script>
+</html>

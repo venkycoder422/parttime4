@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller</title>
+</head>
+<style>
+ form{
+    display: flex;
+    flex-direction: column;
+    width:max-content;
+    margin: auto;
+}
+form>input{
+    margin: 2%;
+    width:300px;
+}
+form>select{
+    margin: 2%;
+    width:310px;
+}
+h3{
+    text-align: center;
+}
+#inputform{
+    background-color: antiquewhite;
+    max-width: max-content;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+</style>
+<body>
+    <h3>Storing data in Data Base by using constroctor function</h3>
+    <div id="inputform">
+        <form>
+            <input type="text" id="name" placeholder="Enter product name">
+            <input type="text" id="category" placeholder="Enter category">
+            <input type="url" id="image" placeholder="Enter url">
+            <input type="number" id="price" placeholder="Enter price">
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">other</option>
+            </select>
+            <select id="sold">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <input type="submit" id="add" value="ADD">
+        </form>
+
+    </div>
+</body>
+<script src="./admin.js"></script>
+</html>

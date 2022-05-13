@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens clothing</title>
+    <link  rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./womens.css">
+   
+</head>
+
+
+<body>
+    <!-- Nav bar place holder -->
+<div id = "navget">
+
+</div>   
+
+
+        <div style="display:flex; z-index:-20;">
+        <h1 id="heading">Womens clothing</h1>
+        <h1 id="lens"></h1>
+        </div>
+        <!-- Filters right side -->
+        <div id="filter">
+
+            <h3>Sort By</h3>
+        
+            <div id="sortFilterCss">
+                <select id="sortfilter">
+                    <option value="popular">Popular</option>
+                    <option value="new">New</option>
+                    <option value="hightToLow">High to Low</option>
+                    <option value="lowToHigh">Low to High</option>
+                </select>
+            </div>
+    </div>
+
+    <div id="Main">
+                <!-- Filter left side like catogary size etc -->
+                
+
+            <div id="filters">
+                <div>
+                    <p>FILTERS</p>
+                </div>
+                <select id="category">
+                    <option value="none">Category</option>
+                    <option value="t-shirt">T-shirt</option>
+                    <option value="nightsuits">Nightsuits</option>
+                    <option value="top">Top</option>
+                    <option value="jeans">Jeans</option>
+                    <option value="jacket">Jacket</option>
+                    <option value="dress">Dress</option>
+                    <option value="sweatshirt">Sweatshirt</option>
+                    <option value="top & pyjama set">Top & Pyjama Set</option>
+                    <option value="pyjama">Pyjama</option>
+                </select>
+
+                <select id="sizes">
+                    <option value="none">Sizes</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="26">26</option>
+                    <option value="28">28</option>
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                </select>
+
+                <select id="brand">
+                    <option value="none">Brand</option>
+                    <option value="bewakoof">Bewakoof</option>
+                    <option value="clovia">Clovia</option>
+                    <option value="campusSutra">Campus Sutra</option>
+                    <option value="bannosswagger">Bannosswagger</option>
+                    <option value="styleQuoteint">Style Quoteint</option>
+                    <option value="differentOfOpinion">Different Of Opinion</option>
+                    <option value="alcis">Alcis</option>
+                    <option value="harpa">Harpa</option>
+                    <option value="freaking">Freaking</option>
+                </select>
+
+                <select>
+                    <option value="">Design</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+
+
+                <select id="fit">
+                    <option value="none">Fit</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+
+                <select id="sleeve">
+                    <option value="none">Sleeve</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+
+                <select id="neck">
+                    <option value="none">Neck</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+
+                <select id="ratings">
+                    <option value="none">Ratings</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+                <select id="discount">
+                    <option value="none">Discount</option>
+                    <option value="printed">Printed</option>
+                    <option value="typography">Typography</option>
+                    <option value="plain">Plain</option>
+                    <option value="graphicPrint">Graphic Print</option>
+                    <option value="aop">Aop</option>
+                    <option value="allOverPrinted">All Over Printed</option>
+                    <option value="floralPrint">Floral Print</option>
+                    <option value="Stripped">Stripped</option>
+                    <option value="colorBlock">Color Block</option>
+                </select>
+                <select id="sortfilter">
+                    <option value="none">Sort</option>
+                    <option value="popular">Popular</option>
+                    <option value="new">New</option>
+                    <option value="hightToLow">Hight to Low</option>
+                    <option value="lowToHigh">Low to High</option>
+                </select>
+
+            </div>
+        <!-- Filters End here -->
+
+        <!-- image div from womens data -->
+        <div id="container">
+
+        </div>
+        <!-- Womens div End  -->
+    <!---->
+</div>
+
+</body>
+<!-- <script src='./navbar.html'></script> -->
+<script type="module">
+// For importing nav bar every page
+
+var allData=JSON.parse(localStorage.getItem('shoppingData'));
+    var womensData = [
+
+
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Yellow Jerry Chase Graphic Printed Boyfriend T-Shirt",
+            price: 349,
+            size: "M",
+            type: "popular",
+
+        },
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Blue Space Love Graphic Printed Boyfriend T-Shirt",
+            price: 299,
+            size: "L",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t540/click-click-bugs-boyfriend-t-shirt-ltl-black-310831-1637995547-1.jpg",
+            name: "Click Click Bugs Boyfriend T-Shirt (LTL) Black",
+            price: 1100,
+            size: "XL",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Women's Black Disney Polka T-shirt",
+            price: 490,
+            size: "30",
+            type: "new",
+        },
+
+        {
+
+            brand: "bannosswagger",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "26",
+            type: "new",
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "30",
+            type: "new",
+
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "28",
+            type: "new",
+
+        }, {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Blue Space Love Graphic Printed Boyfriend T-Shirt",
+            price: 299,
+            size: "L",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t540/click-click-bugs-boyfriend-t-shirt-ltl-black-310831-1637995547-1.jpg",
+            name: "Click Click Bugs Boyfriend T-Shirt (LTL) Black",
+            price: 1100,
+            size: "XL",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Women's Black Disney Polka T-shirt",
+            price: 490,
+            size: "26",
+            type: "new",
+        },
+
+        {
+
+            brand: "bannosswagger",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "XL",
+            type: "new",
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "32",
+            type: "new",
+
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "32",
+            type: "new",
+
+        },
+
+
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Yellow Jerry Chase Graphic Printed Boyfriend T-Shirt",
+            price: 349,
+            size: "XS",
+            type: "popular",
+
+        },
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Blue Space Love Graphic Printed Boyfriend T-Shirt",
+            price: 299,
+            size: "XS",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t540/click-click-bugs-boyfriend-t-shirt-ltl-black-310831-1637995547-1.jpg",
+            name: "Click Click Bugs Boyfriend T-Shirt (LTL) Black",
+            price: 1100,
+            size: "XL",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Women's Black Disney Polka T-shirt",
+            price: 490,
+            size: "26",
+            type: "new",
+        },
+
+        {
+
+            brand: "bannosswagger",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "28",
+            type: "new",
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "XS",
+            type: "new",
+
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "30", type: "new",
+
+        },
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Yellow Jerry Chase Graphic Printed Boyfriend T-Shirt",
+            price: 349,
+            size: "26",
+            type: "popular",
+
+        },
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Blue Space Love Graphic Printed Boyfriend T-Shirt",
+            price: 299,
+            size: "32",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t540/click-click-bugs-boyfriend-t-shirt-ltl-black-310831-1637995547-1.jpg",
+            name: "Click Click Bugs Boyfriend T-Shirt (LTL) Black",
+            price: 1100,
+            size: "XL",
+            type: "popular",
+        },
+        {
+            brand: "campusSutra",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Women's Black Disney Polka T-shirt",
+            price: 490,
+            size: "S",
+            type: "new",
+        },
+
+        {
+
+            brand: "bannosswagger",
+            category: "jeans",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "28",
+            type: "new",
+        },
+        {
+
+            brand: "clovia",
+            category: "top",
+            image: "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+            name: "Women's White All Over Mickey & Minnie Printed Stripe Oversized T-shirt",
+            price: 1100,
+            size: "28",
+            type: "new",
+
+        },
+
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Yellow Jerry Chase Graphic Printed Boyfriend T-Shirt",
+            price: 349,
+            size: "30",
+            type: "popular",
+
+        },
+        {
+            brand: "bewakoof",
+            category: "t-shirt",
+            image: "https://images.bewakoof.com/t320/jerry-chase-women-s-street-wear-boyfriend-fit-t-shirt-489634-1649433754-1.jpg",
+            name: "Womens Blue Space Love Graphic Printed Boyfriend T-Shirt",
+            price: 299,
+            size: "30",
+            type: "popular",
+        },
+
+       
+    ];
+
+   
+
+   var cartData;
+    var all = JSON.parse(JSON.stringify(womensData));
+if(localStorage.getItem('womenCartData')===null){
+    cartData=[];
+}else{
+    cartData=JSON.parse(localStorage.getItem("womenCartData"));
+}
+    
+    function displayData(womensData) {
+        document.querySelector("#container").innerText = "";
+        womensData.forEach(function (data) {
+
+            var box = document.createElement("div");
+            box.style.backgroundColor = "whitesmoke";
+
+            var img = document.createElement("img");
+            img.src = data.image;
+            img.style.width = "100%";
+            var name = document.createElement("h6");
+            name.innerText = data.name;
+            var price = document.createElement("h6");
+            price.innerText = "₹" + " " + data.price;
+            var tribes = document.createElement("h6");
+            tribes.innerText = "₹" + (data.price - 20) + " " + "For TriBe Members";
+            tribes.style.backgroundColor = "lightgray";
+            var cartButton = document.createElement("button");
+            cartButton.innerText = "ADD TO CART";
+            box.append(img, name, price, tribes, cartButton);
+            cartButton.addEventListener('click', function () {
+                event.preventDefault();
+                alert("added to cart");
+                cartData.push(data);
+                ///console.log(cartData);
+
+                localStorage.setItem('womenCartData',JSON.stringify(cartData));
+                window.location.reload();
+            });
+            document.querySelector('#lens').innerText="("+womensData.length+")";
+            document.querySelector("#container").append(box);
+        });
+
+    }
+    displayData(womensData);
+
+
+    function searchCategory(searchvalue) {
+
+        var data = womensData.filter(function (product) {
+
+            if (product.category.includes(searchvalue)) {
+                return true;
+            }
+            return false;
+        });
+        return data;
+    }
+
+    document.querySelector("#category").addEventListener('change', function () {
+        event.preventDefault();
+        var searchedvalue = event.target.value;
+        if (searchedvalue === "none") {
+            displayData(womensData);
+        } else {
+            var searchedData = searchCategory(searchedvalue);
+            displayData(searchedData);
+        }
+    });
+
+    function searchSize(searchvalue) {
+        var data = womensData.filter(function (product) {
+            if (product.size.includes(searchvalue)) {
+                return true;
+            }
+            return false;
+        });
+        return data;
+    }
+
+    document.querySelector("#sizes").addEventListener('change', function () {
+        event.preventDefault();
+        var searchedvalue = event.target.value;
+        if (searchedvalue === "none") {
+            displayData(womensData);
+        } else {
+            var searchedData = searchSize(searchedvalue);
+            displayData(searchedData);
+        }
+
+    });
+
+
+    function searchBrand(searchvalue) {
+        var data = womensData.filter(function (product) {
+            if (product.brand.includes(searchvalue)) {
+                return true;
+            }
+            return false;
+        });
+        return data;
+    }
+
+    document.querySelector("#brand").addEventListener('change', function () {
+        event.preventDefault();
+        var searchedvalue = event.target.value;
+        if (searchedvalue === "none") {
+            displayData(womensData);
+        } else {
+            var searchedData = searchBrand(searchedvalue);
+            displayData(searchedData);
+        }
+
+    });
+
+    function searchPopular(searchvalue) {
+
+        if (searchvalue === "new" || searchvalue === "popular") {
+            var data = womensData.filter(function (product) {
+                if (product.type.includes(searchvalue)) {
+                    return true;
+                }
+                return false;
+            });
+            return data;
+        } else {
+
+            var str = searchvalue;
+
+            var sortdata = womensData.sort(function (a, b) {
+
+                if (str === "lowToHigh") {
+                    return a.price - b.price;
+                }
+                return b.price - a.price;
+            });
+            return sortdata;
+        }
+    }
+
+
+
+    document.querySelector("#sortfilter").addEventListener('change', function () {
+        event.preventDefault();
+        var searchedvalue = event.target.value;
+        if (searchedvalue === "none") {
+            displayData(womensData);
+        } else {
+            var searchedData = searchPopular(searchedvalue);
+            displayData(searchedData);
+        }
+
+    });
+
+
+    var allData=JSON.parse(localStorage.getItem('shoppingData'));
+    function searchMe(searchvalue) {
+
+var data = allData.filter(function (product) {
+
+    if (product.name.includes(searchvalue)) {
+        return true;
+    }
+    return false;
+});
+return data;
+}
+
+document.querySelector("#searchInput").addEventListener('change', function () {
+event.preventDefault();
+var searchedvalue = event.target.value;
+if (searchedvalue === "undefined") {
+            
+        } else {
+    var searchedData = searchMe(searchedvalue);
+    console.log(searchedData);
+    displayData(searchedData);
+    }
+});
+   //console.log(allData)
+
+
+
+
+//Getting Data from Nav.Js
+    import Navget from "./nav.js";
+    console.log(Navget);
+    var navdata = document.getElementById("navget");
+    navdata.innerHTML = Navget();
+
+</script>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridCoffe</title>
+</head>
+<style>
+body{
+    margin: 0%;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap:20px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: auto;
+    background-color:rgb(243, 230, 215) ;
+    border-radius: 10px;
+    padding: 20px;
+}
+.container>div{
+    background-color: white;
+    
+    border-radius: 10px;
+    height:auto;
+    text-align: left;
+    font-size: 25px;;
+    padding: 16px;
+}
+.line{
+    display: flex;
+    align-items: center;
+}
+.line>p{
+    margin-left: auto;;
+    color: rgb(247, 153, 12);
+    font-weight: bold;
+}
+@media only screen and (min-width:320px) and (max-width:480px) {
+  .container{
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    grid-template-rows: repeat(9,1fr);
+    grid-gap:20px;
+    justify-content: center;
+    margin-bottom: auto;
+    background-color:rgb(243, 230, 215) ;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  }
+@media only screen and (min-width:480px) and (max-width:850px) {
+  .container{
+    display:grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(5,1fr);
+    grid-gap:20px;
+    justify-content:center;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: auto;
+    background-color:rgb(243, 230, 215) ;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+}
+</style>
+
+<body>
+    <div class="container">
+        
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+        <div>
+            <div class="line"><h3> Cappuccino</h3>
+                <p>$49</p></div>
+            
+            <p> Usage of the internet is becaming more common due to rapid advance</p>
+        </div>
+    </div>
+    
+</body>
+</html>

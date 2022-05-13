@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<style>
+    #navbar{
+        display: flex;
+        justify-content: space-between;
+        height:auto;
+        background-color: aquamarine;
+        border-radius: 5px;
+    }
+    #navbar{
+        font-size: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width:300px;
+        margin: auto;
+        padding-top: 100px;
+    }
+    form>input{
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    section{
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div id="navbar">
+        <div>
+            <a rel="home" href="./index.html"> Home</a>
+        </div>
+       <div>
+        <a rel="cont" href="./contact.html">Contact List</a>
+       </div>
+        <div>
+            <a rel="fav" href="./favourites.html">Favaroites</a>
+        </div>
+
+    </div>
+
+    <form>
+        <input type="text" id="name" placeholder="Enter a name">
+        <input type="number" id="number" placeholder="Enter a number">
+        <select id="type">
+            <option>Family</option>
+            <option>Friend</option>
+            <option>Other</option>
+        </select>
+        
+        <input type="submit">
+        
+    </form>
+</body>
+<script>
+    var data;
+    if(localStorage.getItem("contactList")===null){
+        data=[];
+    }else{
+        data=JSON.parse.localStorage.getItem("contactList");
+    }
+    
+    document.querySelector("form").addEventListener('submit',saveContact);
+
+    function saveContact(){
+        event.preventDefault();
+        var contactObj={
+            name:document.querySelector("#name").value,
+            number:document.querySelector("#number").value,
+            type:document.querySelector("#type").value,
+        }
+        data.push(contactObj);
+        localStorage.setItem("contactList",JSON.stringify(data));
+    }
+</script>
+</html>

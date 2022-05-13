@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecting data from IDMB</title>
+</head>
+<style>
+    #inputForm{
+        text-align: center;
+        margin-top: 20px;
+        border: 2px solid green;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding:8%;
+        background-color: antiquewhite;
+    }
+    #container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:2px;
+        justify-content: center;
+        margin-left: 20%;
+        margin-top: 10px;
+
+    }
+    #flex{
+        display: flex;
+        flex-direction: column;
+
+    }
+    #movieName{
+        height:30px;
+        border-radius: 5px;;
+    }
+    button{
+        height: 30px;
+        margin-top: 5px;
+        width:80px;
+    }
+</style>
+<body>
+    <form id="inputForm">
+        <div id="flex">
+            <caption><h3>Search Movies</h3></caption>
+            <input type="text" id="movieName"/>
+        </div>
+        <button type="submit">search</button>
+    </form>
+
+    <div id="container">
+     
+    </div>
+</body>
+<script>
+// var API_key='2ddbdddb';
+var apikey="9c9092cf";
+var url="http://www.omdbapi.com/?i=tt3896198";
+
+document.querySelector('form').addEventListener('submit',function(){
+   event.preventDefault()
+   var movie=document.getElementById('movieName').value;
+
+    fetch('http://www.omdbapi.com/?i=tt3896198&apikey=9c9092cf&s={movie}').then((response)=>{
+        response.json().then((result) =>{
+            var movieData=result.Search;
+            console.log(result);
+            // movieData.forEach(function(movie){
+            // console.log(movie);
+            // });
+                function displayData(movieData){
+                    document.querySelector("#container").innerText="";
+                    movieData.forEach(function(data){
+
+                        var box=document.createElement("div");
+                       
+                        var img=document.createElement('img')
+                        img.src=data.Poster;
+
+                        var name=document.createElement('p');
+                        name.innerText=data.Title;
+
+                        var IMDB=document.createElement('p');
+                        IMDB.innerText=data.imdbID;
+
+                        box.append(img,name,IMDB);
+                     
+                        document.querySelector("#container").append(box);
+                        
+                
+                    });
+                }
+            
+            var dummy=movieData;
+            function searchMe(movie){
+                
+                if(movie==''){
+                   
+                }else{
+                    var searchData=dummy.filter(function(mv){
+                    if(mv.Title.includes(movie)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                });
+                return searchData;
+                }
+                
+                
+            }
+
+            var searchedData=searchMe(movie);
+            if(searchedData===undefined){
+                var img=document.createElement("img");
+                img.src="https://cdn.dribbble.com/users/602333/screenshots/6305928/attachments/1350583/nothing-found.png?compress=1&resize=800x600&vertical=top";
+                img.style.width="400px";
+                img.style.marginLeft="250px";
+                document.querySelector("#container").append(img);
+            }else{
+               // If IMDB is Greater than 8.5 
+                searchedData.forEach(function(dt){
+                    var rate=dt.imdbID;
+                    rate = rate.substring(7, rate.length);
+                    //console.log(rate);
+                    if(+rate>9){
+                   
+                        dt.imdbID="HIT:"+" "+dt.imdbID;
+                    
+                    }
+                });
+                displayData(searchedData);
+            }
+            
+            
+        });
+
+    }).catch(function(err){
+        console.log(err)
+    });
+
+    // fetch('url&apikey&s={movie}').then(function(res){
+    //    console.log(res)
+    //     return res.json;
+    // }).then(function(res){
+    //     console.log(res);
+    // })
+    // .catch(function(err){
+    //     console.log(err);
+    // });
+
+    //Showing
+   
+});
+
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=auction
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&maxResult=20&key
+</script>
+</html>

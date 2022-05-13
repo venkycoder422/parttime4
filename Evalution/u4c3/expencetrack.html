@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expence Track</title>
+</head>
+<style>
+#main{ 
+    margin: auto;
+  
+}
+form{
+    height: auto;
+    width: 500px;
+    margin: auto;
+    padding-left:120px;    
+}
+#month,#income,#expences{
+    height: 30px;
+    width:350px;
+    border-radius: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: left;
+    
+    
+}
+#container
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    margin:auto;
+    
+    
+}
+p{
+        margin-bottom: 0;
+}
+#button{
+    background-color: rgb(26, 235, 235);
+    height:40px;
+    width:350px;
+    border-radius: 20px;
+    margin-top: 10px;
+    
+    
+    }
+    #cards{
+        
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        font-size: 50px;
+        text-decoration: underline;
+        color: blue;
+
+    }
+    #section{
+        background-color: rgb(227, 241, 241);
+        margin:10px 100px 10px 100px;
+        border-radius: 10px;
+        
+        
+    }
+</style>
+<body>
+    <h1>EXPENSE TRACKER</h1>
+    <div id="main">
+        
+    <form>
+    <p >Select Month</p>
+    <select id="month">
+        <option value="January"> January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="Octobar">Octobar</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+    <br>
+    <p>Income</p>
+    <input id="income" type="number">
+    <br>
+    <p>Expence</p>
+    <input id="expences" type="number">
+    <br>
+   <input  id="button" type="submit">
+
+</form>
+
+</div>
+<div id="section">
+    <div id="container">
+
+    </div>
+    
+</div>
+</body>
+<script>
+
+document.querySelector("form").addEventListener('submit',addData);
+
+var arrData;
+if(localStorage.getItem('expence')===null){
+    arrData=[];
+}else{
+    arrData=JSON.parse(localStorage.getItem('expence'));
+}
+
+
+function addData(){
+
+event.preventDefault();
+
+var expenceData={
+
+    month:document.querySelector("#month").value,
+    income:document.querySelector("#income").value,
+    expence:document.querySelector("#expences").value,
+};
+
+arrData.push(expenceData);
+//console.log(arrData);
+localStorage.setItem('expence',JSON.stringify(arrData));
+displayData(arrData);
+}
+
+function displayData(){
+    document.querySelector("#container").innerText="";
+
+    arrData.forEach(function(data){
+        
+        var table=document.createElement("div");
+
+        var month=document.createElement("h4");
+        month.style.color="blue";
+        month.innerText=data.month;
+        var income=document.createElement("p");
+        income.style.color="green";
+        income.innerText="Your income is Rs "+data.income;
+        var expence=document.createElement("p");
+        expence.style.color="red";
+        
+        expence.innerText="Your expense is Rs "+data.expence;
+        var saving=document.createElement("p");
+        saving.style.color="green";
+        saving.innerText="Your savings are Rs "+(data.income-data.expence);
+        table.append(month,income,expence,saving);
+        document.querySelector('#container').append(table);
+        
+    });
+}
+</script>
+</html>

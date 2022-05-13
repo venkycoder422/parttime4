@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles/index.css"></link>
+    
+</head>
+<style>
+   
+</style>
+<body onload=timer() >
+    <div id="navbar">
+        <div><a href="">Home</a></div>
+        <div><a href="login.html">Login</a></div>
+        <div><a href="signup.html">SignUp</a></div>
+    </div>
+
+    <div id="container1">
+        <img src="https://assetscdn1.paytm.com/images/cinema/KGF-1035x420-61d0f220-b6fc-11ec-8665-6d654dc679e6.jpg"  id="data">
+    </div>
+
+
+    <div id="sort-buttons">
+            <select name="Sorting" id="sorting">
+                <option value="none">NONE</option>
+                <option value="sort-lh">LOW - HIGH</option>
+                <option value="sort-hl">HIGH - LOW</option>
+            </select>
+    </div>
+   
+    <div id="movies"></div>
+</body>
+<script src="./scripts/index.js"> </script>
+</html>

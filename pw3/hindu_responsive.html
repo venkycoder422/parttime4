@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           /* *{
+                margin: 0px;padding:0px;
+                background-color: red;
+                ]box-sizing: border-box;
+            }*/
+
+            .main{
+                background-color:rgba(235, 235, 230, 0.733);
+                width:75%;
+                margin:50px auto;
+              
+                display: grid;
+                color:#1708e2;
+                grid-template-rows:200px 200px 200px 200px ;
+                grid-template-columns: repeat(2,1fr);
+                
+                grid-gap:30px;
+
+               
+            }
+            .div1{
+                background-color: rgb(10, 20, 112);
+                grid-row: 1/4;
+               grid-area: breaking;
+                color:white;
+              
+            }
+            
+           .div2,.div3,.div4,.div5,.div6{
+               background-color: white;
+               text-align: justify;
+              
+               grid-area:bars;
+               
+           }
+            
+           
+            .bar{
+                width:200px; 
+                height:200px;  
+                float: left;
+                padding-right: 20px;
+                text-size-adjust: auto;
+
+            }
+           div>p{
+               color: rgb(29, 23, 23);
+               font-size: 25px;;
+               text-size-adjust: auto;
+              text-justify: auto;
+           }
+           @media only screen and (max-width: 600px) {
+            .main{
+                background-color:rgba(235, 235, 230, 0.733);
+                width:75%;
+                margin:50px auto;
+              
+                display: grid;
+                color:#1708e2;
+                
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: 400px 200px 200px 200px 200px 200px;
+                grid-gap:30px;
+                grid-area:"breaking"
+                        "bars"
+                        "bars"
+                        "bars"
+                        "bars"
+                        "bars";
+
+               
+            }
+        }
+            @media only screen and (max-width: 1000px) {
+
+                .main{
+                background-color:rgba(63, 63, 60, 0.733);
+                width:75%;
+                margin:50px auto;
+              
+                display: grid;
+                color:#1708e2;
+                
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 400px 200px 200px 200px 200px 200px;
+                grid-gap:30px;
+                grid-area:"breaking breaking"
+                        "breaking breaking"
+                        "bars bars"
+                        "bars bars"
+                        "bars bars"
+                        "bars bars";
+
+            } 
+           
+        }
+     </style>
+    </head>
+    <body>
+        <main class="main">
+            <div class="div1" ><img src="https://th.thgim.com/news/national/bxey6n/article38368719.ece/ALTERNATES/FREE_660/Winter-Session-of-Parliament" style="width:100%;"> 
+                <h1 style="padding-left: 20px;">Uttar Pradesh Assembly election | People who left BJP are abandoning their old seats as they fear losing: Keshav Prasad Maurya</h1>
+                <h3 style="padding-left: 20px;"> KALLOL BHATTACHERJEE</h3>
+                <h3 style="padding-left: 20px;"> SUHASINI HAIDAR</h3>
+                <p style="padding-left: 20px; color:rgb(108, 125, 139)"> U.S President to visit Sabarmati Ashram ahead of 'Namaste Trump' event</p>
+            
+            </div>
+            <div class="div2">
+                <img src="https://th.thgim.com/news/national/ua7l3v/article38381109.ece/ALTERNATES/FREE_660/Encounter-in-Srinagar" class="bar" />
+                <h3 style="margin-left:10px;"> THE HUDDLE</h3>
+                <p > The Huddle 2020| regional integration pegged to SAARC revival,says Ranil Wickremesinged</p>         
+            </div>
+            <div class="div3"> 
+                <img src="https://th.thgim.com/news/national/tamil-nadu/aiudau/article38382100.ece/ALTERNATES/FREE_660/05FEBTH--AllpartyMeet" class="bar" />
+                <h3 > THE HUDDLE</h3>
+                <p > The Huddle 2020| regional integration pegged to SAARC revival,says Ranil Wickremesinged</p> 
+            </div>
+            <div class="div4"> <img src="https://th.thgim.com/news/international/9t2v2r/article38349213.ece/ALTERNATES/FREE_660/FILE-PHOTO-COVID-19-vaccination-center-in-Nice" class="bar" />
+                <h3 > THE HUDDLE</h3>
+                <p> The Huddle 2020| regional integration pegged to SAARC revival,says Ranil Wickremesinged</p> </div>
+            <div class="div5"><img src="https://th.thgim.com/news/national/4dixis/article38381778.ece/ALTERNATES/FREE_660/HijabKarnataka" class="bar" />
+                <h3> THE HUDDLE</h3>
+                <p> The Huddle 2020| regional integration pegged to SAARC revival,says Ranil Wickremesinged</p>
+             </div>
+            <div class="div6">
+                <img src="https://th.thgim.com/news/national/karnataka/n0p0pd/article38381838.ece/ALTERNATES/FREE_660/Hijab-controversy-Karnataka-Dakshina-Kannada-MP-BJP-president-Nalin-Kumar-Kateeljpg" class="bar" />
+                <h3> THE HUDDLE</h3>
+                <p> The Huddle 2020| regional integration pegged to SAARC revival,says Ranil Wickremesinged</p>
+            </div>
+        </main>
+    </body>
+</html>

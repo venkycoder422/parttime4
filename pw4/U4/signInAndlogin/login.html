@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    #logincss{
+        
+        width: 500px;
+        height: auto;
+        margin: auto;
+        border: rgb(77, 71, 71);
+        border-radius: 5px;
+        margin-top: 50px;
+        padding-top: 20px;
+        border: solid rgb(209, 200, 200);
+    }
+#logincss >form{
+    display: flex;
+    flex-direction: column;
+}
+
+#logincss > form> input{
+    width:400px;
+    height:40px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding: 0%;
+    background-color: rgb(246, 251, 248);
+}
+#logincss > form > input:hover{
+    border:solid orange;
+}
+p,h1{
+margin-left: 50px;
+margin-bottom: 0%;
+
+}
+#logo{
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+}
+#logo>img{
+    width:100px;
+    height:100px;
+    
+}
+</style>
+<body>
+    <div id="logo">
+        <img src="https://dcassetcdn.com/design_img/3696593/107245/22058508/j5rtqa041jvdmpysgnph4je7kd_image.jpg">
+        </div>
+    <div id="logincss">
+
+        <h1> Login</h1>
+        <form>
+         <p>Email</p>   
+        <input  id="email" type="email" >
+        <p>Password</p>
+        <input id="password"type="password">
+        
+        <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener('submit',checkUserDetails);
+    
+    var data=JSON.parse(localStorage.getItem('customerData'));
+    
+    console.log(data);
+    
+    function checkUserDetails(){
+        event.preventDefault();
+        var istrue=false;
+        data.forEach(function(details){
+            
+            if(details.email===document.querySelector("#email").value && details.password===document.querySelector("#password").value){
+                istrue=true;
+                }
+        });
+        
+        if(istrue){
+            alert("Login Successful");
+            window.location.href="./dressCircle.html";
+            
+        }else{
+            alert("Enter Correct details");
+        }
+        
+    }
+</script>
+</html>

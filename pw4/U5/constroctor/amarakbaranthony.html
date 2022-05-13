@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarakbar</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var amar={
+        name:"amar",
+        singer:function(){
+            return (this.name+" "+"is singer,"+" and good speaker");
+        }
+    }
+    var akbar={
+        name:"akbar",
+       
+        chef:function(){
+            return (this.name+" "+"is smart,"+"is chef and hardworker");
+        }
+      
+    }
+    var antony={
+        name:"antony",
+        megician:function(){
+            return (this.name+" "+'is hardworker,'+" smart and great speaker");
+        }
+        
+    }
+    console.log(amar.singer.call(akbar));
+    console.log(antony.megician.call(amar));
+    console.log(antony);
+    
+</script>
+</html>

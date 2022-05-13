@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="cartnavbar">
+        <div style="margin:0% 15% 0% 15%">
+            <img  src="https://images.bewakoof.com/web/bewakoof-logo-white-1648550013.png"> 
+        </div>
+        
+    </div>
+    <hr>
+<div id="entire">
+   <div> 
+    <div style="display:flex;margin-left:-15%;gap:2%">
+        <h2 style="margin-left: 15% ;float:top;">My Bag</h2>
+        <h2 id="len"></h2>
+    </div>
+    
+    <div id="container">
+        <!-- This is for displaying data from cartData -->
+       
+    </div>
+</div>
+<div>
+    <h2 >Price Summary</h2>
+    <div id="priceSummary">
+        <div id="left">
+            <p>Total MRP (inl. of taxes</p>
+            <p>Delivery Fee</p>
+            <p>Bag Discount</p>
+            <P>Subtotal</P>
+            <p id="yourSaving">Your saving ₹ 1400 on this order</p>
+        </div>
+        <div id="right">
+          
+            <p id="tPrice" class=""></p>
+            <p id="dFee"class="">FREE</p>
+            <p id="bagdiscount">-₹1400</p>
+            <p id="subtotal"></p>
+        </div>
+    </div>
+    
+</div>
+</div>
+</body>
+<script>
+    var cartData=JSON.parse(localStorage.getItem("womenCartData"));
+    console.log(cartData);
+
+    function displayCartData(){
+        document.querySelector("#container").innerHTML="";
+        cartData.forEach(function(cartItem,index){
+
+        var box=document.createElement("div");
+        box.style.borderRadius="4px";
+        box.style.border="1px solid black";
+        box.style.padding="20px";
+        box.style.boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+        var img=document.createElement("img");
+        img.src=cartItem.image;
+        img.style.width="200px";
+        img.style.height = "200px"
+        var name=document.createElement("h3");
+        name.innerText=cartItem.name;
+        var price=document.createElement("h4");
+        price.innerText="₹"+cartItem.price;
+        var saved=document.createElement("p");
+        saved.innerText="Your saved ₹950!";
+        var size=document.createElement("p");
+        size.innerText="SIZE:"+" "+cartItem.size;
+        var cartButton=document.createElement("button");
+        cartButton.setAttribute("id","rmvbtn");
+        cartButton.innerText="REMOVE";
+        cartButton.style.margin="auto";
+        cartButton.style.padding="auto";
+        //cartButton.style.paddingRight="50%";
+        cartButton.addEventListener("click",function (){
+            cartData.splice(index,1);
+
+            localStorage.setItem("womenCartData",JSON.stringify(cartData));
+            window.location.reload();
+        })
+        box.append(img,name,price,saved,size,cartButton);
+        
+        
+        document.querySelector('#len').innerText= cartData.length+" "+"Item(s)";
+        document.querySelector("#container").append(box);
+        });
+           
+    }
+
+    var totalPrice=cartData.reduce(function(sum,ele){
+    return sum+Number(ele.price);
+},0);
+document.querySelector("#tPrice").innerText=totalPrice;
+document.querySelector("#subtotal").innerText=(+totalPrice-1400);
+
+displayCartData(cartData);
+</script>
+</html>

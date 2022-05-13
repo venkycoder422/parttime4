@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        width: 80%;
+        height:auto;
+        margin: auto;
+        grid-template-rows: auto;
+    }
+</style>
+
+<body>
+
+    
+    <div id="cart">
+       
+        <form>
+            <input type="text" id="promocode" placeholder="Ente promo code">
+            <input type="submit" value="Apply">
+        </form>
+        </div>
+
+    <div id="functionality">
+        <div>
+            <h4 style="margin:0%">Sort</h4>
+            <select id="sort" >
+                <option value="none">None</option>
+                <option value="LowToHigh">LowToHigh</option>
+                <option value="HighToLow">HighToLow</option>
+            </select>
+        </div>
+        
+    </div>
+
+
+    <div id = "container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var produ;
+    
+   if(localStorage.getItem("pro")===null){
+      produ = [];
+  }else
+  {    
+      produ = JSON.parse(localStorage.getItem("pro"));
+  }
+    
+  var cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  var filterData=JSON.parse(JSON.stringify(produ));
+
+ function displayData(){
+    //document.querySelector("container").innerHTML = "";
+     produ.forEach(function(data){
+         var box = document.createElement("div");
+
+         var name = document.createElement("p");
+         name.innerText = data.name;
+
+         var rating = document.createElement("p");
+         rating.innerText = data.rating;
+
+         var img = document.createElement("img");
+         img.src = data.image_url;
+
+         var price = document.createElement("p");
+         price.innerText = data.price;
+         var cartButton = document.createElement("button");
+            cartButton.innerText = "ADD TO CART";
+    
+            cartButton.addEventListener('click', function () {
+                event.preventDefault();
+                alert("added to cart");
+                cartData.push(data);
+                ///console.log(cartData);
+
+                localStorage.setItem('cartData',JSON.stringify(cartData));
+                window.location.reload();
+            });
+         box.append(img,name,price,rating,cartButton);
+         document.querySelector("#container").append(box);
+     })
+ }
+ document.querySelector("#sort").addEventListener("change",function(){
+   var str=document.querySelector("#sort").value;
+    
+    if(str==="none"){
+        console.log(str);
+        displayData(produ);
+     }else{
+        filterData.sort(function(a,b){
+            
+            if(str==="LowToHigh"){
+                return a.price - b.price;
+            }
+                return b.price - a.price;  
+        });
+        displayData(filterData);
+    }
+    
+});
+displayData(produ)
+
+</script>

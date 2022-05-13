@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart data</title>
+</head>
+<style>
+       .container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        width: 80%;
+        height:auto;
+        margin: auto;
+        grid-template-rows: auto;
+    }
+</style>
+<body>
+    <div class="container"></div>
+    
+</body>
+</html>
+<script>
+    var cartdata = JSON.parse(localStorage.getItem("cartData"))
+
+    function displayData(){
+    //  document.querySelector("container").innerHTML = "";
+    cartdata.forEach(function(data){
+         var box = document.createElement("div");
+
+         var name = document.createElement("p");
+         name.innerText = data.name;
+
+         var rating = document.createElement("p");
+         rating.innerText = data.rating;
+
+         var img = document.createElement("img");
+         img.src = data.image_url;
+
+         var price = document.createElement("p");
+         price.innerText = data.price;
+
+         box.append(img,name,rating,price);
+         document.querySelector(".container").append(box)
+     })
+ }
+ displayData();
+</script>

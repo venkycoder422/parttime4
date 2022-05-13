@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheather</title>
+</head>
+<style>
+  body{
+      background-color: azure;
+  }
+    #container{
+        text-align: center;
+        gap:10px;
+        margin-left: 100px;;
+    }
+    
+    #left{
+        float:left;
+        width:100px;
+        height:100px;
+        margin-right: 50px;
+    }
+    #text{
+        display: flex;
+        
+        gap:10px;
+    }
+   
+    #text2{
+    margin-left:150px;
+       display: flex;
+       gap:10px;
+       
+    }
+    h1,p{
+        text-align: center;
+    }
+</style>
+<body>
+    
+
+
+  <h1>Weather data for your City</h1>
+  <p style="font-size: 25px;">The data depends upon your City</p>
+  <div>Enter Your City Name : <input id="input" placeholder="Search..."> </div>
+   <div id="container">
+
+   </div>
+</body>
+<script>
+// temp, pressure, humidity, wind speed, sunrise, sunset, weather description)
+var str;
+document.querySelector("#input").addEventListener('change',function(str){
+    str=document.getElementById("input").value;
+    console.log(str);
+    // str=str.trim().split(" ");
+    // var latitude=+str[0];
+    // var longitude=+str[1];
+    // console.log(typeof(latitude),typeof(longitude));
+   
+    fetchData(str);
+async function fetchData(str){
+    //latitude=35;
+    //longitude=59;
+    //https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=01f9d853050d34e350d54f0394187070
+    try{
+       // console.log(latitude+longitude);
+        var response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${str}&appid=01f9d853050d34e350d54f0394187070`);
+
+        var result=await response.json();
+        //console.log(result)
+        var data=result;
+
+        console.log(data);
+
+        function displayData(data){
+            document.querySelector("#container").innerText=''
+        var div=document.createElement('div');
+        var name=document.createElement('h1');
+        name.innerText=data.name;
+        name.setAttribute('id','text');
+        var tmp=document.createElement('h3');
+        tmp.innerText="Temperature:"+data.main.temp;
+        tmp.setAttribute('id','text');
+        var pressure=document.createElement('h3');
+        pressure.innerText="Presure:"+data.main.pressure;
+        pressure.setAttribute('id','text');
+        var humidity=document.createElement('h3');
+        humidity.innerText="Humidity:"+data.main.humidity;
+        humidity.setAttribute('id','text2');
+        var windspeed=document.createElement('h3');
+        windspeed.innerText="WindSpeed:"+data.wind.speed;
+        windspeed.setAttribute('id','text2');
+        var sunrise=document.createElement('h3');
+        sunrise.innerText="Sun rise:"+data.sys.sunrise;
+        sunrise.setAttribute('id','text2');
+        var sunset=document.createElement('h3');
+        sunset.innerText="SunSet:"+data.sys.sunset;
+        sunset.setAttribute('id','text2');
+        var dis=document.createElement('h3');
+        dis.innerText="Discription:"+data.weather[0].description;
+        dis.setAttribute('id','text2');
+        var img=document.createElement('img');
+        img.setAttribute('id','left');
+    
+        if(data.weather[0].description=='sky'){
+            img.src="https://i.pinimg.com/originals/03/fc/fb/03fcfb072345ad4782ff0467fe34d7ba.jpg"
+        }else{
+            img.src="data:image/jpeg;base64,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";
+        }
+        div.append(img,name,tmp,pressure,humidity,windspeed,dis,sunrise,sunset);
+
+        document.querySelector("#container").append(div);
+        }
+        displayData(data);
+        
+    }catch(err){
+        console.log(err);
+    }
+    
+}
+
+});
+
+
+//console.log(dt);
+
+
+
+</script>
+</html>
