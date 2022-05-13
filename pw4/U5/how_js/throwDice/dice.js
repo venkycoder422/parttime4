@@ -5,7 +5,7 @@ var thirdRandomNum;
 document.querySelector('#throwDice1').addEventListener('click',function(){
     event.preventDefault();
     firstRandomNum = Math.floor(Math.random()*6)+1;
-    var firstDiceImage = 'dice' + firstRandomNum + '.svg';
+    var firstDiceImage = 'dice' + firstRandomNum + '.png';
     document.querySelectorAll('img')[0].setAttribute("src",firstDiceImage);
 // //console.log(firstDiceImage);
     winners(firstRandomNum,secondRandomNum,thirdRandomNum);
@@ -15,7 +15,7 @@ document.querySelector('#throwDice1').addEventListener('click',function(){
 document.querySelector('#throwDice2').addEventListener('click',function(){
     event.preventDefault();
     secondRandomNum = Math.floor(Math.random()*6)+1;
-    var secondDiceImage = 'dice' + secondRandomNum + '.svg';
+    var secondDiceImage = 'dice' + secondRandomNum + '.png';
     document.querySelectorAll('img')[1].setAttribute("src",secondDiceImage);
 
     winners(firstRandomNum,secondRandomNum,thirdRandomNum);
@@ -25,7 +25,7 @@ document.querySelector('#throwDice2').addEventListener('click',function(){
 document.querySelector('#throwDice3').addEventListener('click',function(){
     event.preventDefault();
     thirdRandomNum = Math.floor(Math.random()*6)+1;
-    var thirdDiceImage = 'dice' + thirdRandomNum + '.svg';
+    var thirdDiceImage = 'dice' + thirdRandomNum + '.png';
     document.querySelectorAll('img')[2].setAttribute("src",thirdDiceImage);
     winners(firstRandomNum,secondRandomNum,thirdRandomNum);
 });
