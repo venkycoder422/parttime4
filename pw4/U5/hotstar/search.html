@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You tube</title>
+    <link rel="stylesheet" href="./youtube.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <!-- Left part -->
+        <div id="nav_left">
+            <div><img src="https://css-tricks.com/wp-content/uploads/2012/10/threelines.png"></div>
+            <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"></div>
+        </div>
+        <!-- Center part -->
+        <div id="nav_middle">
+            <div>
+               <input type="text" id="searchInput" placeholder="Search..." name="search" oninput="debounce(main,1000)"></input>
+            </div>
+            <div>
+               <img src="https://www.iconpacks.net/icons/1/free-microphone-icon-342-thumb.png"> 
+            </div>
+        </div>
+        <!-- Right part -->
+        <div id="nav_right">
+            <div><img src="https://previews.123rf.com/images/martialred/martialred1810/martialred181000014/113393140-agregue-un-nuevo-video-o-cargue-una-pel%C3%ADcula-cree-un-%C3%ADcono-de-vector-de-arte-de-l%C3%ADnea-de-medios-para.jpg" style="margin-top:15px"></div>
+            <div><img src="https://icon-library.com/images/google-apps-icon-png/google-apps-icon-png-27.jpg"></div>
+            <div><img src="https://previews.123rf.com/images/illizium/illizium1903/illizium190300113/119765682-notification-icon-vector-bell-icons-in-line.jpg"></div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="searchedData">
+        
+    </div>
+
+    <div id="details">
+
+    </div>
+</body>
+<script>
+
+var yourkey='9c9092cf';
+//var API_KEY=`AIzaSyBNnX6pfoDGeWUpm1pm6ImYLnjlF2aPWtQ`;
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&maxResult=20&key
+
+async function main(){
+        try{
+            let data= await fetchData();
+            if(!data){
+                return false;
+            }
+            var result=data;
+            console.log(result);
+           
+           displayData(result);
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+
+
+async function fetchData(){
+    
+        try{
+            var movie=document.getElementById('searchInput').value;
+            const response= await fetch(`http://www.omdbapi.com/?apikey=${yourkey}&s=${movie}`);
+        //console.log(response);
+            const data= await response.json();
+            //console.log(data);
+           return data.Search;
+        }catch(err){
+            console.log(err);
+        }
+}
+
+function displayData(result){
+    document.querySelector('#searchedData').innerHTML="";
+              result.forEach(function(data){
+                var box=document.createElement('div');
+                
+                var p=document.createElement('p');
+              p.innerText=data.Title;
+              p.addEventListener('click',function(){
+                var movieData=document.createElement('div');
+                  var img=document.createElement('img');
+                  img.src=data.Poster;
+
+                  var title=document.createElement('h3');
+                  title.innerText="Title:-"+data.Title;
+
+                  var type=document.createElement('p');
+                  type.innerText="Type:-"+data.Type;
+
+                  var imdb=document.createElement('p');
+                  imdb.innerText="IMDB:-"+(data.imdbID);
+                  movieData.append(img,title,type,imdb);
+                document.querySelector('#details').append(movieData);
+              });
+              box.append(p);
+              document.querySelector('#searchedData').append(box);
+            });
+
+               
+}
+
+
+function displaydetailes(){
+
+}
+let timerId;
+   function debounce(func,delay){
+       if(timerId){
+           clearTimeout(timerId);
+       }
+
+        timerId = setTimeout(function(){
+            func();
+        },delay);
+   }
+</script>
+</html>
