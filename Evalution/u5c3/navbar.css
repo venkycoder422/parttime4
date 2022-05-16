@@ -12,3 +12,13 @@ a{
     display: flex;
     float:left;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+    
+}
+table{
+    margin-left:400px;
+}

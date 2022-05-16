@@ -8,19 +8,17 @@
     <link rel="stylesheet" href="./navbar.css">
 </head>
 <style>
-   table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  font-size: 20px;
-}
+  
+
 </style>
 <body>
     <div id="navbar">
         <div id="left"><a href="./main.html"><p>Home</p></a></div>
         <div id="center"><a href="./brewary.html"><p>Brewary</p></a></div>
         <div id="right"><a href="./search.html"><p>search</p></a></div>
+        
     </div>
-
+<hr>
     <table>
         <tr>
             <th>Name</th>
@@ -86,7 +84,7 @@
             var button=document.createElement('button');
             button.innerText="More details"
             button.addEventListener('click',function(){
-                
+                window.location.href="./brewary.html";
                 gettingid(brewary.id);
             });
             

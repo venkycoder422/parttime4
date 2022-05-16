@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="./navbar.css">
 </head>
 <style>
-    
+     table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+#searchBar>input{
+    margin-left:35%;
+
+    width:300px;
+    height:30px;
+}
 </style>
 <body>
     <div id="navbar">
@@ -16,7 +26,7 @@
         <div id="center"><a href="./brewary.html"><p>Brewary</p></a></div>
         <div id="right"><a href="./search.html"><p>search</p></a></div>
     </div>
-
+<hr>
     <div id="searchBar">
         <input type="text" id="search"placeholder="Search....." oninput="debounce(main,1000)">
     </div>
@@ -31,6 +41,9 @@
             <th>More Details</th>
         </tr>
     </table>
+    <div id="err">
+
+    </div>
 </body>
 <script>
 
@@ -60,7 +73,7 @@
         console.log(data);
             return data;
         }catch(err){
-            console.log(err);
+            var img=document.createElement
         }
     }
 
@@ -80,7 +93,7 @@
             var button=document.createElement('button');
             button.innerText="More details"
             button.addEventListener('click',function(){
-                
+                window.location.href="./brewary.html";
                 gettingid(brewary.id);
             });
             
