@@ -105,7 +105,13 @@
         });
     }
 
-
+    var brewary=JSON.parse(localStorage.getItem('id'))||[];
+    function gettingid(data){
+        brewary.push(data);
+        localStorage.setItem('id',JSON.stringify(brewary));
+        //console.log(brewary)
+        
+    }
 
 let timerId;
    function debounce(func,delay){
