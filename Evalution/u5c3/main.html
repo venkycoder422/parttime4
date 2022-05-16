@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./navbar.css">
+</head>
+<style>
+   table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+</style>
+<body>
+    <div id="navbar">
+        <div id="left"><a href="./main.html"><p>Home</p></a></div>
+        <div id="center"><a href="./brewary.html"><p>Brewary</p></a></div>
+        <div id="right"><a href="./search.html"><p>search</p></a></div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Brewary_type</th>
+            <th>City</th>
+            <th>State</th>
+            <th>More Details</th>
+        </tr>
+    </table>
+</body>
+<script>
+    // [
+    // {
+    //     "id": "banjo-brewing-fayetteville",
+    //     "name": "Banjo Brewing",
+    //     "brewery_type": "planning",
+    //     "street": null,
+    //     "address_2": null,
+    //     "address_3": null,
+    //     "city": "Fayetteville",
+    //     "state": "West Virginia",
+    //     "county_province": null,
+    //     "postal_code": "25840",
+    //     "country": "United States",
+    //     "longitude": null,
+    //     "latitude": null,
+    //     "phone": "3042164231",
+    //     "website_url": null,
+    //     "updated_at": "2021-10-23T02:24:55.243Z",
+    //     "created_at": "2021-10-23T02:24:55.243Z"
+    // },
+
+    var apikey="";
+   // name, brewery_type, city, state
+    async function get(){
+        try{
+            let response= await fetch(`https://api.openbrewerydb.org/breweries`);
+            //console.log(response);
+            var data= await response.json();
+            console.log(data)
+            displayData(data);
+
+        }catch(err){
+            console.log(err);
+        }
+    }
+    get();
+  
+   
+    function displayData(data){
+        data.forEach(function(brewary){
+
+           // console.log(brewary.name)
+         var tr=document.createElement('tr');
+            var td1=document.createElement('td');
+                td1.innerText=brewary.name;
+            var td2=document.createElement('td');
+            td2.innerText=brewary.brewery_type;
+            var td3=document.createElement('td');
+            td3.innerText=brewary.city;
+            var td4=document.createElement('td');
+            td4.innerText=brewary.state;
+            var button=document.createElement('button');
+            button.innerText="More details"
+            button.addEventListener('click',function(){
+                
+                gettingid(brewary.id);
+            });
+            
+            tr.append(td1,td2,td3,td4,button);
+            document.querySelector('table').append(tr);
+        });
+    }
+    var brewary=JSON.parse(localStorage.getItem('id'))||[];
+    function gettingid(data){
+        brewary.push(data);
+        localStorage.setItem('id',JSON.stringify(brewary));
+        //console.log(brewary)
+        
+    }
+</script>
+</html>

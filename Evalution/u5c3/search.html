@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="./navbar.css">
+</head>
+<style>
+    
+</style>
+<body>
+    <div id="navbar">
+        <div id="left"><a href="./main.html"><p>Home</p></a></div>
+        <div id="center"><a href="./brewary.html"><p>Brewary</p></a></div>
+        <div id="right"><a href="./search.html"><p>search</p></a></div>
+    </div>
+
+    <div id="searchBar">
+        <input type="text" id="search"placeholder="Search....." oninput="debounce(main,1000)">
+    </div>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Brewary_type</th>
+            <th>City</th>
+            <th>State</th>
+            <th>More Details</th>
+        </tr>
+    </table>
+</body>
+<script>
+
+
+    async function main(){
+        try{
+            let data= await searchbrewary();
+            if(!data){
+                return false;
+            }
+            //console.log(data)
+           displayData(data);
+          
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+
+    async function searchbrewary(){
+        try{
+            let brewary=document.getElementById('search').value;
+
+            let res= await fetch(`https://api.openbrewerydb.org/breweries/search?query=${brewary}`);
+        
+            var data= await res.json();
+        console.log(data);
+            return data;
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    function displayData(data){
+        data.forEach(function(brewary){
+
+           // console.log(brewary.name)
+         var tr=document.createElement('tr');
+            var td1=document.createElement('td');
+                td1.innerText=brewary.name;
+            var td2=document.createElement('td');
+            td2.innerText=brewary.brewery_type;
+            var td3=document.createElement('td');
+            td3.innerText=brewary.city;
+            var td4=document.createElement('td');
+            td4.innerText=brewary.state;
+            var button=document.createElement('button');
+            button.innerText="More details"
+            button.addEventListener('click',function(){
+                
+                gettingid(brewary.id);
+            });
+            
+            tr.append(td1,td2,td3,td4,button);
+            document.querySelector('table').append(tr);
+        });
+    }
+
+
+
+let timerId;
+   function debounce(func,delay){
+       if(timerId){
+           clearTimeout(timerId);
+       }
+
+        timerId = setTimeout(function(){
+            func();
+        },delay);
+   }
+</script>
+</html>

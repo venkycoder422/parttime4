@@ -1,0 +1,14 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 5% 0% 5%;
+    font-size: 25px;
+    
+}
+a{
+    text-decoration: none;
+}
+#left{
+    display: flex;
+    float:left;
+}
