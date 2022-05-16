@@ -20,18 +20,18 @@
     </div>
 <hr>
 <h1>Home page</h1>
+<div id="selectionOptions"></div>
+<div id="tableData">
+
 
     <table>
-        <tr>
-            <th>Name</th>
-            <th>Brewary_type</th>
-            <th>City</th>
-            <th>State</th>
-            <th>More Details</th>
-        </tr>
+       
     </table>
+</div>
 </body>
 <script>
+
+///https://api.openbrewerydb.org/breweries?by_type=micro&per_page=3
     // [
     // {
     //     "id": "banjo-brewing-fayetteville",
@@ -60,20 +60,36 @@
             let response= await fetch(`https://api.openbrewerydb.org/breweries`);
             //console.log(response);
             var data= await response.json();
-            console.log(data)
-            displayData(data);
+            //console.log(data)
+            var result=data;
+           displayData(result);
+            settingSelect(result);
 
         }catch(err){
             console.log(err);
         }
     }
     get();
-  
-   
+    
     function displayData(data){
+        document.querySelector('table').innerText='';
+        var tr1=document.createElement('tr');
+           var th1= document.createElement('th');
+           th1.innerText='Name';
+           var th2= document.createElement('th');
+           th2.innerText='Brewary_type';
+           var th3=document.createElement('th');
+           th3.innerText="City"
+           var th4= document.createElement('th');
+           th4.innerText='State';
+           var th5= document.createElement('th');
+           th5.innerText='More details';
+           document.querySelector('table').append(tr1);
         data.forEach(function(brewary){
-
            // console.log(brewary.name)
+           
+
+           tr1.append(th1,th2,th3,th4,th5);
          var tr=document.createElement('tr');
             var td1=document.createElement('td');
                 td1.innerText=brewary.name;
@@ -89,10 +105,13 @@
                 window.location.href="./brewary.html";
                 gettingid(brewary.id);
             });
+           
             
+
             tr.append(td1,td2,td3,td4,button);
             document.querySelector('table').append(tr);
         });
+        
     }
     var brewary=JSON.parse(localStorage.getItem('id'))||[];
     function gettingid(data){
@@ -101,5 +120,36 @@
         //console.log(brewary)
         
     }
+    var select=document.createElement('select');
+    select.setAttribute('id','opts')
+    select.addEventListener('change',function(){
+        var str=document.querySelector('#opts').value;
+                //console.log(str);
+async function getType(str){
+        try{
+        let response= await fetch(`https://api.openbrewerydb.org/breweries?by_type=${str}&per_page=3`);
+            //console.log(response);
+            var data= await response.json();
+           console.log(data)
+            displayData(data);
+            //settingSelect(data);
+    }catch(err){
+        console.log(err)
+    }
+}
+getType(str);
+                
+});
+    function settingSelect(data){
+        data.forEach(function(brewary){
+            var option=document.createElement('option');
+            option.innerText=brewary.brewery_type;
+            select.append(option)
+
+            
+            document.querySelector('#selectionOptions').append(select);
+    });
+    }
+   
 </script>
 </html>
