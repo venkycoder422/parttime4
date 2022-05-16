@@ -36,13 +36,7 @@
 
 
     <table>
-        <tr>
-            <th>Name</th>
-            <th>Brewary_type</th>
-            <th>City</th>
-            <th>State</th>
-            <th>More Details</th>
-        </tr>
+        
     </table>
     <div id="err">
         
@@ -81,9 +75,24 @@
     }
 
     function displayData(data){
+        document.querySelector('table').innerText='';
+        var tr1=document.createElement('tr');
+           var th1= document.createElement('th');
+           th1.innerText='Name';
+           var th2= document.createElement('th');
+           th2.innerText='Brewary_type';
+           var th3=document.createElement('th');
+           th3.innerText="City"
+           var th4= document.createElement('th');
+           th4.innerText='State';
+           var th5= document.createElement('th');
+           th5.innerText='More details';
+           document.querySelector('table').append(tr1);
         data.forEach(function(brewary){
-
            // console.log(brewary.name)
+           
+
+           tr1.append(th1,th2,th3,th4,th5);
          var tr=document.createElement('tr');
             var td1=document.createElement('td');
                 td1.innerText=brewary.name;
@@ -99,10 +108,13 @@
                 window.location.href="./brewary.html";
                 gettingid(brewary.id);
             });
+           
             
+
             tr.append(td1,td2,td3,td4,button);
             document.querySelector('table').append(tr);
         });
+        
     }
 
     var brewary=JSON.parse(localStorage.getItem('id'))||[];
