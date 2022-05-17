@@ -10,7 +10,7 @@
     display: flex;
     float: left;
 }
-#nav_left>div>img{
+#nav_left>div img{
     width:150px;
 }
 #nav_middle{

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DataBase</title>
+    <link rel="stylesheet" href="./youtube.css">
+</head>
+<style>
+    #popular{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        gap:4%;
+    }
+    table,th,td{
+        border:1px solid black;
+    }
+    table{
+        margin: auto;
+    }
+
+</style>
+<body>
+    <div id="navbar">
+        <!-- Left part -->
+        <div id="nav_left">
+            <div><img src="https://css-tricks.com/wp-content/uploads/2012/10/threelines.png"></div>
+            <div><a href="./search.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"></a></div>
+        </div>
+        <!-- Center part -->
+        <div id="nav_middle">
+            <div>
+               <input type="text" id="searchInput" placeholder="Search..." name="search" oninput="debounce(main,1000)"></input>
+            </div>
+            <div>
+               <img src="https://www.iconpacks.net/icons/1/free-microphone-icon-342-thumb.png"> 
+            </div>
+        </div>
+        <!-- Right part -->
+        <div id="nav_right">
+            <div><img src="https://previews.123rf.com/images/martialred/martialred1810/martialred181000014/113393140-agregue-un-nuevo-video-o-cargue-una-pel%C3%ADcula-cree-un-%C3%ADcono-de-vector-de-arte-de-l%C3%ADnea-de-medios-para.jpg" style="margin-top:15px"></div>
+            <div><img src="https://icon-library.com/images/google-apps-icon-png/google-apps-icon-png-27.jpg"></div>
+            <div><img src="https://previews.123rf.com/images/illizium/illizium1903/illizium190300113/119765682-notification-icon-vector-bell-icons-in-line.jpg"></div>
+        </div>
+    </div>
+    <hr>
+    <table></table>
+</body>
+<script>
+    var key='12fc8b62a024cd9c8b7871b4947c8bdb';
+    const getData = async()=>{
+        try{
+            const response= await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${key}`);
+
+            const data= await response.json();
+            console.log(data.results)
+            displayData(data.results);
+        }catch(err){
+            console.log(err);
+        }
+
+    }
+    getData();
+
+    const displayData =(data)=>{
+        var tr=document.createElement('tr');
+
+        var th1=document.createElement('th');
+            th1.innerText="Name";
+        var th2=document.createElement('th');
+            th2.innerText="Popularity";
+            tr.append(th1,th2)
+            document.querySelector('table').append(tr);
+        data.forEach(details => {
+
+            var tr=document.createElement('tr');
+
+            var td1=document.createElement('td');
+            td1.innerText=details.title;
+
+            let td2=document.createElement('td');
+            td2.innerText=details.popularity
+
+           
+           tr.append(td1,td2);
+           //table.append(tr);
+
+           document.querySelector('table').append(tr);
+            
+
+        });
+    }
+    
+
+
+</script>
+</html>
