@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es6</title>
+</head>
+<body>
+    <h1>ES6</h1>
+</body>
+<script>
+    // class person{
+    //     constructor(name,age){
+    //         this.name=name;
+    //         this.age=age;
+    //     }
+    //     //addding directly to object
+    //     printName=function(){
+    //         console.log(`${this.name}`);
+    //     }
+    //     //adding to object prototype.
+    //     getDetaile(){
+    //         console.log("very angry");
+    //         console.log("Good person");
+    //         console.log(`${this.name} and his age is ${this.age}`);
+        
+    //     }
+
+        
+    // }
+
+    // class student extends person {
+    //     constructor(name,age,roll_no, school){
+    //         super(name,age)//tis allows student constrocture to inherit propertiies of parent class which is person.
+    //         this.roll_no=roll_no;
+    //         this.school=school;
+
+    //     }
+    // }
+
+  
+
+    // let person1=new person('venky',22);
+
+    // console.log(person1);
+
+
+    // let student1= new student('chinni',19,5,"SVDC");
+    // console.log(student1);
+
+//getDetails();
+    //Crating methods in ES6
+
+    class stack{
+        constructor(){
+            this.length=0;
+            this.stack=[];
+
+        }
+        push(elm){
+            this.stack.push(elm);
+            this.length++;
+
+        }
+pop(){
+    let rm=this.stack.pop();
+    this.length--;
+    return rm;
+   
+}
+}
+
+let stack1= new stack();
+
+stack1.push(1);
+stack1.push(2);
+stack1.push(3);
+stack1.push(4);
+
+
+stack1.pop();
+console.log(stack1);
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+a{
+    text-decoration: none;
+    color: black
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    height:50px;
+    background-color: antiquewhite;
+}
+#navbar>div{
+    margin: 1% 1% 1% 1%;
+}
+#left-Content{
+    display: flex;
+    float: right;
+}
+
+#left-Content>div{
+    margin-left: 30px;
+    
+}
+#left-Content>div>a:hover{
+    color: rgb(34, 0, 255);
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:5px;
+    margin-top: 50px;
+    margin-left:10px;
+    text-align: center;
+}
+#container img{
+        width:300px;
+        height:300px;
+}

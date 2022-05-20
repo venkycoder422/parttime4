@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deaounce</title>
+</head>
+<style>
+    #container>input{
+            margin-left:40%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            width:300px;
+            height:30px;
+    }
+    #searchResult{
+        display: grid;
+        grid-template-columns: repeat(4,400px);
+        gap:10px;
+       margin:0% 2% 0% 2%;
+       text-align: center;
+       overflow:inherit;
+
+    }
+    #searchResult img{
+        width:100%;
+
+    }
+    #nm{
+        margin-left:40%;
+        margin-right:40%;
+        height:400px;
+        width:300px;
+        overflow: scroll;
+        border:1px solid black;
+    }
+</style>
+<body>
+    <div id="container">
+        <h1>Search movies</h1>
+        <input id="movies"  placeholder="Search" oninput="debounce(main,1000)" ></input>
+    </div>
+    <div id="nm"></div>
+    <div id="searchResult">
+        
+    </div>
+    
+</body>
+<script>
+    let key=`9c9092cf`;
+
+    async function main(){
+        try{
+            let data= await searchMovie();
+            if(!data){
+                return false;
+            }
+            //console.log(data)
+           displayData(data);
+          
+        }catch(err){
+            console.log(err);
+        }
+    }
+   
+    async function searchMovie(){
+        try{
+            let movie=document.getElementById('movies').value;
+
+            let res= await fetch(`http://www.omdbapi.com/?&apikey=${key}&t=${movie}`);
+        
+            var data= await res.json();
+        console.log(data.Search);
+            return data.Search;
+        }catch(err){
+            console.log(err);
+        }
+    }
+    
+    function displayData(data){
+       
+        data.forEach(function(movie){
+            console.log(movie)
+            var p=document.createElement('p');
+            p.innerText=movie.Title;
+            //console.log(p);
+            document.querySelector('#nm').append(p);
+            var box=document.createElement('div');
+            box.style.border='2px solid black';
+
+            var img=document.createElement('img');
+            img.src=movie.Poster;
+            var name=document.createElement('h2');
+            name.innerText=movie.Title;
+            //name.style.textAlign="center";
+
+
+            box.append(img,name);
+            document.querySelector('#searchResult').append(box);
+        });
+        
+    }
+
+   let timerId;
+   function debounce(func,delay){
+       if(timerId){
+           clearTimeout(timerId);
+       }
+
+        timerId = setTimeout(function(){
+            func();
+        },delay);
+   }
+</script>
+</html>

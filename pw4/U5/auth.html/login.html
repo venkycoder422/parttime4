@@ -7,15 +7,25 @@
     <title>Authontication</title>
 </head>
 <style>
-#regis >input{
-display: flex;
-flex-direction: column;
-}
+    .main{
+        display: flex;
+       justify-content: center;
+    }
+    #regis >input{
+    display: flex;
+    flex-direction: column;
+    width:300px;
+    height: 30px;
+    
+    }
+    
 </style>
 <body>
+    
     <div id="conatiner">
         <h1>Register</h1>
-        < hr/>
+        <hr>
+    <div class="main">
         <form id="regis">
             <input type="text" placeholder="Name" id="Name">
             <input type="text" placeholder="mail" id="email">
@@ -25,16 +35,15 @@ flex-direction: column;
             <input type="text" placeholder="description" id="description">
         <button onclick="register()">REGISTER</button>
         </form>
+    
 
-    </div>
-<div>
+        <form id="regis">
+            <input type="text" placeholder="username" id="username">
+            <input type="text" placeholder="password" id="password">
+            <button onclick="login()">LOGIN</button>
+            </form>
+        </div>
 
-
-<form id="regis">
-<input type="text" placeholder="username" id="username">
-<input type="text" placeholder="password" id="password">
-<button onclick="login()">LOGIN</button>
-</form>
-</div>
+        </div>
 </body>
 </html>

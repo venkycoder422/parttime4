@@ -10,7 +10,7 @@
     display: flex;
     float: left;
 }
-#nav_left>div>img{
+#nav_left>div img{
     width:150px;
 }
 #nav_middle{
@@ -33,4 +33,18 @@
 }
 #nav_right>div img{
     width:80px;
+}
+
+#searchResults{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:3%;
+}
+
+#clikedVideo{
+    margin: 2%;
+   
+}
+#clikedVideo iframe{
+    height:550px;
 }
