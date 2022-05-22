@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+    
+</head>
+<style>
+     #form{
+           display: flex;
+           flex-direction: column;
+            width: 400px;
+            margin: auto;
+            
+       }
+       #form input,button{
+        height:25px;
+        margin-bottom: 10px;
+       }
+</style>
+<body>
+    <div id="form">
+        <input type="text" placeholder="Name" id="name">
+        <input type="number" placeholder="age" id="age">
+        <input type="text" placeholder="Gender" id="gender">
+        <input type="number" placeholder="marks" id="marks">
+        <input type="text" placeholder="Cohort" id="cohort">
+        <button onclick="editStudent()">Update Student</button>
+    </div>
+</body>
+<script>
+    const studentId=JSON.parse(localStorage.getItem('studentId'))||"";
+    console.log(studentId);
+    async function updateStudent(){
+        try {
+            let res= await fetch(`http://localhost:3000/students/${studentId}`);
+           let data= await res.json();
+           const {id,name,age,gender,marks,cohort}=data; 
+
+           document.getElementById('name').value=name;
+            document.getElementById('age').value=age;
+
+            document.getElementById('gender').value=gender;
+
+            document.getElementById('marks').value=marks;
+
+            document.getElementById('cohort').value=cohort;
+        } catch (q) {
+            console.log(q)
+            
+        }
+    }
+    updateStudent();
+
+
+    const editStudent= async()=>{
+        try {
+            var body={
+                name:document.getElementById("name").value,
+                age:document.getElementById("age").value,
+                gender:document.getElementById("gender").value,
+                marks:document.getElementById("marks").value,
+                cohort:document.getElementById("cohort").value
+            };
+
+            let res=await fetch(`http://localhost:3000/students/${studentId}`,{
+                method:"PUT",
+                body:JSON.stringify(body),
+                headers:{
+                "Content-Type":"application/json",
+                }
+            });
+            window.location.href='./index.html';
+        } catch (error) {
+            console.log(error)
+        }
+    }
+</script>
+</html>

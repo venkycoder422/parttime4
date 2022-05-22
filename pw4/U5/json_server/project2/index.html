@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<style>
+        #container{
+            margin-left:465px;
+            
+        }
+        #heading{
+            text-align: center;
+        }
+        table,th,td{
+        box-sizing: border-box;
+        border:1px solid black;
+        }
+       #form{
+           display: flex;
+           flex-direction: column;
+            width: 400px;
+            margin: auto;
+            
+       }
+       #form input,button{
+        height:25px;
+        margin-bottom: 10px;
+       }
+</style>
+<body>
+    <div id="heading"><h1>Students Data</h1></div>
+    <div id="form">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="age" id="age">
+        <input type="text" placeholder="Gender" id="gender">
+        <input type="text" placeholder="marks" id="marks">
+        <input type="text" placeholder="Cohort" id="cohort">
+        <button onclick="createStudent()">CREATE NEW STUDENT</button>
+    </div>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    let container=document.querySelector("#container")
+    async function createStudent(){
+        try{
+            let name=document.getElementById('name').value;
+            let age=+document.getElementById('age').value;
+
+            let gender=document.getElementById('gender').value;
+
+            let marks=+document.getElementById('marks').value;
+
+            let cohort=document.getElementById('cohort').value;
+
+            let body={
+                name,
+                age,
+                gender,
+                marks,
+                cohort,
+            };
+
+            let res= await fetch(`http://localhost:3000/students`,{
+                method:"POST",
+                body:JSON.stringify(body),
+                headers:{
+                    "Content-Type":"application/json",
+                }
+
+            });
+                data= await res.json();
+                updateDom();
+        }catch(err){
+            console.log(err);
+        }
+    }
+    
+    async function updateDom(){
+        container.innerHTML='';
+        let table=document.createElement("table");
+
+        let thead=document.createElement("thead");
+        
+        let theadRow=document.createElement("tr");
+
+        let th1=document.createElement("th");
+        th1.textContent="ID"
+        let th2=document.createElement("th");
+        th2.textContent="Name"
+        let th3=document.createElement("th");
+        th3.textContent="Gender"
+        let th4=document.createElement("th");
+        th4.textContent="Marks"
+        let th5=document.createElement("th");
+        th5.textContent="age"
+        let th6=document.createElement("th");
+        th6.textContent="Chohort";
+        let th7=document.createElement("th");
+        th7.textContent="DLETE";
+        let th8=document.createElement("th");
+        th8.textContent="EDIT";
+
+
+        
+theadRow.append(th1,th2,th3,th4,th5,th6,th7,th8);
+thead.append(theadRow);
+
+
+
+        let res= await fetch('http://localhost:3000/students');
+
+        let data= await res.json();
+
+        console.log(data);
+        let tbody=document.createElement("tbody")
+        data.forEach(function(details){
+        let row=document.createElement('tr');
+
+        let td1=document.createElement('td');
+        td1.textContent=details.id;
+        let td2=document.createElement('td');
+        td2.textContent=details.name;
+        let td3=document.createElement('td');
+        td3.textContent=details.gender;
+        let td4=document.createElement('td');
+        td4.textContent=details.marks;
+        let td5=document.createElement('td');
+        td5.textContent=details.age;
+        let td6=document.createElement('td');
+        td6.textContent=details.cohort;
+        let td7=document.createElement('td');
+        let deleteButton=document.createElement('button');
+       deleteButton.textContent="DELETE";
+        deleteButton.onclick= async function(){
+            let res= await fetch(`http://localhost:3000/students/${details.id}`,{
+                method: "DELETE"
+            });
+            updateDom();
+        }
+        td7.append(deleteButton);
+        let td8=document.createElement('td');
+        let updateButton=document.createElement('button');
+       updateButton.textContent="EDIT";
+        updateButton.onclick= function(){ 
+            console.log(details.id);
+            localStorage.setItem('studentId',(details.id));
+            window.location.href="editPage.html";
+
+            //take this id to local storage 
+
+            //
+        }
+
+        td8.append(updateButton);
+        
+        row.append(td1,td2,td3,td4,td5,td6,td7,td8);
+            tbody.append(row);
+
+        
+
+    })
+
+    table.append(thead,tbody);
+    container.append(table);
+
+    }
+updateDom();
+
+
+
+</script>
+</html>

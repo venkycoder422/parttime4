@@ -23,9 +23,9 @@ if(name===""){
 }
     //here fetch not declared
      const fetchData = async(e) => {
-         console.log(e)
+         //console.log(e)
         let name=document.querySelector("#searchInput").value;
-        console.log(name);
+        //console.log(name);
     try{
         
         let response= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
@@ -90,3 +90,4 @@ function debounce(func,delay){
 
 let input = document.querySelector("#searchInput")
 input.addEventListener("input",debounce(fetchData,1000))
+
