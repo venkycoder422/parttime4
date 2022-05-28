@@ -1,6 +1,6 @@
 import navbar from "./navbar.js";
 
-document.querySelector("#main_div").innerHTML= navbar();
+document.querySelector("#main_div").innerHTML= navbar(); 
 var foodUserData;
 
 foodUserData=JSON.parse(localStorage.getItem('foodUserData'))||[];

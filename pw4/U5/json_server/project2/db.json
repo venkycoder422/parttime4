@@ -1,0 +1,76 @@
+{
+  "students": [
+    {
+      "name": "Drioli",
+      "age": "28",
+      "gender": "feMale",
+      "marks": "17",
+      "cohort": "PTW3",
+      "id": 7
+    },
+    {
+      "name": "Twist",
+      "age": "27",
+      "gender": "Male",
+      "marks": "77",
+      "cohort": "PTW3",
+      "id": 8
+    },
+    {
+      "id": 10,
+      "age": 18,
+      "name": "Olkowicz",
+      "gender": "Male",
+      "marks": 90,
+      "cohort": "PTW3"
+    },
+    {
+      "id": 12,
+      "age": 23,
+      "name": "Karolczyk",
+      "gender": "Female",
+      "marks": 80,
+      "cohort": "PTW3"
+    },
+    {
+      "id": 14,
+      "age": 25,
+      "name": "Lorkin",
+      "gender": "Male",
+      "marks": 99,
+      "cohort": "PTW2"
+    },
+    {
+      "id": 15,
+      "age": 19,
+      "name": "Wardrop",
+      "gender": "Male",
+      "marks": 96,
+      "cohort": "PTW1"
+    },
+    {
+      "id": 16,
+      "age": 27,
+      "name": "Whitfield",
+      "gender": "Bigender",
+      "marks": 24,
+      "cohort": "PTW1"
+    },
+    {
+      "id": 17,
+      "age": 25,
+      "name": "Confait",
+      "gender": "Male",
+      "marks": 99,
+      "cohort": "PTW3"
+    },
+    {
+      "name": "e",
+      "age": 12,
+      "gender": "male",
+      "marks": 122,
+      "cohort": "pw2",
+      "id": 18
+    }
+  ]
+}
