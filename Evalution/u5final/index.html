@@ -6,7 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .main{
+        text-align: center;
+        margin: auto;
+        margin-top: 100px;;
+        
+        
+    }
+    #task_div input{
+        height:40px;
+        
+        
+    }
+    #status{
+        position: relative;
+        top:15px;
+    width:40px;
+    height: 40px;
+    }
+    #row_div{
+      
+        display: flex;
+        flex-direction: column;
+        row-gap:5px;
+        width:200px;
+        justify-content: center;
+        margin-left: 35%;
+        margin-top: 1px;
+        
+    }
+    #row{
+        border: 1px solid black;
+        height: 50px;
+        text-align: center;
+        
+    }
+    #addbutton{
+
+    }
+
+    #container{
+        
+    }
+
+</style>
 <body>
-    <h>HEllo</h1>
+    <div class="main">
+    
+        <div id="task_div">
+            <input type="text" placeholder="Enter Tittle" id="title"> 
+            <input type="checkbox" id="status">
+            
+        </div>
+        <button onclick="post()" id="addbutton">ADD TASK</button>
+
+
+    <div id="container">
+
+    </div>
+</div>
 </body>
+<script>
+    const getting=async()=>{
+        try {
+            let res= await fetch(`http://localhost:3000/tasks`);
+            let data= await res.json();
+            console.log(data);
+             
+             updateDom(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+getting();
+
+// POST DATA
+    const post=async()=>{
+        
+        try {
+            let tasks={
+            title:document.getElementById('title').value,
+        
+            status:document.getElementById('status').checked,
+            }
+        
+            if(tasks.title.length!==0){
+                let res=await fetch(`http://localhost:3000/tasks`,{
+                    method:"POST",
+                    body:JSON.stringify(tasks),
+                    headers:{
+                        "Content-Type":"application/json"
+                    }
+                
+                });
+                let data= await res.json();
+        
+            
+            }else{
+            alert("Please input must fill")
+            }
+        
+        } catch (error) {
+            console.log(error);
+        }
+
+        
+    }
+    
+
+    function updateDom(data){
+        data.forEach(function(text){
+            console.log(text);
+            let div=document.createElement('div');
+
+            div.setAttribute('id',"row_div")
+            let tr=document.createElement('h3');
+            tr.setAttribute('id',"row")
+            if(text.status===true){
+                tr.style.color="green";
+            }else{
+                tr.style.color="red";
+            }
+            
+            
+            tr.innerText=text.title;
+
+            div.append(tr);
+            document.querySelector('#container').append(div);
+
+        });
+    }
+</script>
 </html>
