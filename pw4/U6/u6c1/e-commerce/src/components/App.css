@@ -1,0 +1,17 @@
+
+.App{
+  
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .App>.inputForm{
+    display: flex;
+    flex-direction: column;
+    margin: 0% 70% 0% 5%;
+    
+  }
+  .App>.inputForm>input,select{
+    width:300px;
+    height: 30px;
+  }
