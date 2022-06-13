@@ -74,12 +74,15 @@ function App() {
         
         <input type="submit" value="Submit" ></input>
       </form>
-      <div>
+      <br></br>
+      <br></br>
+      <div className="cards">
       {
         getdate.map((item)=>(
             <div className="list">
-                 <h1 key={item.id}>{item.title}</h1>
-                 
+                <img src={item.image}></img>
+                 <h3 key={item.id}>TITLE:{item.title}</h3>
+                 <h4>PRICE:{item.price}</h4>
             </div>
          ))
       }
