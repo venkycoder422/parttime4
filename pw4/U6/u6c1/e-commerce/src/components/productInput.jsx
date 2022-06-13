@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css"
-import ProductList from "./ProductsList";
 
 function App() {
-  const [data,setData]= React.useState({
-    title:"",
-    gender:"",
-    price:"",
-    category:"",
-    image:"",
-    
-  })
+  const [data,setData]= React.useState([])
+
+  React.useEffect(()=>{
+    fetch(`http://localhost:3001/products`)
+    .then((res)=>res.json())
+    .then((res)=>setData(res))
+    .catch((err)=>console.log(err))
+},[])
+  
   const HandleChange=(e)=>{
     const {name,value}=e.target
     setData({...data,[name]:value})
@@ -61,10 +61,15 @@ function App() {
         <input type="submit" value="Submit" ></input>
       </form>
       <div>
-      <div>
-      <ProductList data={data} />
-      </div>
-    
+      {
+        data.map((item)=>(
+            <div className="list">
+                 <h1 key={item.id}>{item.title}</h1>
+                 
+            </div>
+         ))
+      }
+     
       </div>
     </div>
    
