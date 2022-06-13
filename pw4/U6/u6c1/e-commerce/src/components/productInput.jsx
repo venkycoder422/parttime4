@@ -1,13 +1,27 @@
 import React from "react";
 import "./App.css"
-
+// import ProductList from "./ProductsList";
+// async function get(){
+    
+//     let res= await fetch(`http://localhost:3001/Products`);
+//     let data= await res.json();
+//     console.log(data)
+//   }
+// let data=get();\
 function App() {
-  const [data,setData]= React.useState([])
-
+  const [data,setData]= React.useState({
+    title:"",
+    gender:"",
+    price:"",
+    category:"",
+    image:"",
+    
+  })
+  const [getdate,getData]= React.useState([])
   React.useEffect(()=>{
     fetch(`http://localhost:3001/products`)
     .then((res)=>res.json())
-    .then((res)=>setData(res))
+    .then((res)=>getData(res))
     .catch((err)=>console.log(err))
 },[])
   
@@ -62,7 +76,7 @@ function App() {
       </form>
       <div>
       {
-        data.map((item)=>(
+        getdate.map((item)=>(
             <div className="list">
                  <h1 key={item.id}>{item.title}</h1>
                  
