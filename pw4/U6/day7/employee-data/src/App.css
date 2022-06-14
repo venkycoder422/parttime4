@@ -1,0 +1,43 @@
+
+form{
+display: flex;
+flex-direction: column;
+margin: auto;
+width: 30%;
+gap:5px;
+border: 1px solid black;
+background-color: aquamarine;
+}
+.inputForm>label{
+  margin: auto;
+}
+.inputForm>label>input{
+  width:100px;
+  height:25px;
+  
+}
+.App input ,select{
+width: 300px;
+height:50px;
+margin:auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 32px;
+}
+
+th {
+  background-color: rgb(117, 201, 250);
+}
+
+td {
+  background-color: rgb(205, 235, 253);
+}
