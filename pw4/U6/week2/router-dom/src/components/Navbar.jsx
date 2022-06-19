@@ -8,14 +8,17 @@ align-items:center;
 justify-content:center;
 gap:20px;
 background-color: orange;
+padding:20px;
 `
 const Navbar =()=>{
     return (
     <NavbarWrapper>
         <Link to="/">HOME</Link>
-        <Link to="/">ABOUT</Link>
-        <Link to="/">CONTACT Us</Link>
-        <Link to="/">Login</Link>
+        <Link to="/about">ABOUT</Link>
+        <Link to="/contact">CONTACT Us</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/products"> Products</Link>
+        
     </NavbarWrapper>
 
     )

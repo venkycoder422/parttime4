@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "name": "Venky",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "name": "Venky",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "name": "Dommara Venkatesulu",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 12
+    },
+    {
+      "name": "Dommara Venkatesulu",
+      "email": "test@gmail.com",
+      "password": "123",
+      "id": 13
+    },
+    {
+      "name": "Dommara Venkatesulu",
+      "email": "test@gmail.com",
+      "password": "124",
+      "id": 14
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "66",
+      "id": 15
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 16
+    }
+  ],
+  "products": [
+    {
+      "name": "SmartPhone",
+      "price": 30,
+      "id": 0
+    },
+    {
+      "name": "Watch",
+      "price": 20,
+      "id": 1
+    },
+    {
+      "name": "Shirt",
+      "price": 50,
+      "id": 2
+    },
+    {
+      "name": "Pants",
+      "price": 100,
+      "id": 3
+    }
+  ]
+}
