@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "name": "Venky",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "name": "Venky",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "name":"Product-1",
+      "discription":"A product that is 1st in the list products"
+    },
+    {
+      "name":"Product-2",
+      "discription":"A product that is 2nd in the list products"
+    },
+    {
+      "name":"Product-3",
+      "discription":"A product that is 3rd in the list products"
+    },
+    {
+      "name":"Product-4",
+      "discription":"A product that is 4th in the list products"
+    },
+    {
+      "name":"Product-5",
+      "discription":"A product that is 5th in the list products"
+    },
+    {
+      "name":"Product-6",
+      "discription":"A product that is 6th in the list products"
+    }
+
+    
+  ],
+  "cart":[
+    {
+      "count":""
+    }
+  ]
+}
