@@ -1,0 +1,180 @@
+.projects {
+  background-color: #010101;
+  width: 100%;
+}
+.projects h1 {
+  text-align: center;
+  color: #26a1da;
+  font-size: 3rem;
+  font-weight: 500;
+}
+.project-section {
+  width: 80%;
+  margin: auto;
+}
+.center {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto; 
+  /* If you need two projects two colums */
+}
+.one {
+  width: 600px;
+  border: 2px solid;
+  background-color: #191919;
+  margin: 2rem auto;
+  padding: 6px;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.one p,
+h2 {
+  color: white;
+  margin: 1rem;
+  font-weight: 100;
+}
+.one img {
+  margin: auto;
+  width: 584px;
+  height: 350px;
+  border: 2px solid black;
+  border-top-left-radius: 2rem;
+}
+.one button {
+  width: 160px;
+  margin: 1rem 0.2rem;
+  height: 40px;
+  margin: 1rem;
+
+  background-color: #26a1da;
+  border: 1px solid #072227;
+  border-radius: 7px;
+  color: #072227;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px #072227;
+  cursor: pointer;
+  
+}
+
+.one button:hover {
+  font-size: 1.4rem;
+}
+@media only screen and (max-width: 1330px) {
+  .project-section {
+    margin: 30px;
+  }
+  .center {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto ;
+  }
+  .one {
+    width: 1000px;
+
+    margin: 1rem;
+  }
+  .one img {
+    width: 1000px;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .center {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .one {
+    width: 700px;
+  }
+  .one img {
+    width: 700px;
+    height: 280px;
+  }
+  .one p {
+    font-size: 2rem;
+  }
+  .one h2 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .center {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .one {
+    margin: 2rem;
+    width: 500px;
+  }
+  .one img {
+    width: 480px;
+    height: 300px;
+  }
+  .one p {
+    font-size: 1rem;
+  }
+  .one h2 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 625px) {
+  .one {
+    margin: 2rem 0;
+    width: 358px;
+  }
+  .one img {
+    width: 340px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .center {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .one {
+    margin: 2rem 0;
+    width: 300px;
+  }
+  .one img {
+    width: 285px;
+    height: 300px;
+  }
+  .one p {
+    font-size: 1rem;
+  }
+  .one h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .one {
+    margin: 2rem 0;
+    width: 260px;
+  }
+  .one img {
+    width: 245px;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 225px) {
+  .one {
+    margin: 2rem 0;
+    width: 200px;
+  }
+  .one img {
+    width: 185px;
+    height: 300px;
+  }
+}
+
+/* .one .btn1{
+  margin-top:40px;
+} */
+

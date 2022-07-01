@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e52c25f6.css",
+    "main.js": "/static/js/main.5367c53a.js",
+    "static/media/nykaa.png": "/static/media/nykaa.efc3d0e3f9d1c7727e12.png",
+    "static/media/healthkart.png": "/static/media/healthkart.153b8227585de05246b7.png",
+    "static/media/photo.jpg": "/static/media/photo.fa83c89db7f218d762bf.jpg",
+    "index.html": "/index.html",
+    "main.e52c25f6.css.map": "/static/css/main.e52c25f6.css.map",
+    "main.5367c53a.js.map": "/static/js/main.5367c53a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e52c25f6.css",
+    "static/js/main.5367c53a.js"
+  ]
+}
