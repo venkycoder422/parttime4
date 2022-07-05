@@ -1,7 +1,7 @@
 import React from "react";
 import "./Project.css";
 import Image from "./img/proj1.png";
-// import Img from "./img/proj2.png";
+import Img from "./img/proj2.png";
 
 
 
@@ -40,38 +40,38 @@ This project is a clone of (Bewakoof.com). Bewakoof is an Online Shopping site f
               </a>
             </div>
             
-            {/* <div className="one">
+            <div className="one">
               <img src={Img} alt="project" />
-              <h2>Developed a clone of Swiggy website</h2>
+              <h2>Developed a clone of Anthropologie website</h2>
               <p>
               About
-                  This project is a clone of (Swiggy.com) Swiggy is an Indian online food ordering and delivery platform.
+                  This project is a clone of (Anthropologie.com).Anthropologie is a website which sells women clothings and home furnitures.
               </p>
-              {/* <p>
-              It not only lists restaurants, but it also maintains a huge fleet of delivery partners that ensures the delivery of your delicious meals within 30 minutes.
+               {/* <p>
+              
               </p> */}
-              {/* <p>
-                Along with other 1 member, build the application in 5 days. websites which we includes the features Signin page, Cart page, Offers page, Help Page & Search bar option.
+               <p>
+                Along with other 4 member, build the application in 5 days. websites which we includes the features Landing page, Signin page, Cart page, Clothing page and Shipment page.
               </p>
               <p>
-                Teck-Stack: HTML | CSS | Javascript | React | Redux
+                Teck-Stack: CSS | Javascript | JSON | React | Redux
               </p>
 
               <a
-                href="https://www.swiggy.com/restaurants"
+                href="https://github.com/venkycoder422/Anthropologie/tree/venky/project"
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>Demo</button>
               </a>
               <a
-                href="https://github.com/YogendraRajpoot/Swiggy-Clone.git"
+                href=""
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>GitHub Link</button>
               </a>
-            </div> */} 
+            </div>
           </div>
         </div>
       </div>
