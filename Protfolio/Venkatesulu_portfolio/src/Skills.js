@@ -47,13 +47,13 @@ function Skills() {
                   />
                   <p>ReactJs</p>
                 </div>
-                <div className="icon-name">
+                {/* <div className="icon-name">
                   <img
                     src="https://img.icons8.com/color/70/000000/bootstrap.png"
                     alt="bootstrap"
                   />
                   <p>Bootstrap</p>
-                </div>
+                </div> */}
               </div>
 
               {/* <h2>Backend</h2>

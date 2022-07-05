@@ -32,7 +32,7 @@ This project is a clone of (Bewakoof.com). Bewakoof is an Online Shopping site f
                 <button className="btn1">Demo</button>
               </a>
               <a
-                href="https://github.com/venkycoder422/bewakoof.github.io"
+                href="https://github.com/venkycoder422/bewakoof.github.io "
                 target="_blank"
                 rel="noreferrer"
               >
@@ -58,14 +58,14 @@ This project is a clone of (Bewakoof.com). Bewakoof is an Online Shopping site f
               </p>
 
               <a
-                href="https://github.com/venkycoder422/Anthropologie/tree/venky/project"
+                href="https://the-great-venkycoder422-site.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>Demo</button>
               </a>
               <a
-                href=""
+                href="https://github.com/venkycoder422/Anthropologie/tree/venky/project"
                 target="_blank"
                 rel="noreferrer"
               >
