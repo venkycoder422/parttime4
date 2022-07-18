@@ -20,7 +20,7 @@ moviesRouter.post(`/movies`, postMovieData);
 moviesRouter.patch(`/movies/:id`, updateMovie);
 moviesRouter.delete(`/movies/:id`, deleteMovie);
 moviesRouter.get(`/movies/all/sort`,sortByField);
-moviesRouter.get(`movies/all/pagination`,pagination)
+moviesRouter.get(`movies/all/pagin`,pagination)
 // moviesRouter.get(`/movies`,async (req,res)=>{
 //     const match = {};
 //     if(req.query.rating){
