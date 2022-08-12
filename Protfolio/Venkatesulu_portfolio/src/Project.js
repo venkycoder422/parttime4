@@ -58,7 +58,7 @@ This project is a clone of (Bewakoof.com). Bewakoof is an Online Shopping site f
               </p>
 
               <a
-                href="https://the-great-venkycoder422-site.netlify.app/"
+                href="https://anthropologie1.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
               >
