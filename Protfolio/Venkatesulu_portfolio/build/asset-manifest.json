@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.079198a1.css",
-    "main.js": "./static/js/main.42efc605.js",
+    "main.css": "./static/css/main.c3e44cc5.css",
+    "main.js": "./static/js/main.032882e5.js",
     "static/media/proj2.png": "./static/media/proj2.29a6d951b697eefe7176.png",
     "static/media/proj1.png": "./static/media/proj1.feaa2b410285cc20daba.png",
     "static/media/Venkatesulu.JPG": "./static/media/Venkatesulu.405b8e8310fc463d4dd5.JPG",
     "index.html": "./index.html",
-    "main.079198a1.css.map": "./static/css/main.079198a1.css.map",
-    "main.42efc605.js.map": "./static/js/main.42efc605.js.map"
+    "main.c3e44cc5.css.map": "./static/css/main.c3e44cc5.css.map",
+    "main.032882e5.js.map": "./static/js/main.032882e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.079198a1.css",
-    "static/js/main.42efc605.js"
+    "static/css/main.c3e44cc5.css",
+    "static/js/main.032882e5.js"
   ]
 }

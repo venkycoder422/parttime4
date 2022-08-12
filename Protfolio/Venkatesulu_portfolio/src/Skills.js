@@ -47,16 +47,16 @@ function Skills() {
                   />
                   <p>ReactJs</p>
                 </div>
-                {/* <div className="icon-name">
-                  <img
-                    src="https://img.icons8.com/color/70/000000/bootstrap.png"
-                    alt="bootstrap"
+                <div className="icon-name">
+                  <img style={{width:"70px",height:"70px"}}
+                    src="https://camo.githubusercontent.com/b4b57fddacbe4a87593bdf071027189d0130d258/68747470733a2f2f6769746c61622e636f6d2f6b2d6c61627a2f686178652d6f73732f686178652d6d6174657269616c2d75692f7261772f6d61737465722f6c6f676f2e737667"
+                    alt="MaterialUI"
                   />
-                  <p>Bootstrap</p>
-                </div> */}
+                  <p>Material UI</p>
+                </div>
               </div>
 
-              {/* <h2>Backend</h2>
+              <h2>Backend</h2>
               <div className="two">
                 <div className="icon-name">
                   <img
@@ -80,7 +80,7 @@ function Skills() {
                   />
                   <p>MongoDB</p>
                 </div>
-              </div> */}
+              </div>
               <h2>Tools</h2>
               <div className="two">
                 <div className="icon-name">

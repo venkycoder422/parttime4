@@ -1,5 +1,6 @@
 .about {
   background: #191919;
+  margin-top: 0%;
 }
 
 h1.about__heading {
@@ -8,8 +9,9 @@ h1.about__heading {
   text-align: start;
   font-family: Montserrat, sans-serif;
   font-size: 60px;
-  padding-top:4%;
+  padding-top: 4%;
 }
+
 button.about.btn.pointer {
   text-transform: capitalize;
   width: 195px;
@@ -17,9 +19,11 @@ button.about.btn.pointer {
   font-size: 18px;
   transition: 0.4s ease;
 }
+
 .about__button {
   padding: 20px 0px;
 }
+
 a.bottom__to__top {
   height: 40px;
   width: 40px;
@@ -35,6 +39,7 @@ a.bottom__to__top {
   transition: 0.4s all ease;
   z-index: 1000;
 }
+
 a.bottom__to__top.active {
   display: flex;
 }
@@ -42,20 +47,24 @@ a.bottom__to__top.active {
 .tagline {
   margin: auto;
 }
+
 .tagline h1 {
   text-align: center;
   color: #26a1da;
   font-size: 3rem;
   font-weight: 500;
 }
+
 .tech-stack {
   width: 90%;
   margin: 3rem auto;
 }
+
 .tech-section {
   display: inline-flex;
   width: 100%;
 }
+
 .tech-stack .center {
   display: inline-block;
   text-align: center;
@@ -74,20 +83,24 @@ a.bottom__to__top.active {
 .tech-stack .right img {
   margin: 0rem 1.5rem;
 }
+
 .icon-name {
   display: inline-block;
   border: 1px solid #26a1da;
-  margin:0.5rem;
+  margin: 0.5rem;
   border-radius: 5%;
   padding: 1.5rem;
   text-align: center;
+
 }
+
 .icon-name:hover {
-  background-color: #3d3338;
+  background-color: #21c7d9;
   color: aliceblue;
 }
+
 .icon-name p {
-  color: #f9004d;
+  color: white;
   font-size: 20px;
 }
 
@@ -96,23 +109,28 @@ a.bottom__to__top.active {
   .p__color {
     font-size: 15px !important;
   }
+
   .tech-section {
     display: inline-block;
   }
-  .tech-stack .right .center {
-  }
+
+  .tech-stack .right .center {}
+
   .icon-name {
     margin: 0.5rem;
     width: 170px;
-   
+
   }
+
   .tech-stack .right img {
     width: 70px;
   }
+
   .icon-name p {
     font-size: 14px;
   }
 }
+
 @media only screen and (max-width: 425px) {
   button.about.btn.pointer {
     text-transform: capitalize;
@@ -121,23 +139,28 @@ a.bottom__to__top.active {
     font-size: 13px;
     transition: 0.4s ease;
   }
+
   .icon-name {
     margin: 0.5rem;
     width: 140px;
   }
+
   .tech-stack .right img {
     width: 50px;
   }
+
   .two {
     display: grid;
     grid-template-columns: auto auto;
   }
 }
+
 @media only screen and (max-width: 325px) {
   .icon-name {
     margin: 0.5rem;
     width: 120px;
   }
+
   .tech-stack .right img {
     width: 30px;
   }
@@ -149,4 +172,3 @@ a.bottom__to__top.active {
     grid-template-columns: auto;
   }
 }
-

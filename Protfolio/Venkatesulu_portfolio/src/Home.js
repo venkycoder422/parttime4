@@ -86,17 +86,16 @@ function Home() {
               <div className="home__meta">
                 <h2 className="home__text pz__10">Hi, </h2>
                 <h2 className="home__text pz__10">I’m Venkatesulu</h2>
-                <h3 className="home__text sweet pz__10">
-
+                <marquee><h3 className="home__text sweet pz__10">
                   Full-stack Web Developer.
                   <span className="typing"></span>
-                </h3>
+                </h3></marquee>
                
                 <div className="resume-option">
                   {/* <a href="chanduresumemac.pdf" download="chanduresumemac.pdf">
                     <button className="btn highlighted-btn">Get Resume</button>
                   </a> */}
-                  <a href="https://drive.google.com/file/d/1STLFoqV7Mc4Uy95GLuod5HVsepxXKwOV/view?usp=sharing" target="_blank" rel="noreferrer">
+                  <a href="https://drive.google.com/file/d/1K9U8XbWRd-W07ENFlpfTnAw3k-kkSfMA/view?usp=sharing" target="_blank" rel="noreferrer">
                   <button className="btn highlighted-btn">Get Resume</button>
                   </a>
                 </div>
