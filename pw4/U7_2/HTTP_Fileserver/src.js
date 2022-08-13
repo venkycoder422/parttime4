@@ -1,0 +1,1 @@
+<h1>Others files also opened</h1>
