@@ -4,7 +4,11 @@ import styled from "styled-components";
 
 const Products=()=>{
     const [products,setProducts] = React.useState([]);
-    const [count,setCount]= React.useState(0);
+    const [cart,setCart] = React.useState({
+    name:"",
+    discription:""
+
+    });
 
     const MainDiv =styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -12,13 +16,7 @@ const Products=()=>{
     margin:auto;
     `;
 
-    const Tbody=styled.tbody`
-    border: 1px solid black;
-    background-color: aquamarine;
-    `;
-    const Tdata=styled.td`
-    border: 1px solid black;
-    `;
+   
     React.useEffect(() =>{
         fetch(`http://localhost:8080/products`)
         .then((res)=>res.json())
@@ -28,7 +26,20 @@ const Products=()=>{
         .catch((err)=>console.log(err));
     },[])
     console.log(products);
-
+    const Posting=()=>{
+        
+    }
+    React.useEffect(()=>{
+        fetch(`http://localhost:8080/cart`, {
+                method:"POST",
+                body:JSON.stringify(cart),
+                headers:{
+                    "Content-type":"application/json"
+                }
+            }).then((res) => res.json())
+            .catch((err) => console.log(err));
+    },[])
+    
     return(
         <div>
            
@@ -38,11 +49,11 @@ const Products=()=>{
                 <h3>{product.name}</h3>
                 <h5>{product.discription}</h5>
                 
-                <button>ADD TO CART</button>
+                <button onClick={()=>setCart(product)}>ADD TO CART</button>
                 <div style={{display:"flex",marginLeft:"32%"}}>
-                <button onClick={()=>setCount(count+1)}>INC</button>
+                <button onClick={()=>setCart(product)}>INC</button>
                 <h4>NOT add</h4>
-                <button onClick={()=>setCount(count-1)}>DEC</button>
+                <button onClick={()=>setCart(product)}>DEC</button>
                 </div >
                 <button>REMOVE</button>
                 </MainDiv>

@@ -10,7 +10,7 @@ function App() {
     department: "",
     salary: "",
     maritual_status: true,
-  })
+  });
 
   const [formData, setFormData] = useState([])
 

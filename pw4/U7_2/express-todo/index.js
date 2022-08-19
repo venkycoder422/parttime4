@@ -13,6 +13,7 @@ app.get(`/`, (req, res) => {
 
 app.post(`/todo`, (req, res) => {
     const { todo } = req.body;
+    // console.log(todo);
     let max = 0;
     todos.forEach((todo) => {
         max = Math.max(todo.id, max)
@@ -32,6 +33,7 @@ app.post(`/todo`, (req, res) => {
 let index = 0;
 app.delete(`/todo/:id`, (req, res) => {
     const { id } = req.params;
+
     todos.forEach((todo, i) => {
         if (todo.id == id) {
             index = i;
@@ -49,11 +51,10 @@ app.patch('/todo/:id',(req,res)=>{
     const { id } = req.params;
     const { taskData } = req.body;
     // console.log(id);
-    
-    var data = todos.map((t)=>{
-        if(t.id==id){
-            console.log(t)
-            return t;
+    let index=0;
+     todos.map((todo,i)=>{
+        if(todo.id==id){
+          return todo;
         }
 
     })

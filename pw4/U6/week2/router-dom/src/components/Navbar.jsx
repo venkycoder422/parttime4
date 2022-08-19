@@ -6,9 +6,10 @@ const NavbarWrapper= styled.div`
 display:flex;
 align-items:center;
 justify-content:center;
-gap:20px;
+gap:30px;
 background-color: orange;
 padding:20px;
+color:white;
 `
 const Navbar =()=>{
     return (

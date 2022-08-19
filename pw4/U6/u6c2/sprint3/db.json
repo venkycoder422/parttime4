@@ -15,35 +15,70 @@
   ],
   "products": [
     {
-      "name":"Product-1",
-      "discription":"A product that is 1st in the list products"
+      "name": "Product-1",
+      "discription": "A product that is 1st in the list products"
     },
     {
-      "name":"Product-2",
-      "discription":"A product that is 2nd in the list products"
+      "name": "Product-2",
+      "discription": "A product that is 2nd in the list products"
     },
     {
-      "name":"Product-3",
-      "discription":"A product that is 3rd in the list products"
+      "name": "Product-3",
+      "discription": "A product that is 3rd in the list products"
     },
     {
-      "name":"Product-4",
-      "discription":"A product that is 4th in the list products"
+      "name": "Product-4",
+      "discription": "A product that is 4th in the list products"
     },
     {
-      "name":"Product-5",
-      "discription":"A product that is 5th in the list products"
+      "name": "Product-5",
+      "discription": "A product that is 5th in the list products"
     },
     {
-      "name":"Product-6",
-      "discription":"A product that is 6th in the list products"
+      "name": "Product-6",
+      "discription": "A product that is 6th in the list products"
     }
-
-    
   ],
-  "cart":[
+  "cart": [
     {
-      "count":""
+      "name": "Product-1",
+      "discription": "A product that is 1st in the list products",
+      "id": 1
+    },
+    {
+      "name": "Product-2",
+      "discription": "A product that is 2nd in the list products",
+      "id": 2
+    },
+    {
+      "name": "Product-2",
+      "discription": "A product that is 2nd in the list products",
+      "id": 3
+    },
+    {
+      "name": "Product-2",
+      "discription": "A product that is 2nd in the list products",
+      "id": 4
+    },
+    {
+      "name": "Product-1",
+      "discription": "A product that is 1st in the list products",
+      "id": 5
+    },
+    {
+      "name": "",
+      "discription": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "discription": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "discription": "",
+      "id": 8
     }
   ]
 }

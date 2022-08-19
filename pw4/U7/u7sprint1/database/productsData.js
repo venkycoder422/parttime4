@@ -18,7 +18,8 @@ const prductSchema = new mongoose.Schema({
 
 const my_net = new mongoose.Schema({
     name:{
-        type:String
+        type:String,
+        required:true,
     }
  });
 

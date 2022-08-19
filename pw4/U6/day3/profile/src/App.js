@@ -23,8 +23,8 @@ function App() {
     return true;
   }
   
-  const [details,setdetails] = React.useState([]);
-  const moreDetails=(value)=>{
+const [details,setdetails] = React.useState([]);
+  const moreDetails=({value})=>{
     
     if({eventChange}){
       setdetails(value);
@@ -80,8 +80,8 @@ function App() {
             <button onClick={() => ageDec(1)}>Decrease</button>
           </div>
           <div>
-          <button onClick={() => setShowAll(!showAll)}>
-        {showAll ? "SHOW DETAILS" : "HIDE DETAILS"}
+          <button onClick={() => moreDetails(["fsdfsf","fsfdsf"])}>
+        {se ? "SHOW DETAILS" : "HIDE DETAILS"}
       </button>
           </div>
           <div>{details.map(value=><p>{value}</p>)}</div>

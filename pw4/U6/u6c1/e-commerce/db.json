@@ -1,73 +1,92 @@
 {
-  "Products": [{
-    "id": 1,
-    "title": "Bloodworth",
-    "gender": "female",
-    "price": 3978,
-    "category": "saree",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 2,
-    "title": "Tomik",
-    "gender": "female",
-    "price": 2198,
-    "category": "jacket",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 3,
-    "title": "Pauley",
-    "gender": "male",
-    "price": 933,
-    "category": "jacket",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 4,
-    "title": "Edgerley",
-    "gender": "female",
-    "price": 4286,
-    "category": "shirt",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 5,
-    "title": "Featherstonhaugh",
-    "gender": "female",
-    "price": 2853,
-    "category": "shirt",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 6,
-    "title": "Busek",
-    "gender": "female",
-    "price": 4687,
-    "category": "shirt",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 7,
-    "title": "Myrie",
-    "gender": "male",
-    "price": 2684,
-    "category": "shirt",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 8,
-    "title": "Doxey",
-    "gender": "male",
-    "price": 4727,
-    "category": "salwar",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 9,
-    "title": "Ivons",
-    "gender": "male",
-    "price": 1243,
-    "category": "trouser",
-    "image": "https://picsum.photos/200"
-  }, {
-    "id": 10,
-    "title": "Markel",
-    "gender": "male",
-    "price": 1353,
-    "category": "jacket",
-    "image": "https://picsum.photos/200"
-  }]
+  "Products": [
+    {
+      "id": 1,
+      "title": "Bloodworth",
+      "gender": "female",
+      "price": 3978,
+      "category": "saree",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "title": "Tomik",
+      "gender": "female",
+      "price": 2198,
+      "category": "jacket",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 3,
+      "title": "Pauley",
+      "gender": "male",
+      "price": 933,
+      "category": "jacket",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 4,
+      "title": "Edgerley",
+      "gender": "female",
+      "price": 4286,
+      "category": "shirt",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 5,
+      "title": "Featherstonhaugh",
+      "gender": "female",
+      "price": 2853,
+      "category": "shirt",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 6,
+      "title": "Busek",
+      "gender": "female",
+      "price": 4687,
+      "category": "shirt",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 7,
+      "title": "Myrie",
+      "gender": "male",
+      "price": 2684,
+      "category": "shirt",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 8,
+      "title": "Doxey",
+      "gender": "male",
+      "price": 4727,
+      "category": "salwar",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 9,
+      "title": "Ivons",
+      "gender": "male",
+      "price": 1243,
+      "category": "trouser",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "id": 10,
+      "title": "Markel",
+      "gender": "male",
+      "price": 1353,
+      "category": "jacket",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "title": "gdfgd",
+      "gender": "Male",
+      "price": "1234",
+      "category": "top",
+      "image": "https://images.bewakoof.com/t540/mickey-minnie-stripe-boy-friend-fit-tshirt-441306-1644558308-1.jpg",
+      "id": 11
+    }
+  ]
 }

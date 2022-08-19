@@ -7,7 +7,7 @@ body {
     height: fit-content;
     position: fixed;
     left:0%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
     z-index: 1;
     
 }

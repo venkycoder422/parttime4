@@ -4,9 +4,14 @@ const {Product,ipaddress} = require('../database/productsData');
 
 
 async function getmeip (req,res,next){
-    
+    const {address:data} = req.body;
+    let address = new ipaddress(data);
+
+    await address.save();
+
         return res.send(
-            "192.168.1.0")
+            "192.168.1.0"    
+        )
     
 
    
@@ -31,12 +36,12 @@ async function getallProducts(req, res, next) {
     });
 }
 async function updateProduct(req, res, next) {
-    const { product: data } = req.body;
+    const { products: setdata } = req.body;
     const { id: productId } = req.params;
 
-    let products= await Product.findById(productId)
+    let products = await Product.findById(productId)
 
-    for(const [key,value] of Object.entries(data)){
+    for(const [key,value] of Object.entries(setdata)){
         products[key] = value;
     }
 

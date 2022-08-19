@@ -1,0 +1,53 @@
+.main_div{
+margin: 2% 5% 0% 5%;
+display: flex;
+column-gap:40px;
+}
+
+.recipes_div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap:20px;
+   
+}
+
+.recipes_div img{
+    width:100%;
+    height: 50%;
+    border-radius:5px;
+}
+
+@media only screen and (max-width: 900px) {
+    .main_div{
+        margin: 2% 5% 0% 5%;
+        display: flex;
+        flex-direction: column;
+        column-gap:40px;
+        }
+      .tag_centent{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto auto auto;
+      }
+
+    .recipes_div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap:20px;
+       
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .main_div{
+        margin: 2% 5% 0% 5%;
+        display: flex;
+        flex-direction: column;
+        column-gap:10px;
+        }
+    .recipes_div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+       
+    }
+}

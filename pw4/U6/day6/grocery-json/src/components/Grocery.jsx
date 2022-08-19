@@ -13,7 +13,7 @@ const Grocery = () => {
     React.useEffect(()=>{
         fetch(`http://localhost:3001/Grocery`)
         .then((res)=> res.json())
-            .then((res)=>setData(res)).catch((error)=>console.log(error))
+        .then((res)=>setData(res)).catch((error)=>console.log(error))
         
     
     },[]);

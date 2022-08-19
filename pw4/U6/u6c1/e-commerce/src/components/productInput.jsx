@@ -80,7 +80,7 @@ function App() {
       {
         getdate.map((item)=>(
             <div className="list">
-                <img src={item.image} style={{width:"100%"}}></img>
+                <img src={item.image} style={{width:"100%",height:"50%"}}></img>
                  <h3 key={item.id}>TITLE:{item.title}</h3>
                  <h4>PRICE:{item.price}</h4>
                  <h3>gender:{item.gender}</h3>

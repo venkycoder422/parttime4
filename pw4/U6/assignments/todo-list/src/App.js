@@ -21,6 +21,7 @@ function Todo({todo,i}){
 function Todo2({todo,i}){
   
   if(i==3){
+    
     return (
       <div class="App">
         <ul>

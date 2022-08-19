@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log(50+50),console.log(function(o,n){return o*n}(50,50))})();

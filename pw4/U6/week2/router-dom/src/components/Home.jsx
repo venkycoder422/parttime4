@@ -1,7 +1,7 @@
 const Home=()=>{
     return (
         <>
-        <div>Home</div>
+        <div>HOME-{process.env.REACT_APP_BASE_URL}</div>
         </>
     )
 }

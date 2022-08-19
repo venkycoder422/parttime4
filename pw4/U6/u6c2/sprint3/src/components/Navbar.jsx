@@ -14,11 +14,21 @@ padding:20px;
 color:white;
 `
 const Navbar =()=>{
-   
+    const [cartCount,setcartCount] = React.useState([]);
+    React.useEffect(()=>{
+        fetch(`http://localhost:8080/cart`)
+        .then((res)=>res.json())
+        
+        .then((res)=>setcartCount(res))
+        
+        .catch((err)=>console.log(err));
+    },[])
+
+    
     return (
     <NavbarWrapper>
         <Link to="/">HOME</Link>
-        <Link to="/cart">Cart-{}</Link>
+        <Link to="/cart">Cart-{cartCount.length}</Link>
         <Link to="/products"> Products</Link>
         <Link to="/login">Login</Link>
     </NavbarWrapper>

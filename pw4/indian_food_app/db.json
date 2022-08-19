@@ -1,0 +1,170 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Rava Upma",
+      "img": "https://www.vegrecipesofindia.com/wp-content/uploads/2009/08/upma-recipe-1.jpg",
+      "pretime": "10 min",
+      "category": "Breakfast",
+      "cooktime": "15 min",
+      "serve": 4,
+      "description": "The upma recipe I share here is adapted from my mom’s recipe and continues to be a favorite in my home. The ingredients used to flavor the rava upma (also called suji ka upma) give it a deliciously satisfying taste that will make this dish one of your new preferred go-to breakfasts.",
+      "instruction": [
+        "step1",
+        "Dry roast the rava in a pan until it turns a light brown (about 7-10 mins). Transfer to a bowl when done and set aside to cool.",
+        "step2",
+        "Heat oil in the same pan and add the mustard seeds, urad dal, chana dal and curry leaves. When the dal turns golden brown and the mustard seeds splutter, add the onions, green chillies and ginger. Fry for 4-5 mins until the onions turn golden brown.",
+        "step3",
+        "Now add the peas and vegetables. Mix well. Add about 3 cups of water and cook covered until the vegetables turn soft.",
+        "step4",
+        "Open, add salt and mix well. Then lower fire to sim and add the roasted rava little at a time, stirring constantly to avoid lumps. Continue to cook and stir for another 5 mins.",
+        "step5",
+        "Remove and serve hot."
+      ],
+      "ingrediants": [
+        "1 cup rava / semolina",
+        "1 onion, finely chopped",
+        "¼ cup peas (fresh or frozen)",
+        "1 cup mixed vegetables, chopped (carrots, beans and capsicum)",
+        "2 green chillies, chopped (adjust to taste)",
+        "1 small piece ginger, grated",
+        "A few black peppercorns",
+        "A few curry leaves",
+        "1 tsp urad dal",
+        "1 tsp chana dal ( I like the crunch of the dals so use more!)",
+        "¼ tsp mustard seeds",
+        "A few roasted cashewnuts to garnish (optional)",
+        "Coriander leaves, chopped, for garnish",
+        "2 tsp Sesame oil",
+        "Salt to taste"
+      ],
+      "tools": [
+        "Hand Blender",
+        "Large Heavy Pot With Lid",
+        "Measuring Spoons",
+        "Measuring Cups"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Indian Village (Gavthi) Chicken Curry Recipe",
+      "img": "https://www.seriouseats.com/thmb/gmRx2WpJpke05zHjDs6dSk6LVOE=/880x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2011__12__20111227-indian-curry-610-4142c3c6f67d4702b51518dd17fa41c2.jpg",
+      "pretime": "43 min",
+      "category": "Chicken",
+      "cooktime": "60 min",
+      "serve": 6,
+      "description": "this simple Indian chicken curry is made in the style common to the hamlets in Konkan, along the west coast of India. Using bone-in chicken lends the meat a richer, gamey flavor that's in keeping with how this dish was traditionally made, using free-roaming birds. A heavy hand with spices, including turmeric, coriander, cumin, and cinnamon, plus plenty of chili, leaves this dish intensely flavorful and fiery. Serve it over white rice or with bhakris (a type of unleavened rice bread) to soak up all the sauce.",
+      "instruction": [
+        "step1",
+        "To Marinate the Chicken: In a small bowl, mix together ginger-garlic paste, turmeric powder, and 1 tablespoon of the red chile powder",
+        "step2",
+        "Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon.",
+        "step3",
+        "Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge.",
+        "step4"
+      ],
+      "ingrediants": [
+        "2 tablespoons ginger-garlic paste (see note)",
+        "1/2 tablespoon ground turmeric",
+        "1 tablespoon red chile powder",
+        "1 pound (450g) bone-in chicken drumsticks and thighs, optionally cut in half through the bone with a cleaver",
+        "Kosher salt"
+      ],
+      "tools": [
+        "Hand Blender",
+        "Large Heavy Pot With Lid",
+        "Measuring Spoons",
+        "Measuring Cups"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tasty muttun",
+      "img": "https://images.ctfassets.net/1sfeg2xcbtuz/1gyxYJdsGBBE5XkGj4eSS3/7568543e831a828d4e1190cc8f28d066/recipe-1.jpeg?w=1000&h=667&q=50&fm=webp",
+      "pretime": "12 min",
+      "category": "Breakfast",
+      "cooktime": "20min",
+      "description": "Shabby chic humblebrag banh mi bushwick, banjo kale chips meggings. Cred selfies sartorial, cloud bread disrupt blue bottle seitan. Dreamcatcher tousled bitters, health goth vegan venmo whatever street art lyft shabby chic pitchfork beard. Drinking vinegar poke tbh, iPhone coloring book polaroid truffaut tousled ramps pug trust fund letterpress. Portland four loko austin chicharrones bitters single-origin coffee. Leggings letterpress occupy pour-over.",
+      "serve": 3,
+      "instruction": [
+        "step1",
+        "I'm baby mustache man braid fingerstache small batch venmo succulents shoreditch.",
+        "step2",
+        "Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon.",
+        "step3",
+        "Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge.",
+        "step4",
+        "Unicorn meditation affogato venmo, vexillologist DIY godard iPhone. Whatever chambray paleo, meh try-hard hashtag meggings wayfarers hella flannel ugh asymmetrical succulents."
+      ],
+      "ingrediants": [
+        "1 1/2 cups dry pancake mix",
+        "1/2 cup flax seed meal",
+        "1 cup skim milk"
+      ],
+      "tools": [
+        "Hand Blender",
+        "Large Heavy Pot With Lid",
+        "Measuring Spoons",
+        "Measuring Cups"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Vegetable Soup",
+      "img": "https://images.ctfassets.net/1sfeg2xcbtuz/3Whg2klkDG8aThfNZCw1vg/a6314370185667777fc8c82b530d1510/recipe-3.jpeg?w=1000&h=667&q=50&fm=webp",
+      "pretime": "12 min",
+      "category": "Breakfast",
+      "cooktime": "20min",
+      "serve": 4,
+      "instruction": [
+        "step1",
+        "I'm baby mustache man braid fingerstache small batch venmo succulents shoreditch.",
+        "step2",
+        "Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon.",
+        "step3",
+        "Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge.",
+        "step4"
+      ],
+      "ingrediants": [
+        "1 1/2 cups dry pancake mix",
+        "1/2 cup flax seed meal",
+        "1 cup skim milk"
+      ],
+      "tools": [
+        "Hand Blender",
+        "Large Heavy Pot With Lid",
+        "Measuring Spoons",
+        "Measuring Cups"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "tastymuttun",
+      "img": "https://images.ctfassets.net/1sfeg2xcbtuz/1gyxYJdsGBBE5XkGj4eSS3/7568543e831a828d4e1190cc8f28d066/recipe-1.jpeg?w=1000&h=667&q=50&fm=webp",
+      "pretime": "12 min",
+      "category": "Breakfast",
+      "cooktime": "20min",
+      "serve": 6,
+      "instruction": [
+        "step1",
+        "I'm baby mustache man braid fingerstache small batch venmo succulents shoreditch.",
+        "step2",
+        "Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon.",
+        "step3",
+        "Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge.",
+        "step4"
+      ],
+      "ingrediants": [
+        "1 1/2 cups dry pancake mix",
+        "1/2 cup flax seed meal",
+        "1 cup skim milk"
+      ],
+      "tools": [
+        "Hand Blender",
+        "Large Heavy Pot With Lid",
+        "Measuring Spoons",
+        "Measuring Cups"
+      ]
+    }
+  ]
+}

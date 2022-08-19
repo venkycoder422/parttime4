@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bodyFont: "Montserrat",sans-serif;
+    --smallText: 0.8em;
+    --extraSmallText: 0.7em;
+    --backgroundColor: var(--grey-0);
+    --textColor: var(--grey-1000);
+    --borderRadius: 0.25rem;
+    --letterSpacing: 1px;
+    --transition: 0.3s ease-in-out all;
+    --max-width: 1120px;
+    --fixed-width: 600px;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0 0 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+a{
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

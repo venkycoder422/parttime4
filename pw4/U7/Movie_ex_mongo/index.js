@@ -6,7 +6,7 @@ const app = express();
 
 
 app.use(express.json());
-// app.use(cors()); //prevent eroor cross origin resource sharing while using with react app
+app.use(cors()); //prevent eroor cross origin resource sharing while using with react app
 
 
 //Loggers;

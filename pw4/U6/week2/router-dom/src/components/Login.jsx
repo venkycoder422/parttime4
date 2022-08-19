@@ -56,7 +56,7 @@ import styled from "styled-components";
     const HandleSubmit=(event)=>{
             event.preventDefault();
             
-            fetch(`http://localhost:3001/users`, {
+            fetch(`process.env.React_base_url/users`, {
                 method:"POST",
                 body:JSON.stringify(Data),
                 headers:{

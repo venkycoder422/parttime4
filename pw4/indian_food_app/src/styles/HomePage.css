@@ -1,0 +1,32 @@
+.Home_main_div{
+    margin-top: 5%;
+    
+}
+
+.indianfood_homepage_image{
+    width:90%;
+    height:auto;
+    border-radius: 5px;
+    margin-left:5%;
+    margin-right: 5%;
+    background-image: url('https://media.istockphoto.com/photos/various-indian-dishes-featuring-rogan-josh-chicken-tikka-masala-picture-id1168659055?k=20&m=1168659055&s=170667a&w=0&h=O2kOXpS8hlapm5BKdefcDfIvmXaOdlab7BEhIVwBQBs=');
+    /* z-index: 1; */
+    text-align: center;
+    font-size: 50px;
+    color:white;
+    padding-top: 3%; 
+    padding-bottom: 3%;
+    filter: brightness(70%);
+    
+    
+}
+
+.text_above_img{
+    margin-bottom:0px;
+    font-size: 4rem;
+    filter: brightness(200%);
+    color: rgb(255, 255, 255);
+    
+}
+
+
