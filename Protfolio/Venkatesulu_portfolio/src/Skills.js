@@ -49,7 +49,7 @@ function Skills() {
                 </div>
                 <div className="icon-name">
                   <img style={{width:"70px",height:"70px"}}
-                    src="https://camo.githubusercontent.com/b4b57fddacbe4a87593bdf071027189d0130d258/68747470733a2f2f6769746c61622e636f6d2f6b2d6c61627a2f686178652d6f73732f686178652d6d6174657269616c2d75692f7261772f6d61737465722f6c6f676f2e737667"
+                    src="https://img.icons8.com/color/452/material-ui.png"
                     alt="MaterialUI"
                   />
                   <p>Material UI</p>
