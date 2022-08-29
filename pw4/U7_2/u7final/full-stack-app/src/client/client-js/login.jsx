@@ -26,7 +26,7 @@ export const Loginform = () => {
             <h1>LOGIN WITH EMAIL</h1>
             <div className="login-form">
                 <div>
-                    {/* <form>
+                    <form>
                         <label>Enter email</label>
                         <input type="email" value={email}
                             onChange={(e) => setemail(e.target.value)}></input>
@@ -34,7 +34,7 @@ export const Loginform = () => {
                         <input type="password" value={password}
                             onChange={(e) => setpassword(e.target.value)}></input>
                         <input type="submit" value="Submit" onClick={addDataHandler}></input>
-                    </form> */}
+                    </form>
 
                     <GoogleOAuthProvider clientId="490174809580-66dq2meojcgpga5u8hq6pj08e6fnl75k.apps.googleusercontent.com">
                         <GoogleOauth />
