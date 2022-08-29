@@ -4,35 +4,30 @@ import { Link } from 'react-router-dom';
 
 export const Home = () => {
 
-  const [data, setData] = React.useState([]);
-  const getData = () => {
-    fetch(`http://localhost:3001/todos/all`)
-      .then((res) => res.json())
-      .then((res) => setData(res))
+  const [todos, settodos] = React.useState([]);
 
-      .then((err) => console.log(err))
-  }
-
-  React.useEffect(() => {
-    getData()
-  }, [])
-  console.log(data);
-
+  React.useEffect(()=>{
+        fetch(`http://localhost:3001/todos/all`)
+        .then((res)=>res.json())
+        .then((res)=>settodos(res))
+        .then((err)=>console.log(err));
+    },[]);
+    console.log(todos);
   return (
     <div>
       <h1>HOME PAGE</h1>
-      {
-        data.map((data) => (
-          <div className="CartData">
-            <Link className='Links' to={`/new_clothing/${data.id}`}></Link>
-            <h3 className="" >{data.taskname}</h3>
+      {/* {
+        todos?.forEach((data) => (
 
-            <p className="">{data.status}</p>
-            <p className="tag">${data.tag}</p>
+          <div>
+              <h3>{data.taskname}</h3>
+            <p >{data.status}</p>
+            <p >{data.tag}</p>
 
           </div>
+          
         ))
-      }
+      } */}
 
     </div>
   )
