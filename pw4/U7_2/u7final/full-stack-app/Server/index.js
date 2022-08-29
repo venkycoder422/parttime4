@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { connectDataBase } = require('./database');
-// const todosRouter = require('./routes/moviesData');
+const todosRouter = require('./routes/TodoData');
 const app = express();
 app.use(express.json());
 app.use(cors()); //prevent eroor cross origin resource sharing while using with react app
@@ -10,7 +10,7 @@ app.use(cors()); //prevent eroor cross origin resource sharing while using with 
 //Loggers;
 app.use(logger);
 
-// app.use(todosRouter);
+app.use(todosRouter);
 
 function logger(req, res, next) {
     console.info(new Date(), req.method, req.path);
