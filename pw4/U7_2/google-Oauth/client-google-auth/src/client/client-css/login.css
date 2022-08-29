@@ -1,0 +1,7 @@
+.login-form div,form{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    gap:10px;
+    margin: auto;
+}
