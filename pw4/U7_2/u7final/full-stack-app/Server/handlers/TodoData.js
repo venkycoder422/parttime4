@@ -33,7 +33,8 @@ async function fetchSingleTodo(req, res, next) {
 
 //Searching todo;
 async function searchTodos(req ,res, next){
-    console.log(req.query.todo);
+    // console.log(req.query.todo);
+//$or:[{"car_color":"Red",car_color:"Pink"}]
         let searches = await Todo.find({taskname:{$regex:`^${req.query.taskname.trim()}`,$options: 'i'}});
     
         return res.send({
@@ -60,23 +61,45 @@ async function postTodo(req,res,next){
 
 //update todo
 
-async function updateTodo(req, res, next) {
-    const {todos:todoData} = req.body;
-    const { id:todoId } = req.params;
+async function updateTodo(req,res,next) {
+    // const {todos:todoData} = req.body;
+    // const {id:todoId} = req.params;
 
-    let todos = await Todo.findById(todoId)
-    console.log(todos);
+    // let todos = await Todo.findById(todoId)
+    // console.log(todos);
 
-    for(const [key, value] of Object.entries(todoData)){
-        todos[key] = value;
-    }
+    // for(const [key, value] of Object.entries(todoData)){
+    //     todos[key] = value;
+    // }
 
-    await todos.save();
+    // await todos.save();
+
+    // return res.send({
+    //     message: "Todo has been updated",
+    //     todos,
+    // });
+
+
+    const { id } = req.params;
+    const { product: Data } = req.body;
+    const products = await Todo.find();
+    let index = 0;
+    products.forEach((product, i) => {
+        if (product._id == id) {
+            index = i;
+        }
+
+    })
+    
+    products[index] = Data;
+    
 
     return res.send({
-        message: "Todo has been updated",
-        todos,
-    });
+        message: "Product Updated",
+        products
+    })
+
+
 };
 
 
