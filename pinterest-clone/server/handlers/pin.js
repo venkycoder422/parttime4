@@ -1,3 +1,4 @@
+
 const Pin = require('../database/Schema');
 
 async function fetchAllPins(req, res, next) {
@@ -33,13 +34,18 @@ async function fetchSinglePin(req, res, next) {
 
 //Searching todo;
 async function searchPins(req ,res, next){
-    // console.log(req.query.todo);
-//$or:[{"car_color":"Red",car_color:"Pink"}]
-        let searches = await Pin.find({title:{$regex:`^${req.query.title.trim()}`,$options: 'i'}});
-    
+  
+try {
+    let pins = await Pin.find({title:{$regex:`^${req.query.title}`,$options: 'i'}});
+    //console.log(searches);
         return res.send({
-            searches,
+            pins
         })
+} catch (error) {
+    console.log(error)
+}
+
+       
        
     }
 

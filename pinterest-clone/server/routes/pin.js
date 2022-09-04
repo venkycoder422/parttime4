@@ -4,10 +4,10 @@ const { fetchAllPins, fetchSinglePin, searchPins, postPin } = require('../handle
 
 const pinsRouter = express.Router();
 
-pinsRouter.get('/pins', fetchAllPins);
-pinsRouter.get(`/pins/:id`, fetchSinglePin);
-pinsRouter.get(`/pins/search`, searchPins);
-pinsRouter.post(`/pins/create`,postPin);
+pinsRouter.get('/pin', fetchAllPins);
+pinsRouter.get(`/pin/:id`, fetchSinglePin);
+pinsRouter.get(`/pins`, searchPins);
+pinsRouter.post(`/pin/create`,postPin);
 
 
 
