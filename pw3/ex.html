@@ -58,7 +58,7 @@ var res= await fetch(url);
 var data=await res.json();
 
 console.log(data);
-//displayData(data);
+displayData(data);
 }
 catch(err){
     console.log(err);
@@ -67,7 +67,7 @@ catch(err){
 }
 getData();
 
-/*function displayData(data){
+function displayData(data){
 
 data.data.forEach(function(product){
     
@@ -83,7 +83,7 @@ container.append(photoshoot);
 
 });
 }
-*/
+
 </script>
 </body>
 

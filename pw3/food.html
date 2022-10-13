@@ -55,7 +55,7 @@ button{
 
     <script>
 const Id = "56ac0be7";
-  const key ="04bb013870757a05404fd8e5f41c772c";
+  const key ="1";
 
   let cart2=localStorage.getItem("cart");
 if(cart2===null){
@@ -63,6 +63,7 @@ if(cart2===null){
 }
         
     let url=`www.themealdb.com/api/json/v1/1/categories.php&app_id=${Id}&app_key=${key}`;
+
 
     let container = document.getElementById("container");
 
