@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Masai Library</title>
+    <link rel="stylesheet" href="./Styles/index.css">
+  </head>
+  <body>
+
+    <div id="nav-wrapper">
+    <div id="navbar">
+      <h2>Masai Library</h2>
+      <div id="options">
+        <a href="./index.html">
+          <h2>Home</h2>
+        </a>
+        <a href="./dashboard.html">
+          <h2>Dashboard</h2>
+        </a>
+        <a href="./buy.html">
+          <h2>My Books</h2>
+        </a>
+        <a href="./bookmark.html">
+          <h2>Bookmark</h2>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <h1>Library Management System</h1>
+    <div id="create">
+      <form onsubmit="setBooks()">
+        <input id="name" placeholder="Book Name" type="text" />
+        <input id="author" placeholder="Author Name" type="text" />
+        <input id="desc" placeholder="Book Description" type="text" />
+        <label for="">Adding Date:-</label>
+        <input type="date" id="added"/>
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Self Help">Self Help</option>
+          <option value="Finance">Finance</option>
+        </select>
+        <input id="price" placeholder="Book's Price" type="number" />
+        <input type="submit" value="Submit" id="button" />
+      </form>
+    </div>
+
+    <script src="./Scripts/index.js"></script>
+
+  </body>
+</html>
